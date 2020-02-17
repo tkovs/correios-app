@@ -1,13 +1,13 @@
-import React from 'react';
-import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
+import React from 'react'
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native'
 
 const App = () => (
   <SafeAreaView style={styles.container}>
     <View style={styles.body}>
-      <Text style={styles.text}>Tracking</Text>
+      <Text style={styles.text}>Correios</Text>
     </View>
   </SafeAreaView>
-);
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     color: '#ddd',
     textAlign: 'center',
   },
-});
+})
 
-export default App;
+export default App
