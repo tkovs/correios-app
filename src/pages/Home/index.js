@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, View, StyleSheet } from 'react-native'
-import { Appbar } from 'react-native-paper'
+import { Appbar, FAB } from 'react-native-paper'
 import { colors } from '../../styles/theme'
 
 const Home = () => (
@@ -9,6 +9,7 @@ const Home = () => (
       <Appbar.Content title="Correios" subtitle="Rastreio de pacotes" />
     </Appbar.Header>
     <View style={styles.body} />
+    <FAB icon="plus" style={styles.floatingButton} />
   </SafeAreaView>
 )
 
@@ -22,6 +23,13 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: colors.isabelline,
     flex: 1,
+  },
+  floatingButton: {
+    position: 'absolute',
+    margin: 16,
+    bottom: 0,
+    right: 0,
+    backgroundColor: colors.blue,
   },
 })
 

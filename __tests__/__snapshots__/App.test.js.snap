@@ -157,6 +157,139 @@ Object {
             }
           }
         />
+        <View
+          pointerEvents="auto"
+          style={
+            Object {
+              "backgroundColor": "#01417F",
+              "borderRadius": 28,
+              "bottom": 0,
+              "elevation": 6,
+              "margin": 16,
+              "opacity": 1,
+              "position": "absolute",
+              "right": 0,
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 0,
+              },
+              "shadowOpacity": 0.24,
+              "shadowRadius": 6,
+              "transform": Array [
+                Object {
+                  "scale": 1,
+                },
+              ],
+            }
+          }
+        >
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityStates={Array []}
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            delayPressOut={100}
+            disabled={true}
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Object {
+                  "borderRadius": 28,
+                },
+              ]
+            }
+            underlayColor="rgba(255, 255, 255, 0.16)"
+          >
+            <View
+              pointerEvents="none"
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "height": 56,
+                    "width": 56,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 1,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "transform": Array [
+                        Object {
+                          "rotate": "0deg",
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Text
+                    accessibilityElementsHidden={true}
+                    allowFontScaling={false}
+                    importantForAccessibility="no-hide-descendants"
+                    pointerEvents="none"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                          "fontSize": 24,
+                        },
+                        Array [
+                          Object {
+                            "transform": Array [
+                              Object {
+                                "scaleX": 1,
+                              },
+                            ],
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </TouchableHighlight>
+        </View>
       </SafeAreaView>
     </View>
   </View>,
@@ -306,6 +439,139 @@ Object {
           }
         }
       />
+      <View
+        pointerEvents="auto"
+        style={
+          Object {
+            "backgroundColor": "#01417F",
+            "borderRadius": 28,
+            "bottom": 0,
+            "elevation": 6,
+            "margin": 16,
+            "opacity": 1,
+            "position": "absolute",
+            "right": 0,
+            "shadowColor": "#000000",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 0,
+            },
+            "shadowOpacity": 0.24,
+            "shadowRadius": 6,
+            "transform": Array [
+              Object {
+                "scale": 1,
+              },
+            ],
+          }
+        }
+      >
+        <TouchableHighlight
+          accessibilityComponentType="button"
+          accessibilityRole="button"
+          accessibilityStates={Array []}
+          accessibilityTraits="button"
+          activeOpacity={0.85}
+          delayPressOut={100}
+          disabled={true}
+          style={
+            Array [
+              Object {
+                "overflow": "hidden",
+              },
+              Object {
+                "borderRadius": 28,
+              },
+            ]
+          }
+          underlayColor="rgba(255, 255, 255, 0.16)"
+        >
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                },
+                Object {
+                  "height": 56,
+                  "width": 56,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "height": 24,
+                    "width": 24,
+                  },
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "bottom": 0,
+                    "left": 0,
+                    "opacity": 1,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "transform": Array [
+                      Object {
+                        "rotate": "0deg",
+                      },
+                    ],
+                  }
+                }
+              >
+                <Text
+                  accessibilityElementsHidden={true}
+                  allowFontScaling={false}
+                  importantForAccessibility="no-hide-descendants"
+                  pointerEvents="none"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontSize": 24,
+                      },
+                      Array [
+                        Object {
+                          "transform": Array [
+                            Object {
+                              "scaleX": 1,
+                            },
+                          ],
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                      ],
+                      Object {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </View>
+        </TouchableHighlight>
+      </View>
     </SafeAreaView>
   </View>,
   "debug": [Function],
