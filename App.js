@@ -1,6 +1,6 @@
 import React from 'react'
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native'
-import { Button, Appbar } from 'react-native-paper'
+import { SafeAreaView, View, StyleSheet } from 'react-native'
+import { Appbar } from 'react-native-paper'
 import { colors } from './src/styles/theme'
 
 const App = () => (
@@ -8,12 +8,7 @@ const App = () => (
     <Appbar.Header style={styles.header}>
       <Appbar.Content title="Correios" subtitle="Rastreio de pacotes" />
     </Appbar.Header>
-    <View style={styles.body}>
-      <Text style={styles.text}>Correios</Text>
-      <Button icon="camera" mode="outlined">
-        Press me
-      </Button>
-    </View>
+    <View style={styles.body} />
   </SafeAreaView>
 )
 
@@ -25,11 +20,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.blue,
   },
   body: {
-    backgroundColor: '#111',
-  },
-  text: {
-    color: '#ddd',
-    textAlign: 'center',
+    backgroundColor: colors.isabelline,
+    flex: 1,
   },
 })
 

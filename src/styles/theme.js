@@ -6,6 +6,7 @@ export const colors = {
   white: '#FFFFFF',
   sandstorm: '#EEC643',
   licorice: '#141414',
+  isabelline: '#EAEBED',
 }
 
 export default StyleSheet.create({
