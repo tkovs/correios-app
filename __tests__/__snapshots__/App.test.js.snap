@@ -24,10 +24,131 @@ Object {
         style={
           Object {
             "flex": 1,
-            "justifyContent": "center",
           }
         }
       >
+        <SafeAreaView
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#01417F",
+                "elevation": 4,
+                "zIndex": 0,
+              },
+              Object {
+                "shadowColor": "#000000",
+                "shadowOffset": Object {
+                  "height": 3,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.24,
+                "shadowRadius": 4,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#01417F",
+                "elevation": 0,
+                "flexDirection": "row",
+                "height": 56,
+                "marginTop": 0,
+                "paddingHorizontal": 4,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "width": 48,
+                }
+              }
+            />
+            <TouchableWithoutFeedback>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                      "paddingHorizontal": 12,
+                    },
+                    Array [
+                      false,
+                      Object {
+                        "alignItems": "center",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <Text
+                  accessibilityRole="header"
+                  accessibilityTraits="header"
+                  accessible={true}
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                        "textAlign": "left",
+                      },
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                          "fontFamily": "System",
+                          "fontWeight": "400",
+                        },
+                        Object {
+                          "fontSize": 17,
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  Correios
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                        "textAlign": "left",
+                      },
+                      Array [
+                        Object {
+                          "fontSize": 11,
+                        },
+                        Object {
+                          "color": "rgba(255, 255, 255, 0.7)",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  Rastreio de pacotes
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
+            <View
+              style={
+                Object {
+                  "width": 48,
+                }
+              }
+            />
+          </View>
+        </SafeAreaView>
         <View
           style={
             Object {
@@ -45,6 +166,136 @@ Object {
           >
             Correios
           </Text>
+          <View
+            style={
+              Object {
+                "backgroundColor": "transparent",
+                "borderColor": "rgba(0, 0, 0, 0.29)",
+                "borderRadius": 4,
+                "borderStyle": "solid",
+                "borderWidth": 0.5,
+                "elevation": 0,
+                "minWidth": 64,
+              }
+            }
+          >
+            <TouchableHighlight
+              accessibilityComponentType="button"
+              accessibilityRole="button"
+              accessibilityStates={Array []}
+              accessibilityTraits="button"
+              activeOpacity={0.85}
+              delayPressIn={0}
+              delayPressOut={100}
+              disabled={true}
+              style={
+                Array [
+                  Object {
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "borderRadius": 4,
+                  },
+                ]
+              }
+              underlayColor="rgba(98, 0, 238, 0.16)"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "marginLeft": 12,
+                      "marginRight": -4,
+                      "width": 16,
+                    }
+                  }
+                >
+                  <Text
+                    accessibilityElementsHidden={true}
+                    allowFontScaling={false}
+                    importantForAccessibility="no-hide-descendants"
+                    pointerEvents="none"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#6200ee",
+                          "fontSize": 16,
+                        },
+                        Array [
+                          Object {
+                            "transform": Array [
+                              Object {
+                                "scaleX": 1,
+                              },
+                            ],
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#000000",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                        "textAlign": "left",
+                      },
+                      Array [
+                        Object {
+                          "letterSpacing": 1,
+                          "marginHorizontal": 16,
+                          "marginVertical": 9,
+                          "textAlign": "center",
+                        },
+                        undefined,
+                        Object {
+                          "textTransform": "uppercase",
+                        },
+                        Object {
+                          "color": "#6200ee",
+                          "fontFamily": "System",
+                          "fontWeight": "500",
+                        },
+                        Object {
+                          "fontFamily": "System",
+                          "fontWeight": "500",
+                        },
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  Press me
+                </Text>
+              </View>
+            </TouchableHighlight>
+          </View>
         </View>
       </SafeAreaView>
     </View>
@@ -62,10 +313,131 @@ Object {
       style={
         Object {
           "flex": 1,
-          "justifyContent": "center",
         }
       }
     >
+      <SafeAreaView
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#01417F",
+              "elevation": 4,
+              "zIndex": 0,
+            },
+            Object {
+              "shadowColor": "#000000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.24,
+              "shadowRadius": 4,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#01417F",
+              "elevation": 0,
+              "flexDirection": "row",
+              "height": 56,
+              "marginTop": 0,
+              "paddingHorizontal": 4,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "width": 48,
+              }
+            }
+          />
+          <TouchableWithoutFeedback>
+            <View
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "paddingHorizontal": 12,
+                  },
+                  Array [
+                    false,
+                    Object {
+                      "alignItems": "center",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              <Text
+                accessibilityRole="header"
+                accessibilityTraits="header"
+                accessible={true}
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "System",
+                        "fontWeight": "400",
+                      },
+                      Object {
+                        "fontSize": 17,
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Correios
+              </Text>
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "fontSize": 11,
+                      },
+                      Object {
+                        "color": "rgba(255, 255, 255, 0.7)",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Rastreio de pacotes
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <View
+            style={
+              Object {
+                "width": 48,
+              }
+            }
+          />
+        </View>
+      </SafeAreaView>
       <View
         style={
           Object {
@@ -83,6 +455,136 @@ Object {
         >
           Correios
         </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "borderColor": "rgba(0, 0, 0, 0.29)",
+              "borderRadius": 4,
+              "borderStyle": "solid",
+              "borderWidth": 0.5,
+              "elevation": 0,
+              "minWidth": 64,
+            }
+          }
+        >
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityStates={Array []}
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            delayPressIn={0}
+            delayPressOut={100}
+            disabled={true}
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+              ]
+            }
+            underlayColor="rgba(98, 0, 238, 0.16)"
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginLeft": 12,
+                    "marginRight": -4,
+                    "width": 16,
+                  }
+                }
+              >
+                <Text
+                  accessibilityElementsHidden={true}
+                  allowFontScaling={false}
+                  importantForAccessibility="no-hide-descendants"
+                  pointerEvents="none"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#6200ee",
+                        "fontSize": 16,
+                      },
+                      Array [
+                        Object {
+                          "transform": Array [
+                            Object {
+                              "scaleX": 1,
+                            },
+                          ],
+                        },
+                        Object {
+                          "backgroundColor": "transparent",
+                        },
+                      ],
+                      Object {
+                        "fontFamily": "Material Design Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <Text
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    Array [
+                      Object {
+                        "letterSpacing": 1,
+                        "marginHorizontal": 16,
+                        "marginVertical": 9,
+                        "textAlign": "center",
+                      },
+                      undefined,
+                      Object {
+                        "textTransform": "uppercase",
+                      },
+                      Object {
+                        "color": "#6200ee",
+                        "fontFamily": "System",
+                        "fontWeight": "500",
+                      },
+                      Object {
+                        "fontFamily": "System",
+                        "fontWeight": "500",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                Press me
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     </SafeAreaView>
   </View>,
