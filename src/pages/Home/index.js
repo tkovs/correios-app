@@ -1,14 +1,20 @@
 import React from 'react'
 import { SafeAreaView, View, StyleSheet } from 'react-native'
-import { Appbar, FAB } from 'react-native-paper'
+import { FAB } from 'react-native-paper'
+
+import Header from '../../components/Header'
+import PacketList from '../../components/PacketList'
+
 import { colors } from '../../styles/theme'
+
+import mockPackets from '../../__mocks__/packets.json'
 
 const Home = () => (
   <SafeAreaView style={styles.container}>
-    <Appbar.Header style={styles.header}>
-      <Appbar.Content title="Correios" subtitle="Rastreio de pacotes" />
-    </Appbar.Header>
-    <View style={styles.body} />
+    <Header />
+    <View style={styles.body}>
+      <PacketList packets={mockPackets} />
+    </View>
     <FAB icon="plus" style={styles.floatingButton} />
   </SafeAreaView>
 )
@@ -16,9 +22,6 @@ const Home = () => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  header: {
-    backgroundColor: colors.blue,
   },
   body: {
     backgroundColor: colors.isabelline,

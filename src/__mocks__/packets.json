@@ -1,0 +1,20 @@
+[
+  {
+    "title": "iPad",
+    "status": "delivered",
+    "code": "PW086958114BR",
+    "mode": "PAC",
+    "createdAt": "05/02/2020",
+    "updatedAt": "09/02/2020",
+    "deliveredAt": "09/02/2020"
+  },
+  {
+    "title": "Apple Pencil",
+    "status": "delivered",
+    "code": "PW086958115BR",
+    "mode": "SEDEX",
+    "createdAt": "07/02/2020",
+    "updatedAt": "10/02/2020",
+    "deliveredAt": "10/02/2020"
+  }
+]

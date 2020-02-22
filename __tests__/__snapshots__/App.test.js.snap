@@ -156,7 +156,20 @@ Object {
               "flex": 1,
             }
           }
-        />
+        >
+          <View>
+            <Text>
+              iPad
+               - 
+              05/02/2020
+            </Text>
+            <Text>
+              Apple Pencil
+               - 
+              07/02/2020
+            </Text>
+          </View>
+        </View>
         <View
           pointerEvents="auto"
           style={
@@ -438,7 +451,20 @@ Object {
             "flex": 1,
           }
         }
-      />
+      >
+        <View>
+          <Text>
+            iPad
+             - 
+            05/02/2020
+          </Text>
+          <Text>
+            Apple Pencil
+             - 
+            07/02/2020
+          </Text>
+        </View>
+      </View>
       <View
         pointerEvents="auto"
         style={
