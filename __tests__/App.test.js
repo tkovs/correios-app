@@ -7,5 +7,4 @@ import App from '../App'
 it('renders correctly', () => {
   const container = render(<App />)
   expect(container).toMatchSnapshot()
-  expect(1).toEqual(1)
 })
