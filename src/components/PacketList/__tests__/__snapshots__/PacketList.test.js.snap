@@ -18,118 +18,680 @@ exports[`renders correctly with packets 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "marginLeft": 8,
-        }
-      }
-    >
+    <ScrollView>
       <View
         style={
           Object {
-            "marginVertical": 8,
+            "marginLeft": 8,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#141414",
+              "marginVertical": 8,
             }
           }
         >
-          iPad
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#44CF6C",
-              "fontWeight": "bold",
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
             }
-          }
-        >
-          delivered
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#939393",
+          >
+            iPad
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
             }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958100BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
           }
-        >
-          PW086958114BR
-        </Text>
+        />
       </View>
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
-              "height": 0.5,
-            },
-            undefined,
-            undefined,
-          ]
-        }
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "marginLeft": 8,
-        }
-      }
-    >
       <View
         style={
           Object {
-            "marginVertical": 8,
+            "marginLeft": 8,
           }
         }
       >
-        <Text
+        <View
           style={
             Object {
-              "color": "#141414",
+              "marginVertical": 8,
             }
           }
         >
-          Apple Pencil
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#44CF6C",
-              "fontWeight": "bold",
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
             }
-          }
-        >
-          delivered
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#939393",
+          >
+            Apple Pencil
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
             }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958101BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
           }
-        >
-          PW086958115BR
-        </Text>
+        />
       </View>
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0, 0, 0, 0.12)",
-              "height": 0.5,
-            },
-            undefined,
-            undefined,
-          ]
+          Object {
+            "marginLeft": 8,
+          }
         }
-      />
-    </View>
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Macbook Pro
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958102BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Magic Mouse
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958103BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            iMac
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958104BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            iPhone
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958105BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            iPod
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958106BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Applewatch
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958107BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Dell Vostro 5470
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958108BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Peixinho da horta
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958109BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Camiseta C&A
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958110BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginVertical": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#141414",
+              }
+            }
+          >
+            Bola de beisebol
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#44CF6C",
+                "fontWeight": "bold",
+              }
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Object {
+                "color": "#939393",
+              }
+            }
+          >
+            PW086958111BR
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0, 0, 0, 0.12)",
+                "height": 0.5,
+              },
+              undefined,
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </ScrollView>
   </View>
 </View>
 `;

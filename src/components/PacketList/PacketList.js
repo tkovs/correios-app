@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, ScrollView } from 'react-native'
 import { Divider } from 'react-native-paper'
 import isEmpty from 'lodash/isEmpty'
 
@@ -11,12 +11,16 @@ const PacketList = ({ packets }) => {
     return null
   }
 
-  return packets.map(packet => (
-    <View style={styles.container} key={packet.code}>
-      <PacketItem packet={packet} />
-      <Divider />
-    </View>
-  ))
+  return (
+    <ScrollView>
+      {packets.map(packet => (
+        <View style={styles.container} key={packet.code}>
+          <PacketItem packet={packet} />
+          <Divider />
+        </View>
+      ))}
+    </ScrollView>
+  )
 }
 
 const styles = StyleSheet.create({
