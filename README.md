@@ -1,11 +1,11 @@
 ## Package tracking mobile application
 
-An *react native* app for package tracking. It allows you to track your packages sended by Correios and filter them.
+A *react native* app for package tracking. It allows you to track your packages sent by Correios and filter them.
 
 ### Features
 
 1. Manage your package tracking list.
-2. Filter the packages from list by *all*, *pending* and *delivered*.
+2. Filter the packages from the list by *all*, *pending* and *delivered*.
 3. Show the tracking steps for each package in the list.
 
 ### How to build
@@ -24,18 +24,19 @@ An *react native* app for package tracking. It allows you to track your packages
 
 ### Screenshots
 
-Package list
----
+**Package list**<br />
+
 <img src="https://i.imgur.com/XfaH5bx.jpg" width="320">
 
-Add package modal
----
+
+**Add package modal**<br />
+
 <img src="https://i.imgur.com/6b6YfCM.jpg" width="320">
 
-Pending packages filter
----
+**Pending packages filter**<br />
+
 <img src="https://i.imgur.com/E3Mbi6k.jpg" width="320">
 
-Delivered packages filter
----
+**Delivered packages filter**<br />
+
 <img src="https://i.imgur.com/GysJpd4.jpg" width="320">
