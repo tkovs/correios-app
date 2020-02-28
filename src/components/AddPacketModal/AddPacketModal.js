@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Text, TextInput } from 'react-native-paper'
+import { TextInput } from 'react-native-paper'
 import { View, StyleSheet } from 'react-native'
 
 import Modal from '../Modal'
@@ -16,23 +16,25 @@ function AddPacketModal({ visible, onDismiss }) {
       onDismiss={onDismiss}
     >
       <View style={styles.textInputContainer}>
-        <Text>Nome do pacote</Text>
         <TextInput
           theme={{
             colors: { primary: colors.blue, underlineColor: 'transparent' },
           }}
           dense
+          placeholder="iPad"
+          label="Nome do pacote"
           mode="outlined"
         />
       </View>
       <View>
-        <Text>Código de rastreio</Text>
         <TextInput
           theme={{
             colors: { primary: colors.blue, underlineColor: 'transparent' },
           }}
           autoCapitalize="characters"
           dense
+          placeholder="PW086958101BR"
+          label="Código de rastreio"
           mode="outlined"
         />
       </View>
@@ -52,6 +54,7 @@ AddPacketModal.propTypes = {
 const styles = StyleSheet.create({
   textInputContainer: {
     marginBottom: 8,
+    marginTop: 16,
   },
 })
 
