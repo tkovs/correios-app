@@ -1,7 +1,6 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react'
-import { SafeAreaView, View, StyleSheet, Dimensions } from 'react-native'
-import { FAB } from 'react-native-paper'
+import { SafeAreaView, View, StyleSheet, Dimensions, Text } from 'react-native'
+import { FAB, Portal, Modal } from 'react-native-paper'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 import Header from '../../components/Header'
@@ -17,23 +16,10 @@ const AllPacketsRoute = () => (
   </View>
 )
 
-const PendingPacketsRoute = () => (
-  <View style={styles.body}>
-    <PacketList packets={mockPackets} />
-  </View>
-)
-
-const DeliveredPacketsRoute = () => (
-  <View style={styles.body}>
-    <PacketList packets={mockPackets} />
-  </View>
-)
-
 const initialLayout = { width: Dimensions.get('window').width }
 
 const renderTabBar = props => (
   <TabBar
-    // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
     indicatorStyle={{ backgroundColor: colors.sandstorm }}
     style={{ backgroundColor: colors.blue }}
@@ -42,6 +28,7 @@ const renderTabBar = props => (
 
 const Home = () => {
   const [index, setIndex] = useState(0)
+  const [modalVisible, setModalVisible] = useState(false)
   const [routes] = useState([
     { key: 'all', title: 'Todos' },
     { key: 'pending', title: 'Pendentes' },
@@ -50,13 +37,21 @@ const Home = () => {
 
   const renderScene = SceneMap({
     all: AllPacketsRoute,
-    pending: PendingPacketsRoute,
-    delivered: DeliveredPacketsRoute,
+    pending: AllPacketsRoute,
+    delivered: AllPacketsRoute,
   })
 
   return (
     <SafeAreaView style={styles.container}>
       <Header />
+
+      <Portal>
+        <Modal visible={modalVisible} onDismiss={() => setModalVisible(false)}>
+          <View style={styles.addPacketModal}>
+            <Text>Add a packet</Text>
+          </View>
+        </Modal>
+      </Portal>
 
       <TabView
         renderTabBar={renderTabBar}
@@ -65,7 +60,11 @@ const Home = () => {
         onIndexChange={setIndex}
         initialLayout={initialLayout}
       />
-      <FAB icon="plus" style={styles.floatingButton} />
+      <FAB
+        icon="plus"
+        onPress={() => setModalVisible(true)}
+        style={styles.floatingButton}
+      />
     </SafeAreaView>
   )
 }
@@ -84,6 +83,9 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     backgroundColor: colors.blue,
+  },
+  addPacketModal: {
+    backgroundColor: '#fff',
   },
 })
 

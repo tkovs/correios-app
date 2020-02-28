@@ -18,42 +18,50 @@ exports[`PacketItem with full packet renders correctly 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "marginVertical": 8,
-        }
-      }
+    <TouchableHighlight
+      activeOpacity={0.85}
+      delayPressOut={100}
+      onPress={null}
+      underlayColor="#E5E5E5"
     >
-      <Text
+      <View
         style={
           Object {
-            "color": "#141414",
+            "color": "#EAEBED",
+            "marginVertical": 8,
           }
         }
       >
-        Apple Pencil
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#44CF6C",
-            "fontWeight": "bold",
+        <Text
+          style={
+            Object {
+              "color": "#141414",
+            }
           }
-        }
-      >
-        delivered
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#939393",
+        >
+          Apple Pencil
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#44CF6C",
+              "fontWeight": "bold",
+            }
           }
-        }
-      >
-        PW086958115BR
-      </Text>
-    </View>
+        >
+          delivered
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#939393",
+            }
+          }
+        >
+          PW086958115BR
+        </Text>
+      </View>
+    </TouchableHighlight>
   </View>
   <View
     style={
