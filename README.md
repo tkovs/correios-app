@@ -24,14 +24,18 @@ An *react native* app for package tracking. It allows you to track your packages
 
 ### Screenshots
 
-Packages list
-- ![](https://i.imgur.com/XfaH5bx.jpg)
+Package list
+---
+<img src="https://i.imgur.com/XfaH5bx.jpg" width="320">
 
 Add package modal
-- ![](https://i.imgur.com/6b6YfCM.jpg)
+---
+<img src="https://i.imgur.com/6b6YfCM.jpg" width="320">
 
 Pending packages filter
-- ![](https://i.imgur.com/E3Mbi6k.jpg)
+---
+<img src="https://i.imgur.com/E3Mbi6k.jpg" width="320">
 
 Delivered packages filter
-- ![](https://i.imgur.com/GysJpd4.jpg)
+---
+<img src="https://i.imgur.com/GysJpd4.jpg" width="320">
