@@ -51,13 +51,6 @@ exports[`renders correctly 1`] = `
           }
         }
       >
-        <View
-          style={
-            Object {
-              "width": 48,
-            }
-          }
-        />
         <TouchableWithoutFeedback>
           <View
             style={
@@ -67,7 +60,9 @@ exports[`renders correctly 1`] = `
                   "paddingHorizontal": 12,
                 },
                 Array [
-                  false,
+                  Object {
+                    "marginLeft": 8,
+                  },
                   Object {
                     "alignItems": "center",
                   },
