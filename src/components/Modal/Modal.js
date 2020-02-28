@@ -11,17 +11,21 @@ import PropTypes from 'prop-types'
 
 import { colors } from '../../styles/theme'
 
-function Modal({ children, onSubmit, title, visible, onDismiss }) {
+function Modal({ children, onSubmit, title, fullscreen, visible, onDismiss }) {
   return (
     <Portal>
       <ModalPaper visible={visible} onDismiss={onDismiss}>
-        <View style={styles.container}>
+        <View
+          style={fullscreen ? styles.containerFullscreen : styles.container}
+        >
           {title && (
             <View style={styles.header}>
               <Title style={styles.headerText}>{title}</Title>
             </View>
           )}
-          <View style={styles.content}>{children}</View>
+          <View style={fullscreen ? styles.contentFullscreen : styles.content}>
+            {children}
+          </View>
           <Divider />
           <View style={styles.bottomBar}>
             <View style={styles.cancelButtonView}>
@@ -54,10 +58,12 @@ Modal.defaultProps = {
   visible: false,
   title: null,
   onSubmit: null,
+  fullscreen: false,
 }
 
 Modal.propTypes = {
   visible: PropTypes.bool,
+  fullscreen: PropTypes.bool,
   title: PropTypes.string,
   onDismiss: PropTypes.func.isRequired,
   onSubmit: PropTypes.func,
@@ -67,12 +73,22 @@ Modal.propTypes = {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.isabelline,
-    marginHorizontal: 32,
     borderRadius: 5,
+    marginHorizontal: 32,
+  },
+  containerFullscreen: {
+    backgroundColor: colors.isabelline,
+    height: '100%',
+    width: '100%',
   },
   content: {
     paddingHorizontal: 20,
     marginBottom: 8,
+  },
+  contentFullscreen: {
+    paddingHorizontal: 20,
+    marginBottom: 8,
+    flexGrow: 1,
   },
   header: {
     paddingHorizontal: 20,
