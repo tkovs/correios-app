@@ -44,7 +44,7 @@ exports[`PacketItem with full packet renders correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#44CF6C",
+              "color": "#3E8989",
               "fontWeight": "bold",
             }
           }

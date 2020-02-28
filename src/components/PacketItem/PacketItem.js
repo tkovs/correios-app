@@ -14,7 +14,15 @@ const PacketItem = ({ onClick, packet }) => {
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
       <View style={styles.container}>
         <Text style={styles.title}>{packet.title}</Text>
-        <Text style={styles.status}>{packet.status}</Text>
+        <Text
+          style={
+            packet.status === 'delivered'
+              ? styles.statusDelivered
+              : styles.statusPending
+          }
+        >
+          {packet.status}
+        </Text>
         <Text style={styles.code}>{packet.code}</Text>
       </View>
     </TouchableHighlight>
@@ -25,8 +33,12 @@ const styles = StyleSheet.create({
   title: {
     color: colors.licorice,
   },
-  status: {
+  statusDelivered: {
     color: colors.green,
+    fontWeight: 'bold',
+  },
+  statusPending: {
+    color: colors.red,
     fontWeight: 'bold',
   },
   code: {

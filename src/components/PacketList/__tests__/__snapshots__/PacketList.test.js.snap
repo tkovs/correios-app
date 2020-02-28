@@ -51,7 +51,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -114,7 +114,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -177,7 +177,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -240,7 +240,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -303,7 +303,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -366,7 +366,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -429,7 +429,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -492,7 +492,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -555,7 +555,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -618,7 +618,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -681,7 +681,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }
@@ -744,7 +744,7 @@ exports[`renders correctly with packets 1`] = `
             <Text
               style={
                 Object {
-                  "color": "#44CF6C",
+                  "color": "#3E8989",
                   "fontWeight": "bold",
                 }
               }

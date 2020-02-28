@@ -7,8 +7,9 @@ export const colors = {
   sandstorm: '#EEC643',
   licorice: '#141414',
   isabelline: '#EAEBED',
-  green: '#44CF6C',
+  green: '#3E8989',
   gray: '#939393',
+  red: '#C52233',
 }
 
 export default StyleSheet.create({
