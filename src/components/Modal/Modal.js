@@ -30,7 +30,7 @@ function Modal({ children, onSubmit, title, visible, onDismiss }) {
                 compact
                 onPress={onDismiss}
               >
-                Cancel
+                Cancelar
               </Button>
             </View>
             <View>
@@ -40,7 +40,7 @@ function Modal({ children, onSubmit, title, visible, onDismiss }) {
                 mode="contained"
                 onPress={onSubmit}
               >
-                Submit
+                Confirmar
               </Button>
             </View>
           </View>
