@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.sandstorm,
     alignItems: 'center',
+    borderBottomColor: colors.yellow,
+    borderBottomWidth: 1,
   },
   text: {
     color: colors.blue,
