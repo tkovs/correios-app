@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PacketsCount with more quantity than 1 renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EEC643",
+          "borderBottomColor": "#F9D900",
+          "borderBottomWidth": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontWeight": "400",
+              "textAlign": "left",
+            },
+            Array [
+              Object {
+                "color": "rgba(0, 0, 0, 0.54)",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+                "writingDirection": "ltr",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "letterSpacing": 0.4,
+                  "lineHeight": 20,
+                  "marginVertical": 2,
+                },
+                Object {
+                  "color": "#01417F",
+                },
+              ],
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "letterSpacing": 0.4,
+                  "lineHeight": 20,
+                  "marginVertical": 2,
+                },
+                Object {
+                  "color": "#01417F",
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        2 encomendas
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PacketsCount with quantity 0 renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`PacketsCount with quantity 1 renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#EEC643",
+          "borderBottomColor": "#F9D900",
+          "borderBottomWidth": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "System",
+              "fontWeight": "400",
+              "textAlign": "left",
+            },
+            Array [
+              Object {
+                "color": "rgba(0, 0, 0, 0.54)",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+                "writingDirection": "ltr",
+              },
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "letterSpacing": 0.4,
+                  "lineHeight": 20,
+                  "marginVertical": 2,
+                },
+                Object {
+                  "color": "#01417F",
+                },
+              ],
+              Array [
+                Object {
+                  "fontSize": 12,
+                  "letterSpacing": 0.4,
+                  "lineHeight": 20,
+                  "marginVertical": 2,
+                },
+                Object {
+                  "color": "#01417F",
+                },
+              ],
+            ],
+          ]
+        }
+      >
+        1 encomenda
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PacketsCount without quantity renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;
