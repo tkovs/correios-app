@@ -28,7 +28,7 @@ const PacketList = ({ packets }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 8,
+    paddingLeft: 8,
   },
 })
 
