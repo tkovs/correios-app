@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   body: {
-    backgroundColor: colors.isabelline,
+    backgroundColor: colors.snow,
     flex: 1,
   },
   floatingButton: {

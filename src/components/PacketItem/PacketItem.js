@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   container: {
     marginVertical: 8,
-    color: colors.isabelline,
+    color: colors.snow,
   },
 })
 

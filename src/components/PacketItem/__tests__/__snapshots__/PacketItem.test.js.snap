@@ -27,7 +27,7 @@ exports[`PacketItem with full packet renders correctly 1`] = `
       <View
         style={
           Object {
-            "color": "#EAEBED",
+            "color": "#f9f9f9",
             "marginVertical": 8,
           }
         }

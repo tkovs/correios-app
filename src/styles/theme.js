@@ -6,7 +6,7 @@ export const colors = {
   white: '#FFFFFF',
   sandstorm: '#EEC643',
   licorice: '#141414',
-  isabelline: '#EAEBED',
+  snow: '#f9f9f9',
   green: '#3E8989',
   gray: '#939393',
   red: '#C52233',

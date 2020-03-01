@@ -34,7 +34,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -97,7 +97,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -160,7 +160,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -223,7 +223,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -286,7 +286,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -349,7 +349,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -412,7 +412,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -475,7 +475,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -538,7 +538,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -601,7 +601,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -664,7 +664,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }
@@ -727,7 +727,7 @@ exports[`renders correctly with packets 1`] = `
           <View
             style={
               Object {
-                "color": "#EAEBED",
+                "color": "#f9f9f9",
                 "marginVertical": 8,
               }
             }

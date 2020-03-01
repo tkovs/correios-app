@@ -39,7 +39,7 @@ function Modal({ children, onSubmit, title, fullscreen, visible, onDismiss }) {
             </View>
             <View>
               <Button
-                labelStyle={{ color: colors.isabelline }}
+                labelStyle={{ color: colors.snow }}
                 contentStyle={{ backgroundColor: colors.blue }}
                 mode="contained"
                 onPress={onSubmit}
@@ -72,12 +72,12 @@ Modal.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.isabelline,
+    backgroundColor: colors.snow,
     borderRadius: 5,
     marginHorizontal: 32,
   },
   containerFullscreen: {
-    backgroundColor: colors.isabelline,
+    backgroundColor: colors.snow,
     height: '100%',
     width: '100%',
   },
