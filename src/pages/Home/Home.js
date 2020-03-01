@@ -5,6 +5,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 import Header from '../../components/Header'
 import PacketList from '../../components/PacketList'
+import PacketsCount from '../../components/PacketsCount'
 import AddPacketModal from '../../components/AddPacketModal'
 
 import { colors } from '../../styles/theme'
@@ -13,6 +14,7 @@ import mockPackets from '../../__mocks__/packets.json'
 
 const AllPacketsRoute = () => (
   <View style={styles.body}>
+    <PacketsCount quantity={mockPackets.length} />
     <PacketList packets={mockPackets} />
   </View>
 )
