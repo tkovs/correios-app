@@ -5,6 +5,8 @@ import { render } from '@testing-library/react-native'
 import PacketList from '../PacketList'
 import mockPackets from '../../../__mocks__/packets.json'
 
+jest.mock('@react-navigation/native')
+
 it('renders correctly with packets', () => {
   const { baseElement } = render(<PacketList packets={mockPackets} />)
   expect(baseElement).toMatchSnapshot()

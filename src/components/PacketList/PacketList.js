@@ -15,10 +15,7 @@ const PacketList = ({ packets }) => {
     <ScrollView>
       {packets.map(packet => (
         <View style={styles.container} key={packet.code}>
-          <PacketItem
-            packet={packet}
-            onClick={() => console.log(`Clicked on the ${packet.title} packet`)}
-          />
+          <PacketItem packet={packet} />
           <Divider />
         </View>
       ))}
