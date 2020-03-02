@@ -7,7 +7,11 @@ import PacketInfo from './src/screens/PacketInfo'
 const Stack = createStackNavigator()
 
 const App = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}
+  >
     <Stack.Screen name="Home" component={Home} />
     <Stack.Screen name="PacketInfo" component={PacketInfo} />
   </Stack.Navigator>
