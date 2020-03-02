@@ -9,7 +9,7 @@ function PacketsCount({ quantity }) {
     return null
   }
 
-  const phrase = `${quantity} encomenda${quantity > 1 ? 's' : ''}`
+  const phrase = quantity === 1 ? '1 encomenda' : `${quantity} encomendas`
 
   return (
     <View style={styles.container}>
