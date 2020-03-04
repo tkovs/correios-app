@@ -46,7 +46,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header title="Correios" subtitle="Rastreio de pacotes" />
       <AddPacketModal
         onDismiss={() => setModalVisible(false)}
         visible={modalVisible}
