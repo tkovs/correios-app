@@ -7,7 +7,11 @@ import Header from '../../components/Header'
 function PacketInfo({ packet }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={packet.title} subtitle="Informações do envio" />
+      <Header
+        title={packet.title}
+        subtitle="Informações do envio"
+        enableBackButton
+      />
 
       <View>
         <Text>{packet.status}</Text>
