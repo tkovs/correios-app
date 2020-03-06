@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPacketModal renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`Modal\`, but its value is \`undefined\`.
+    in Modal (created by AddPacketModal)
+    in AddPacketModal
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`Modal\`, but its value is \`undefined\`.
+    in Modal (created by AddPacketModal)
+    in AddPacketModal
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/src/components/AddPacketModal/AddPacketModal.js",
+                    "lineNumber": 12,
+                    "methodName": "AddPacketModal",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+          Object {
+            "category": "Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`AddPacketModal\`, but its value is \`undefined\`.
+    in AddPacketModal",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`AddPacketModal\`, but its value is \`undefined\`.
+    in AddPacketModal",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 36,
+                    "file": "/Users/tkovs/Code/tracking/src/components/AddPacketModal/__tests__/AddPacketModal.test.js",
+                    "lineNumber": 9,
+                    "methodName": "Object.<anonymous>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 97,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`Modal\`, but its value is \`undefined\`.
+    in Modal (created by AddPacketModal)
+    in AddPacketModal
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: The prop \`onDismiss\` is marked as required in \`AddPacketModal\`, but its value is \`undefined\`.
+    in AddPacketModal
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;
