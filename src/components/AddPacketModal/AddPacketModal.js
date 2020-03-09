@@ -7,12 +7,14 @@ import { View, StyleSheet } from 'react-native'
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
 
-function AddPacketModal({ visible, onDismiss, onSubmit }) {
+function AddPacketModal({ visible, onDismiss }) {
+  const handleSubmit = () => console.log('Submit')
+
   return (
     <Modal
       title="Adicionar novo rastreio"
       visible={visible}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       onDismiss={onDismiss}
     >
       <View style={styles.textInputContainer}>
@@ -49,7 +51,6 @@ AddPacketModal.defaultProps = {
 AddPacketModal.propTypes = {
   visible: PropTypes.bool,
   onDismiss: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({})
