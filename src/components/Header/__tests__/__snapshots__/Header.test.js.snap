@@ -103,12 +103,120 @@ exports[`Header just with title renders correctly 1`] = `
           </View>
         </TouchableWithoutFeedback>
         <View
-          style={
-            Object {
-              "width": 48,
+          collapsable={false}
+        >
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityStates={Array []}
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            centered={true}
+            delayPressOut={100}
+            disabled={false}
+            hitSlop={
+              Object {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
             }
-          }
-        />
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "margin": 6,
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "borderRadius": 18,
+                    "height": 36,
+                    "width": 36,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+            underlayColor="rgba(255, 255, 255, 0.16)"
+          >
+            <View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 1,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "transform": Array [
+                        Object {
+                          "rotate": "0deg",
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Text
+                    accessibilityElementsHidden={true}
+                    allowFontScaling={false}
+                    importantForAccessibility="no-hide-descendants"
+                    pointerEvents="none"
+                    style={
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 24,
+                        },
+                        Array [
+                          Object {
+                            "transform": Array [
+                              Object {
+                                "scaleX": 1,
+                              },
+                            ],
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     </SafeAreaView>
   </View>
@@ -242,12 +350,120 @@ exports[`Header with title and subtitle renders correctly 1`] = `
           </View>
         </TouchableWithoutFeedback>
         <View
-          style={
-            Object {
-              "width": 48,
+          collapsable={false}
+        >
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityStates={Array []}
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            centered={true}
+            delayPressOut={100}
+            disabled={false}
+            hitSlop={
+              Object {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
             }
-          }
-        />
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                    "margin": 6,
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "borderRadius": 18,
+                    "height": 36,
+                    "width": 36,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+            underlayColor="rgba(255, 255, 255, 0.16)"
+          >
+            <View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "bottom": 0,
+                      "left": 0,
+                      "opacity": 1,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "transform": Array [
+                        Object {
+                          "rotate": "0deg",
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Text
+                    accessibilityElementsHidden={true}
+                    allowFontScaling={false}
+                    importantForAccessibility="no-hide-descendants"
+                    pointerEvents="none"
+                    style={
+                      Array [
+                        Object {
+                          "color": "white",
+                          "fontSize": 24,
+                        },
+                        Array [
+                          Object {
+                            "transform": Array [
+                              Object {
+                                "scaleX": 1,
+                              },
+                            ],
+                          },
+                          Object {
+                            "backgroundColor": "transparent",
+                          },
+                        ],
+                        Object {
+                          "fontFamily": "Material Design Icons",
+                          "fontStyle": "normal",
+                          "fontWeight": "normal",
+                        },
+                        Object {},
+                      ]
+                    }
+                  >
+                    
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     </SafeAreaView>
   </View>

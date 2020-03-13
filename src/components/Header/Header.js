@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, StatusBar } from 'react-native'
-import { Appbar } from 'react-native-paper'
+import { Appbar, Menu } from 'react-native-paper'
 
 import { colors } from '../../styles/theme'
 
 const Header = ({ enableBackButton, goBack, title, subtitle }) => {
+  const [menuVisible, setMenuVisible] = useState(false)
+
   return (
     <Appbar.Header style={styles.header}>
       {enableBackButton && <Appbar.BackAction onPress={goBack} />}
       <StatusBar backgroundColor={colors.blue} />
       <Appbar.Content title={title} subtitle={subtitle} />
+      <Menu
+        visible={menuVisible}
+        onDismiss={() => setMenuVisible(false)}
+        anchor={
+          <Appbar.Action
+            color="white"
+            icon="dots-vertical"
+            onPress={() => setMenuVisible(true)}
+          />
+        }
+      >
+        <Menu.Item onPress={() => {}} title="Editar" />
+        <Menu.Item onPress={() => {}} title="Excluir" />
+      </Menu>
     </Appbar.Header>
   )
 }
