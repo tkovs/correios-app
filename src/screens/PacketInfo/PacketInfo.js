@@ -2,16 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 
-import Header from '../../components/Header'
+import Header from './Header'
 
 function PacketInfo({ packet }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header
-        title={packet.title}
-        subtitle="Informações do envio"
-        enableBackButton
-      />
+      <Header title={packet.title} />
 
       <View>
         <Text>{packet.status}</Text>

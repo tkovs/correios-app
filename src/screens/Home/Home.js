@@ -3,7 +3,7 @@ import { SafeAreaView, View, StyleSheet, Dimensions } from 'react-native'
 import { FAB } from 'react-native-paper'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
-import Header from '../../components/Header'
+import Header from './Header'
 import PacketList from '../../components/PacketList'
 import PacketsCount from '../../components/PacketsCount'
 import AddPacketModal from '../../components/AddPacketModal'
@@ -46,7 +46,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header title="Correios" subtitle="Rastreio de pacotes" />
+      <Header />
       <AddPacketModal
         onDismiss={() => setModalVisible(false)}
         visible={modalVisible}

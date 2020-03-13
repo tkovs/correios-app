@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import { StyleSheet, StatusBar } from 'react-native'
 import { Appbar, Menu } from 'react-native-paper'
 
-import { colors } from '../../styles/theme'
+import { colors } from '../../../styles/theme'
 
-const Header = ({ enableBackButton, goBack, title, subtitle }) => {
+const Header = ({ goBack, title }) => {
   const [menuVisible, setMenuVisible] = useState(false)
 
   return (
     <Appbar.Header style={styles.header}>
-      {enableBackButton && <Appbar.BackAction onPress={goBack} />}
+      <Appbar.BackAction onPress={goBack} />
       <StatusBar backgroundColor={colors.blue} />
-      <Appbar.Content title={title} subtitle={subtitle} />
+      <Appbar.Content title={title} subtitle="Informações do envio" />
       <Menu
         visible={menuVisible}
         onDismiss={() => setMenuVisible(false)}
@@ -38,16 +38,12 @@ const styles = StyleSheet.create({
 })
 
 Header.defaultProps = {
-  enableBackButton: false,
   goBack: null,
-  subtitle: null,
 }
 
 Header.propTypes = {
-  enableBackButton: PropTypes.bool,
   goBack: PropTypes.func,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
 }
 
 export default Header
