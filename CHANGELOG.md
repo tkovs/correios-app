@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - PacketInfo screen
+- Menu in Header
+- Edit and delete packet option
 ### Fixed
 - Replace margin by padding spacing on left of PacketList
 
