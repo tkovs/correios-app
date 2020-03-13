@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, StatusBar } from 'react-native'
-import { Appbar, Menu } from 'react-native-paper'
+import {
+  Appbar,
+  Menu,
+  Portal,
+  Dialog,
+  Paragraph,
+  Button,
+} from 'react-native-paper'
 
 import { colors } from '../../../styles/theme'
 
 const Header = ({ goBack, title }) => {
   const [menuVisible, setMenuVisible] = useState(false)
+  const [dialogVisible, setDialogVisible] = useState(false)
 
   return (
     <Appbar.Header style={styles.header}>
@@ -25,8 +33,31 @@ const Header = ({ goBack, title }) => {
         }
       >
         <Menu.Item onPress={() => {}} title="Editar" />
-        <Menu.Item onPress={() => {}} title="Excluir" />
+        <Menu.Item
+          onPress={() => {
+            setMenuVisible(false)
+            setDialogVisible(true)
+          }}
+          title="Excluir"
+        />
       </Menu>
+      <Portal>
+        <Dialog
+          visible={dialogVisible}
+          onDismiss={() => setDialogVisible(false)}
+        >
+          <Dialog.Title>Apagar encomenda</Dialog.Title>
+          <Dialog.Content>
+            <Paragraph>
+              Tem certeza que deseja remover esta encomenda?
+            </Paragraph>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button onPress={() => setDialogVisible(false)}>Não</Button>
+            <Button onPress={() => setDialogVisible(false)}>Sim</Button>
+          </Dialog.Actions>
+        </Dialog>
+      </Portal>
     </Appbar.Header>
   )
 }
