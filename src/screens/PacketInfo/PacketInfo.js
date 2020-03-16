@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
+import { View, SafeAreaView, StyleSheet } from 'react-native'
 
 import Header from './Header'
+import PacketTrackingInfo from '../../components/PacketTrackingItem'
 
 function PacketInfo({ packet }) {
   return (
@@ -10,7 +11,19 @@ function PacketInfo({ packet }) {
       <Header title={packet.title} />
 
       <View>
-        <Text>{packet.status}</Text>
+        <PacketTrackingInfo
+          status="Postado"
+          from="CTE Benfica: Rio de Janeiro - RJ"
+          to="CTE Centro: Rio de Janeiro - RJ"
+          location="Rio de Janeiro - RJ"
+          note="Sujeito a encaminhamento no próximo dia útil"
+        />
+        <PacketTrackingInfo
+          status="Postado"
+          from="CTE Benfica: Rio de Janeiro - RJ"
+          to="CTE Centro: Rio de Janeiro - RJ"
+          location="Rio de Janeiro - RJ"
+        />
       </View>
     </SafeAreaView>
   )
