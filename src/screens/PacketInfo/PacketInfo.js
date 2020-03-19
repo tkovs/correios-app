@@ -12,17 +12,16 @@ function PacketInfo({ packet }) {
 
       <View>
         <PacketTrackingInfo
-          status="Postado"
-          from="CTE Benfica: Rio de Janeiro - RJ"
-          to="CTE Centro: Rio de Janeiro - RJ"
-          location="Rio de Janeiro - RJ"
+          status="Encaminhado"
+          from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
+          to="CTCE Curitiba: Curitiba - PR"
+          location="Assis Chateaubriand - PR"
           note="Sujeito a encaminhamento no próximo dia útil"
         />
         <PacketTrackingInfo
           status="Postado"
-          from="CTE Benfica: Rio de Janeiro - RJ"
-          to="CTE Centro: Rio de Janeiro - RJ"
-          location="Rio de Janeiro - RJ"
+          from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
+          location="Assis Chateaubriand - PR"
         />
       </View>
     </SafeAreaView>
