@@ -17,11 +17,13 @@ function PacketInfo({ packet }) {
           to="CTCE Curitiba: Curitiba - PR"
           location="Assis Chateaubriand - PR"
           note="Sujeito a encaminhamento no próximo dia útil"
+          date={new Date()}
         />
         <PacketTrackingInfo
           status="Postado"
           from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
           location="Assis Chateaubriand - PR"
+          date={new Date()}
         />
       </View>
     </SafeAreaView>
