@@ -18,7 +18,7 @@ function PacketTrackingItem({ date, status, from, to, location, note }) {
         <Title>{status}</Title>
         <Text>De: {from}</Text>
         {to ? <Text>Para: {to}</Text> : null}
-        <Text>{location}</Text>
+        <Text>[gps icon] {location}</Text>
         {note ? <Caption>Obs.: {note}</Caption> : null}
       </View>
     </View>
