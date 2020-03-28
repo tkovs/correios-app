@@ -29,14 +29,10 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: 'gray',
   },
   left: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderRightWidth: 1,
-    borderRightColor: 'gray',
     paddingRight: 8,
     marginRight: 8,
   },
