@@ -15,14 +15,14 @@ function PacketInfo({ packet }) {
           status="Encaminhado"
           from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
           to="CTCE Curitiba: Curitiba - PR"
-          location="Assis Chateaubriand - PR"
+          locale="Assis Chateaubriand - PR"
           note="Sujeito a encaminhamento no próximo dia útil"
           date={new Date()}
         />
         <PacketTrackingInfo
           status="Postado"
           from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
-          location="Assis Chateaubriand - PR"
+          locale="Assis Chateaubriand - PR"
           date={new Date()}
         />
       </View>

@@ -4,7 +4,7 @@ import moment from 'moment'
 import { View, StyleSheet } from 'react-native'
 import { Caption, Text, Title } from 'react-native-paper'
 
-function PacketTrackingItem({ date, status, from, to, location, note }) {
+function PacketTrackingItem({ date, status, from, to, locale, note }) {
   const time = moment(date).format('h:mm')
   const day = moment(date).format('D MMM')
 
@@ -18,7 +18,7 @@ function PacketTrackingItem({ date, status, from, to, location, note }) {
         <Title>{status}</Title>
         <Text>De: {from}</Text>
         {to ? <Text>Para: {to}</Text> : null}
-        <Text>[gps icon] {location}</Text>
+        <Text>[gps icon] {locale}</Text>
         {note ? <Caption>Obs.: {note}</Caption> : null}
       </View>
     </View>
@@ -43,17 +43,19 @@ const styles = StyleSheet.create({
 })
 
 PacketTrackingItem.propTypes = {
-  status: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
-  to: PropTypes.string,
-  location: PropTypes.string.isRequired,
-  note: PropTypes.string,
   date: PropTypes.instanceOf(Date).isRequired,
+  from: PropTypes.string,
+  locale: PropTypes.string,
+  note: PropTypes.string,
+  status: PropTypes.string.isRequired,
+  to: PropTypes.string,
 }
 
 PacketTrackingItem.defaultProps = {
+  from: '',
+  locale: '',
+  note: '',
   to: '',
-  note: undefined,
 }
 
 export default PacketTrackingItem
