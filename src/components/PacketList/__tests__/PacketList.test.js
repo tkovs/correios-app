@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from '@testing-library/react-native'
 
 import PacketList from '../PacketList'
-import mockPackets from '../../../__mocks__/packets.json'
+import mockPackets from '../../../__mocks__/packets'
 
 jest.mock('@react-navigation/native')
 

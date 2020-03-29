@@ -1,15 +1,10 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
-import isNil from 'lodash/isNil'
 
 import { colors } from '../../styles/theme'
 
 const PacketItem = ({ onClick, packet }) => {
-  if (isNil(packet)) {
-    return null
-  }
-
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
       <View style={styles.container}>

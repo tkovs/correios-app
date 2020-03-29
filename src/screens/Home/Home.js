@@ -10,12 +10,10 @@ import AddPacketModal from '../../components/AddPacketModal'
 
 import { colors } from '../../styles/theme'
 
-import mockPackets from '../../__mocks__/packets.json'
-
 const AllPacketsRoute = () => (
   <View style={styles.body}>
-    <PacketsCount quantity={mockPackets.length} />
-    <PacketList packets={mockPackets} />
+    <PacketsCount />
+    <PacketList />
   </View>
 )
 

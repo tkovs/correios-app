@@ -1,3 +1,9 @@
+import { connect } from 'react-redux'
+
 import PacketsCount from './PacketsCount'
 
-export default PacketsCount
+const mapStateToProps = ({ packets }) => ({
+  quantity: packets.length,
+})
+
+export default connect(mapStateToProps)(PacketsCount)

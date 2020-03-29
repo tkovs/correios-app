@@ -1,6 +1,7 @@
 import * as types from '../actions/packets/types'
+import mockPackets from '../../__mocks__/packets'
 
-const initialState = []
+const initialState = mockPackets
 
 const packets = (state = initialState, action) => {
   switch (action.type) {

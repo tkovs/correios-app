@@ -1,31 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 
 import Header from './Header'
 import PacketTrackingInfo from '../../components/PacketTrackingItem'
+
+const dateToKey = ({ date: { year, month, day }, time: { hour, minute } }) =>
+  `${year}/${month}/${day} ${hour}:${minute}`
 
 function PacketInfo({ packet }) {
   return (
     <SafeAreaView style={styles.container}>
       <Header title={packet.title} />
 
-      <View>
-        <PacketTrackingInfo
-          status="Encaminhado"
-          from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
-          to="CTCE Curitiba: Curitiba - PR"
-          locale="Assis Chateaubriand - PR"
-          note="Sujeito a encaminhamento no próximo dia útil"
-          date={new Date()}
-        />
-        <PacketTrackingInfo
-          status="Postado"
-          from="AC Assis Chateaubriand: Assis Chateaubriand - PR"
-          locale="Assis Chateaubriand - PR"
-          date={new Date()}
-        />
-      </View>
+      <ScrollView>
+        {packet.statuses.map(status => (
+          <PacketTrackingInfo key={dateToKey(status.datetime)} {...status} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   )
 }
@@ -41,6 +33,7 @@ PacketInfo.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
+    statuses: PropTypes.array.isRequired,
   }).isRequired,
 }
 

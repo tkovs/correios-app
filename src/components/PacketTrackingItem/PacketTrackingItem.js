@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import { View, StyleSheet } from 'react-native'
 import { Caption, Text, Title } from 'react-native-paper'
+import isEmpty from 'lodash/isEmpty'
+import { formatLocation } from '../../utils/location'
 
-function PacketTrackingItem({ date, status, from, to, locale, note }) {
-  const time = moment(date).format('h:mm')
-  const day = moment(date).format('D MMM')
+function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
+  const time = moment(datetime).format('h:mm')
+  const day = moment(datetime).format('D MMM')
 
   return (
     <View style={styles.container}>
@@ -16,9 +18,9 @@ function PacketTrackingItem({ date, status, from, to, locale, note }) {
       </View>
       <View style={styles.right}>
         <Title>{status}</Title>
-        <Text>De: {from}</Text>
-        {to ? <Text>Para: {to}</Text> : null}
-        <Text>[gps icon] {locale}</Text>
+        {!isEmpty(from) ? <Text>De: {formatLocation(from)}</Text> : null}
+        {!isEmpty(to) ? <Text>Para: {formatLocation(to)}</Text> : null}
+        {!isEmpty(locale) ? <Text>De: {formatLocation(locale)}</Text> : null}
         {note ? <Caption>Obs.: {note}</Caption> : null}
       </View>
     </View>
@@ -39,19 +41,31 @@ const styles = StyleSheet.create({
 })
 
 PacketTrackingItem.propTypes = {
-  date: PropTypes.instanceOf(Date).isRequired,
-  from: PropTypes.string,
-  locale: PropTypes.string,
-  note: PropTypes.string,
+  datetime: PropTypes.instanceOf(Date).isRequired,
   status: PropTypes.string.isRequired,
-  to: PropTypes.string,
+  note: PropTypes.string,
+  from: PropTypes.shape({
+    city: PropTypes.string,
+    state: PropTypes.string,
+    place: PropTypes.string,
+  }),
+  to: PropTypes.shape({
+    city: PropTypes.string,
+    state: PropTypes.string,
+    place: PropTypes.string,
+  }),
+  locale: PropTypes.shape({
+    city: PropTypes.string,
+    state: PropTypes.string,
+    place: PropTypes.string,
+  }),
 }
 
 PacketTrackingItem.defaultProps = {
-  from: '',
-  locale: '',
   note: '',
-  to: '',
+  from: undefined,
+  locale: undefined,
+  to: undefined,
 }
 
 export default PacketTrackingItem
