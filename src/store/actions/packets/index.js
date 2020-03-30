@@ -6,3 +6,11 @@ export const addPacket = packet => ({
     packet,
   },
 })
+
+export const fetchPacket = (title, code) => ({
+  type: types.FETCH_PACKET,
+  payload: {
+    title,
+    code,
+  },
+})

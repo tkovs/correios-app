@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { TextInput } from 'react-native-paper'
 import { View, StyleSheet } from 'react-native'
@@ -7,14 +7,15 @@ import { View, StyleSheet } from 'react-native'
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
 
-function AddPacketModal({ visible, onDismiss }) {
-  const handleSubmit = () => console.log('Submit')
+function AddPacketModal({ visible, onDismiss, onSubmit }) {
+  const [title, setTitle] = useState('')
+  const [code, setCode] = useState('')
 
   return (
     <Modal
       title="Adicionar novo rastreio"
       visible={visible}
-      onSubmit={handleSubmit}
+      onSubmit={() => onSubmit(title, code)}
       onDismiss={onDismiss}
     >
       <View style={styles.textInputContainer}>
@@ -26,6 +27,8 @@ function AddPacketModal({ visible, onDismiss }) {
           placeholder="iPad"
           label="Nome do pacote"
           mode="outlined"
+          value={title}
+          onChangeText={value => setTitle(value)}
         />
       </View>
       <View>
@@ -38,6 +41,8 @@ function AddPacketModal({ visible, onDismiss }) {
           placeholder="PW086958101BR"
           label="Código de rastreio"
           mode="outlined"
+          value={code}
+          onChangeText={value => setCode(value)}
         />
       </View>
     </Modal>
@@ -51,6 +56,7 @@ AddPacketModal.defaultProps = {
 AddPacketModal.propTypes = {
   visible: PropTypes.bool,
   onDismiss: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 const styles = StyleSheet.create({})
