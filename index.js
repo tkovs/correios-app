@@ -9,6 +9,8 @@ import App from './App'
 import { name as appName } from './app.json'
 import configureStore from './src/store'
 
+global.Buffer = global.Buffer || require('buffer').Buffer
+
 const store = configureStore()
 
 const Main = () => (
