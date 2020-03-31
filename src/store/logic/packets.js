@@ -3,6 +3,7 @@ import correios from 'encomendas-correios/lib/index'
 
 import * as types from '../actions/packets/types'
 import { addPacket } from '../actions/packets'
+import { getShippingWayFromCode } from '../../utils/correios'
 
 const fetchPacketLogic = createLogic({
   type: types.FETCH_PACKET,
@@ -13,7 +14,7 @@ const fetchPacketLogic = createLogic({
     const packet = {
       title,
       code,
-      mode: 'PAC',
+      mode: getShippingWayFromCode(code),
       status: 'delivered',
       statuses,
     }
