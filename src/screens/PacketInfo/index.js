@@ -16,6 +16,8 @@ PacketInfoContainer.propTypes = {
         title: PropTypes.string.isRequired,
         status: PropTypes.string.isRequired,
         code: PropTypes.string.isRequired,
+        mode: PropTypes.string.isRequired,
+        statuses: PropTypes.array.isRequired,
       }),
     }),
   }).isRequired,
