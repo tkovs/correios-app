@@ -7,6 +7,18 @@ import { getShippingWayFromCode } from '../../utils/correios'
 
 const fetchPacketLogic = createLogic({
   type: types.FETCH_PACKET,
+  validate: ({ getState, action }, allow, reject) => {
+    const { packets } = getState()
+    const { code } = action.payload
+
+    const similarPacket = packets.find(packet => packet.code === code)
+
+    if (similarPacket) {
+      reject()
+    } else {
+      allow(action)
+    }
+  },
   process: async ({ action }, dispatch, done) => {
     const { code, title } = action.payload
 
