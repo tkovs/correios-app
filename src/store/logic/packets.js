@@ -15,7 +15,8 @@ const addPacketLogic = createLogic({
     const similarPacket = packets.find(packet => packet.code === code)
 
     if (similarPacket) {
-      reject()
+      const errorMessage = 'Duplicated tracking code'
+      reject(addPacketFailure(errorMessage))
     } else {
       allow(action)
     }
