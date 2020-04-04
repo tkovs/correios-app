@@ -1,16 +1,23 @@
 import * as types from './types'
 
-export const addPacket = packet => ({
-  type: types.ADD_PACKET,
+export const addPacket = (title, code) => ({
+  type: types.ADD_PACKET_PENDING,
+  payload: {
+    title,
+    code,
+  },
+})
+
+export const addPacketSuccess = packet => ({
+  type: types.ADD_PACKET_SUCCESS,
   payload: {
     packet,
   },
 })
 
-export const fetchPacket = (title, code) => ({
-  type: types.FETCH_PACKET,
+export const addPacketFailure = error => ({
+  type: types.ADD_PACKET_FAILURE,
   payload: {
-    title,
-    code,
+    error,
   },
 })

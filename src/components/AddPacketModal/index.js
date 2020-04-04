@@ -1,13 +1,18 @@
 import { connect } from 'react-redux'
 
-import { fetchPacket } from '../../store/actions/packets'
+import { addPacket } from '../../store/actions/packets'
 import AddPacketModal from './AddPacketModal'
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (title, code) => dispatch(fetchPacket(title, code)),
+  onSubmit: (title, code) => dispatch(addPacket(title, code)),
+})
+
+const mapStateToProps = ({ packets }) => ({
+  pending: packets.pending,
+  error: packets.error,
 })
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddPacketModal)

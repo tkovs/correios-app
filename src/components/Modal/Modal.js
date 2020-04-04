@@ -11,7 +11,15 @@ import PropTypes from 'prop-types'
 
 import { colors } from '../../styles/theme'
 
-function Modal({ children, onSubmit, title, fullscreen, visible, onDismiss }) {
+function Modal({
+  children,
+  loading,
+  onSubmit,
+  title,
+  fullscreen,
+  visible,
+  onDismiss,
+}) {
   return (
     <Portal>
       <ModalPaper visible={visible} onDismiss={onDismiss}>
@@ -40,6 +48,7 @@ function Modal({ children, onSubmit, title, fullscreen, visible, onDismiss }) {
             <View>
               <Button
                 labelStyle={{ color: colors.snow }}
+                loading={loading}
                 contentStyle={{ backgroundColor: colors.blue }}
                 mode="contained"
                 onPress={onSubmit}
@@ -59,10 +68,12 @@ Modal.defaultProps = {
   title: null,
   onSubmit: null,
   fullscreen: false,
+  loading: false,
 }
 
 Modal.propTypes = {
   visible: PropTypes.bool,
+  loading: PropTypes.bool,
   fullscreen: PropTypes.bool,
   title: PropTypes.string,
   onDismiss: PropTypes.func.isRequired,

@@ -1,15 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { TextInput } from 'react-native-paper'
+import { TextInput, HelperText } from 'react-native-paper'
 import { View, StyleSheet } from 'react-native'
 
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
 
-function AddPacketModal({ visible, onDismiss, onSubmit }) {
+function AddPacketModal({ error, pending, visible, onDismiss, onSubmit }) {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
+
+  useEffect(() => {
+    if (!pending && !error) {
+      onDismiss()
+    }
+  }, [pending])
 
   return (
     <Modal
@@ -17,6 +23,7 @@ function AddPacketModal({ visible, onDismiss, onSubmit }) {
       visible={visible}
       onSubmit={() => onSubmit(title, code)}
       onDismiss={onDismiss}
+      loading={pending}
     >
       <View style={styles.textInputContainer}>
         <TextInput
@@ -44,6 +51,9 @@ function AddPacketModal({ visible, onDismiss, onSubmit }) {
           value={code}
           onChangeText={value => setCode(value)}
         />
+        <HelperText type="error" visible={!!error}>
+          {error}
+        </HelperText>
       </View>
     </Modal>
   )
@@ -51,12 +61,15 @@ function AddPacketModal({ visible, onDismiss, onSubmit }) {
 
 AddPacketModal.defaultProps = {
   visible: false,
+  error: null,
 }
 
 AddPacketModal.propTypes = {
-  visible: PropTypes.bool,
   onDismiss: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  pending: PropTypes.bool.isRequired,
+  visible: PropTypes.bool,
+  error: PropTypes.string,
 }
 
 const styles = StyleSheet.create({})
