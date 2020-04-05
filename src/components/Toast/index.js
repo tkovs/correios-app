@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -6,12 +6,14 @@ import Toast from './Toast'
 import { clearFeedback } from '../../store/actions/feedback'
 
 function ToastContainer({ hideToast, message, visible }) {
-  useEffect(() => {
-    if (visible) {
-      setTimeout(hideToast, 3000)
-    }
-  }, [visible])
-  return <Toast message={message} visible={visible} />
+  return (
+    <Toast
+      message={message}
+      visible={visible}
+      onDismiss={hideToast}
+      duration={3000}
+    />
+  )
 }
 
 ToastContainer.propTypes = {
