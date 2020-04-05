@@ -3,10 +3,11 @@ import { SafeAreaView, View, StyleSheet, Dimensions } from 'react-native'
 import { FAB } from 'react-native-paper'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
+import AddPacketModal from '../../components/AddPacketModal'
 import Header from './Header'
 import PacketList from '../../components/PacketList'
 import PacketsCount from '../../components/PacketsCount'
-import AddPacketModal from '../../components/AddPacketModal'
+import Toast from '../../components/Toast'
 
 import { colors } from '../../styles/theme'
 
@@ -63,6 +64,8 @@ const Home = () => {
         onPress={() => setModalVisible(true)}
         style={styles.floatingButton}
       />
+
+      <Toast />
     </SafeAreaView>
   )
 }

@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 
 import * as types from '../actions/packets/types'
 import { addPacketFailure, addPacketSuccess } from '../actions/packets'
+import { addFeedback } from '../actions/feedback'
 import { getShippingWayFromCode } from '../../utils/correios'
 
 const addPacketLogic = createLogic({
@@ -15,7 +16,7 @@ const addPacketLogic = createLogic({
     const similarPacket = packets.find(packet => packet.code === code)
 
     if (similarPacket) {
-      const errorMessage = 'Duplicated tracking code'
+      const errorMessage = 'Código de rastreio duplicado'
       reject(addPacketFailure(errorMessage))
     } else {
       allow(action)
@@ -28,7 +29,7 @@ const addPacketLogic = createLogic({
       const statuses = await correios.track(code)
 
       if (isEmpty(statuses)) {
-        throw new Error('The packet can not be tracked')
+        throw new Error('A encomenda não pôde ser rastreada')
       }
 
       const packet = {
@@ -47,4 +48,12 @@ const addPacketLogic = createLogic({
   },
 })
 
-export default [addPacketLogic]
+const addPacketSuccessLogic = createLogic({
+  type: types.ADD_PACKET_SUCCESS,
+  process: () => {
+    const message = 'Encomenda rastreada com sucesso'
+    return addFeedback(message)
+  },
+})
+
+export default [addPacketLogic, addPacketSuccessLogic]
