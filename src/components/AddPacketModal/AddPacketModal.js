@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { TextInput, HelperText } from 'react-native-paper'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Keyboard } from 'react-native'
 
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
@@ -21,7 +21,10 @@ function AddPacketModal({ error, pending, visible, onDismiss, onSubmit }) {
     <Modal
       title="Adicionar novo rastreio"
       visible={visible}
-      onSubmit={() => onSubmit(title, code)}
+      onSubmit={() => {
+        Keyboard.dismiss()
+        onSubmit(title, code)
+      }}
       onDismiss={onDismiss}
       loading={pending}
     >
