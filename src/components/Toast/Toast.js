@@ -4,7 +4,15 @@ import { Snackbar } from 'react-native-paper'
 
 function Toast({ duration, message, onDismiss, visible }) {
   return (
-    <Snackbar visible={visible} onDismiss={onDismiss} duration={duration}>
+    <Snackbar
+      action={{
+        label: 'Ok!',
+        onPress: onDismiss,
+      }}
+      visible={visible}
+      onDismiss={onDismiss}
+      duration={duration}
+    >
       {message}
     </Snackbar>
   )
