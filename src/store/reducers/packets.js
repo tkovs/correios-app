@@ -27,6 +27,11 @@ const packets = (state = initialState, action) => {
         pending: false,
         error: action.payload.error,
       }
+    case types.CLEAR_ERROR:
+      return {
+        ...state,
+        error: null,
+      }
     default:
       return state
   }

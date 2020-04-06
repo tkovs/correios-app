@@ -1,13 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import isNil from 'lodash/isNil'
 import { TextInput, HelperText } from 'react-native-paper'
 import { View, StyleSheet, Keyboard } from 'react-native'
 
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
 
-function AddPacketModal({ error, pending, visible, onDismiss, onSubmit }) {
+function AddPacketModal({
+  clearError,
+  error,
+  pending,
+  visible,
+  onDismiss,
+  onSubmit,
+}) {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
 
@@ -38,7 +46,12 @@ function AddPacketModal({ error, pending, visible, onDismiss, onSubmit }) {
           label="Nome do pacote"
           mode="outlined"
           value={title}
-          onChangeText={value => setTitle(value)}
+          onChangeText={value => {
+            if (!isNil(error)) {
+              clearError()
+            }
+            setTitle(value)
+          }}
         />
       </View>
       <View>
@@ -52,7 +65,12 @@ function AddPacketModal({ error, pending, visible, onDismiss, onSubmit }) {
           label="Código de rastreio"
           mode="outlined"
           value={code}
-          onChangeText={value => setCode(value)}
+          onChangeText={value => {
+            if (!isNil(error)) {
+              clearError()
+            }
+            setCode(value)
+          }}
         />
         <HelperText type="error" visible={!!error}>
           {error}
@@ -68,11 +86,12 @@ AddPacketModal.defaultProps = {
 }
 
 AddPacketModal.propTypes = {
+  clearError: PropTypes.func.isRequired,
+  error: PropTypes.string,
   onDismiss: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   pending: PropTypes.bool.isRequired,
   visible: PropTypes.bool,
-  error: PropTypes.string,
 }
 
 const styles = StyleSheet.create({})

@@ -21,3 +21,7 @@ export const addPacketFailure = error => ({
     error,
   },
 })
+
+export const clearError = () => ({
+  type: types.CLEAR_ERROR,
+})
