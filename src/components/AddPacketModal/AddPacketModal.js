@@ -33,7 +33,12 @@ function AddPacketModal({
         Keyboard.dismiss()
         onSubmit(title, code)
       }}
-      onDismiss={onDismiss}
+      onDismiss={() => {
+        clearError()
+        setTitle('')
+        setCode('')
+        onDismiss()
+      }}
       loading={pending}
     >
       <View style={styles.textInputContainer}>
