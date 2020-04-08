@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import { removePacket as removePacketAction } from '../../../store/actions/packets'
+import { addFeedback } from '../../../store/actions/feedback'
 
 import Header from './Header'
 
 const mapDispatchToProps = dispatch => ({
   removePacket: code => dispatch(removePacketAction(code)),
+  addFeedback: message => dispatch(addFeedback(message)),
 })
 
 function HeaderContainer(props) {

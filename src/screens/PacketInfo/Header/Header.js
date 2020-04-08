@@ -12,7 +12,7 @@ import {
 
 import { colors } from '../../../styles/theme'
 
-const Header = ({ goBack, title, removePacket }) => {
+const Header = ({ addFeedback, goBack, title, removePacket }) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [dialogVisible, setDialogVisible] = useState(false)
 
@@ -56,7 +56,10 @@ const Header = ({ goBack, title, removePacket }) => {
             <Button onPress={() => setDialogVisible(false)}>Não</Button>
             <Button
               onPress={() => {
+                const message = 'Rastreio removido com sucesso'
                 removePacket()
+                setDialogVisible(false)
+                addFeedback(message)
                 goBack()
               }}
             >
@@ -80,6 +83,7 @@ Header.defaultProps = {
 }
 
 Header.propTypes = {
+  addFeedback: PropTypes.func.isRequired,
   goBack: PropTypes.func,
   title: PropTypes.string.isRequired,
   removePacket: PropTypes.func.isRequired,
