@@ -11,7 +11,7 @@ const dateToKey = ({ date: { year, month, day }, time: { hour, minute } }) =>
 function PacketInfo({ packet }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header title={packet.title} />
+      <Header code={packet.code} title={packet.title} />
 
       <ScrollView>
         {packet.statuses.map(status => (

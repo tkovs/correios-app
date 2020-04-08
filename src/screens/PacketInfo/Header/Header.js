@@ -12,7 +12,7 @@ import {
 
 import { colors } from '../../../styles/theme'
 
-const Header = ({ goBack, title }) => {
+const Header = ({ goBack, title, removePacket }) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [dialogVisible, setDialogVisible] = useState(false)
 
@@ -54,7 +54,14 @@ const Header = ({ goBack, title }) => {
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={() => setDialogVisible(false)}>Não</Button>
-            <Button onPress={() => setDialogVisible(false)}>Sim</Button>
+            <Button
+              onPress={() => {
+                removePacket()
+                goBack()
+              }}
+            >
+              Sim
+            </Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>
@@ -75,6 +82,7 @@ Header.defaultProps = {
 Header.propTypes = {
   goBack: PropTypes.func,
   title: PropTypes.string.isRequired,
+  removePacket: PropTypes.func.isRequired,
 }
 
 export default Header

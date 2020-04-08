@@ -27,6 +27,11 @@ const packets = (state = initialState, action) => {
         pending: false,
         error: action.payload.error,
       }
+    case types.REMOVE_PACKET:
+      return {
+        ...state,
+        list: state.list.filter(packet => packet.code !== action.payload.code),
+      }
     case types.CLEAR_ERROR:
       return {
         ...state,

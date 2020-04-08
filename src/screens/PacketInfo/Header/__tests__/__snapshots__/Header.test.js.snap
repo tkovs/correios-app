@@ -426,6 +426,61 @@ exports[`Header renders correctly 1`] = `
       data={
         Array [
           Object {
+            "category": "Warning: Failed prop type: The prop \`removePacket\` is marked as required in \`Header\`, but its value is \`undefined\`.
+    in Header",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: The prop \`removePacket\` is marked as required in \`Header\`, but its value is \`undefined\`.
+    in Header",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/tkovs/Code/tracking/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 36,
+                    "file": "/Users/tkovs/Code/tracking/src/screens/PacketInfo/Header/__tests__/Header.test.js",
+                    "lineNumber": 9,
+                    "methodName": "Object.<anonymous>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+          Object {
             "category": "Warning: Failed prop type: The prop \`title\` is marked as required in \`Header\`, but its value is \`undefined\`.
     in Header",
             "warnings": Array [
@@ -495,13 +550,61 @@ exports[`Header renders correctly 1`] = `
       stickyHeaderIndices={Array []}
       style={
         Object {
-          "height": 48.5,
+          "height": 97,
         }
       }
       updateCellsBatchingPeriod={50}
       viewabilityConfigCallbackPairs={Array []}
       windowSize={21}
     >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: The prop \`removePacket\` is marked as required in \`Header\`, but its value is \`undefined\`.
+    in Header
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
       <View
         style={null}
       >

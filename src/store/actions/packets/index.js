@@ -22,6 +22,13 @@ export const addPacketFailure = error => ({
   },
 })
 
+export const removePacket = code => ({
+  type: types.REMOVE_PACKET,
+  payload: {
+    code,
+  },
+})
+
 export const clearError = () => ({
   type: types.CLEAR_ERROR,
 })
