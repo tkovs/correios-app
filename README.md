@@ -26,17 +26,8 @@ A *react native* app for package tracking. It allows you to track your packages 
 
 **Package list**<br />
 
-<img src="https://i.imgur.com/XfaH5bx.jpg" width="320">
-
+<img src="https://i.imgur.com/QGhydfF.png" width="320">
 
 **Add package modal**<br />
 
-<img src="https://i.imgur.com/6b6YfCM.jpg" width="320">
-
-**Pending packages filter**<br />
-
-<img src="https://i.imgur.com/E3Mbi6k.jpg" width="320">
-
-**Delivered packages filter**<br />
-
-<img src="https://i.imgur.com/GysJpd4.jpg" width="320">
+<img src="https://i.imgur.com/3FCC4Bf.png" width="320">
