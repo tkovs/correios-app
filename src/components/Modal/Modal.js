@@ -13,12 +13,13 @@ import { colors } from '../../styles/theme'
 
 function Modal({
   children,
+  disabled,
+  fullscreen,
   loading,
+  onDismiss,
   onSubmit,
   title,
-  fullscreen,
   visible,
-  onDismiss,
 }) {
   return (
     <Portal>
@@ -52,6 +53,7 @@ function Modal({
                 contentStyle={{ backgroundColor: colors.blue }}
                 mode="contained"
                 onPress={onSubmit}
+                disabled={disabled}
               >
                 Confirmar
               </Button>
@@ -64,6 +66,7 @@ function Modal({
 }
 
 Modal.defaultProps = {
+  disabled: false,
   visible: false,
   title: null,
   onSubmit: null,
@@ -72,6 +75,7 @@ Modal.defaultProps = {
 }
 
 Modal.propTypes = {
+  disabled: PropTypes.bool,
   visible: PropTypes.bool,
   loading: PropTypes.bool,
   fullscreen: PropTypes.bool,

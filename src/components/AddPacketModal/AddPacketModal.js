@@ -40,6 +40,7 @@ function AddPacketModal({
         onDismiss()
       }}
       loading={pending}
+      disabled={title === '' || code === '' || pending}
     >
       <View style={styles.textInputContainer}>
         <TextInput
