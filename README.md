@@ -4,9 +4,9 @@ A *react native* app for package tracking. It allows you to track your packages 
 
 ### Features
 
-1. Manage your package tracking list.
-2. Filter the packages from the list by *all*, *pending* and *delivered*.
-3. Show the tracking steps for each package in the list.
+1. Track packets shipping by Correios.
+2. Manage your package tracking list.
+3. Filter the packages from the list by *all*, *pending* and *delivered*.
 
 ### How to build
 
