@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
 PacketInfo.propTypes = {
   packet: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
     statuses: PropTypes.array.isRequired,

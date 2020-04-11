@@ -1,7 +1,6 @@
 import { createLogic } from 'redux-logic'
 import correios from 'encomendas-correios/lib/index'
 import isEmpty from 'lodash/isEmpty'
-import last from 'lodash/last'
 
 import * as types from '../actions/packets/types'
 import { addPacketFailure, addPacketSuccess } from '../actions/packets'
@@ -33,15 +32,11 @@ const addPacketLogic = createLogic({
         throw new Error('A encomenda não pôde ser rastreada')
       }
 
-      const delivered =
-        last(statuses).status === 'Objeto entregue ao destinatário'
-
       const packet = {
-        title,
         code,
         mode: getShippingWayFromCode(code),
-        status: delivered ? 'delivered' : 'pending',
         statuses,
+        title,
       }
 
       dispatch(addPacketSuccess(packet))

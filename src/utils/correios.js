@@ -1,7 +1,18 @@
+import first from 'lodash/first'
+
 export const getShippingWayFromCode = code => {
   const initials = /\w\w/.exec(code)[0]
 
   return shippingWayInitials[initials]
+}
+
+export const hydrateWithStatus = packet => {
+  const status =
+    first(packet.statuses).status === 'Objeto entregue ao destinatário'
+      ? 'delivered'
+      : 'pending'
+
+  return { ...packet, status }
 }
 
 const shippingWayInitials = {

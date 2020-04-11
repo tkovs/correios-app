@@ -157,7 +157,6 @@ const statuses = [
 export default [
   {
     title: 'iPhone 7',
-    status: 'delivered',
     code: 'PW086958109BR',
     mode: 'SEDEX',
     statuses,
