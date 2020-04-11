@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Selectors with reselect for redux store access
+- Central hydration point of packets with general status
 
 ## [0.4.4] - 2020-04-11
 ### Fixed
