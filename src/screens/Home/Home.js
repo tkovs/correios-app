@@ -18,6 +18,20 @@ const AllPacketsRoute = () => (
   </View>
 )
 
+const PendingPacketsRoute = () => (
+  <View style={styles.body}>
+    <PacketsCount filter="pending" />
+    <PacketList filter="pending" />
+  </View>
+)
+
+const DeliveredPacketsRoute = () => (
+  <View style={styles.body}>
+    <PacketsCount filter="delivered" />
+    <PacketList filter="delivered" />
+  </View>
+)
+
 const initialLayout = { width: Dimensions.get('window').width }
 
 const renderTabBar = props => (
@@ -39,8 +53,8 @@ const Home = () => {
 
   const renderScene = SceneMap({
     all: AllPacketsRoute,
-    pending: AllPacketsRoute,
-    delivered: AllPacketsRoute,
+    pending: PendingPacketsRoute,
+    delivered: DeliveredPacketsRoute,
   })
 
   return (

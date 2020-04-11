@@ -3,20 +3,15 @@ import PropTypes from 'prop-types'
 import { useNavigation } from '@react-navigation/native'
 
 import PacketItem from './PacketItem'
-import { hydrateWithStatus } from '../../utils/correios'
 
 function PacketItemContainer(props) {
-  const { packet: packetProp, ...rest } = props
+  const { packet } = props
   const navigation = useNavigation()
-
-  const packet = hydrateWithStatus(packetProp)
 
   const navigateToPacketItemInfo = () =>
     navigation.navigate('PacketInfo', { packet })
 
-  return (
-    <PacketItem onClick={navigateToPacketItemInfo} {...rest} packet={packet} />
-  )
+  return <PacketItem onClick={navigateToPacketItemInfo} {...props} />
 }
 
 PacketItemContainer.propTypes = {

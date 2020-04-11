@@ -4,11 +4,16 @@ import { render } from '@testing-library/react-native'
 
 import PacketList from '../PacketList'
 import mockPackets from '../../../__mocks__/packets'
+import { hydrateWithStatus } from '../../../utils/correios'
 
 jest.mock('@react-navigation/native')
 
 it('renders correctly with packets', () => {
-  const { baseElement } = render(<PacketList packets={mockPackets} />)
+  const { baseElement } = render(
+    <PacketList
+      packets={mockPackets.map(packet => hydrateWithStatus(packet))}
+    />
+  )
   expect(baseElement).toMatchSnapshot()
 })
 
