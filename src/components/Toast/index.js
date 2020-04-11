@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 
 import Toast from './Toast'
 import { clearFeedback } from '../../store/actions/feedback'
+import {
+  messageSelector,
+  visibleSelector,
+} from '../../store/selectors/feedback'
 
 function ToastContainer({ hideToast, message, visible }) {
   return (
@@ -22,9 +26,9 @@ ToastContainer.propTypes = {
   visible: PropTypes.bool.isRequired,
 }
 
-const mapStateToProps = ({ feedback }) => ({
-  message: feedback.message,
-  visible: feedback.visible,
+const mapStateToProps = state => ({
+  message: messageSelector(state),
+  visible: visibleSelector(state),
 })
 
 const mapDispatchToProps = dispatch => ({

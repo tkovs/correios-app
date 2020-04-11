@@ -3,14 +3,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import PacketsCount from './PacketsCount'
-import { hydrateWithStatus } from '../../utils/correios'
+import { packetsListSelector } from '../../store/selectors/packets'
 
 function PacketsCountContainer({ packets, filter }) {
   const quantity = filter
     ? packets.filter(packet => packet.status === filter).length
     : packets.length
-
-  console.log(quantity, filter, packets)
 
   return <PacketsCount quantity={quantity} />
 }
@@ -24,8 +22,8 @@ PacketsCountContainer.propTypes = {
   filter: PropTypes.string,
 }
 
-const mapStateToProps = ({ packets }) => ({
-  packets: packets.list.map(packet => hydrateWithStatus(packet)),
+const mapStateToProps = state => ({
+  packets: packetsListSelector(state),
 })
 
 export default connect(mapStateToProps)(PacketsCountContainer)

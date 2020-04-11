@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 
 import { addPacket, clearError } from '../../store/actions/packets'
+import { errorSelector, pendingSelector } from '../../store/selectors/packets'
 import AddPacketModal from './AddPacketModal'
 
 const mapDispatchToProps = dispatch => ({
@@ -8,9 +9,9 @@ const mapDispatchToProps = dispatch => ({
   clearError: () => dispatch(clearError()),
 })
 
-const mapStateToProps = ({ packets }) => ({
-  pending: packets.pending,
-  error: packets.error,
+const mapStateToProps = state => ({
+  pending: pendingSelector(state),
+  error: errorSelector(state),
 })
 
 export default connect(

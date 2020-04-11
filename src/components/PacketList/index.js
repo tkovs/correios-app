@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import PacketList from './PacketList'
-import { hydrateWithStatus } from '../../utils/correios'
+import { packetsListSelector } from '../../store/selectors/packets'
 
 function PacketListContainer(props) {
   const { packets: packetsProp, filter, ...rest } = props
@@ -23,8 +23,8 @@ PacketListContainer.propTypes = {
   filter: PropTypes.string,
 }
 
-const mapStateToProps = ({ packets }) => ({
-  packets: packets.list.map(packet => hydrateWithStatus(packet)),
+const mapStateToProps = state => ({
+  packets: packetsListSelector(state),
 })
 
 export default connect(mapStateToProps)(PacketListContainer)
