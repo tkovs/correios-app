@@ -28,38 +28,92 @@ exports[`PacketItem with full packet renders correctly 1`] = `
         style={
           Object {
             "color": "#f9f9f9",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
             "marginVertical": 8,
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "#141414",
+        <View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#141414",
+                },
+              ]
             }
-          }
-        >
-          Apple Pencil
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#3E8989",
-              "fontWeight": "bold",
+          >
+            Apple Pencil
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#3E8989",
+                  "fontWeight": "bold",
+                },
+              ]
             }
-          }
-        >
-          delivered
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#939393",
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#939393",
+                },
+              ]
             }
-          }
-        >
-          PW086958115BR
-        </Text>
+          >
+            PW086958115BR
+          </Text>
+        </View>
+        <View>
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "backgroundColor": "#f50057",
+                "borderRadius": 10,
+                "color": "#ffffff",
+                "fontFamily": "System",
+                "fontSize": 10,
+                "fontWeight": "400",
+                "height": 20,
+                "lineHeight": 20,
+                "minWidth": 20,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingHorizontal": 4,
+                "textAlign": "center",
+                "textAlignVertical": "center",
+              }
+            }
+          >
+            PAC
+          </Text>
+        </View>
       </View>
     </TouchableHighlight>
   </View>
