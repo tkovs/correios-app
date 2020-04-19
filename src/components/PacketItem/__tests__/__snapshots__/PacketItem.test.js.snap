@@ -88,7 +88,13 @@ exports[`PacketItem with full packet renders correctly 1`] = `
             PW086958115BR
           </Text>
         </View>
-        <View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+            }
+          }
+        >
           <Text
             numberOfLines={1}
             style={
@@ -111,7 +117,22 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               }
             }
           >
-            PAC
+            SEDEX
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            1 Jan
           </Text>
         </View>
       </View>

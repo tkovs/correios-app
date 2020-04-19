@@ -95,7 +95,13 @@ exports[`renders correctly with packets 1`] = `
                 PW086958109BR
               </Text>
             </View>
-            <View>
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-end",
+                }
+              }
+            >
               <Text
                 numberOfLines={1}
                 style={
@@ -118,7 +124,22 @@ exports[`renders correctly with packets 1`] = `
                   }
                 }
               >
-                PAC
+                SEDEX
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Invalid date
               </Text>
             </View>
           </View>

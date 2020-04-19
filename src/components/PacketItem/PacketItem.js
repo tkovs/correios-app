@@ -2,10 +2,14 @@ import React from 'react'
 import { View, StyleSheet, TouchableHighlight } from 'react-native'
 import { Badge, Text } from 'react-native-paper'
 import PropTypes from 'prop-types'
+import moment from 'moment'
 
 import { colors } from '../../styles/theme'
 
 const PacketItem = ({ onClick, packet }) => {
+  const lastUpdate = packet.statuses[0].datetime
+  const FormattedLastUpdate = moment(lastUpdate).format('D MMM')
+
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
       <View style={styles.container}>
@@ -23,7 +27,8 @@ const PacketItem = ({ onClick, packet }) => {
           <Text style={styles.code}>{packet.code}</Text>
         </View>
         <View style={styles.right}>
-          <Badge>PAC</Badge>
+          <Badge>{packet.mode}</Badge>
+          <Text>{FormattedLastUpdate}</Text>
         </View>
       </View>
     </TouchableHighlight>
@@ -36,6 +41,9 @@ const styles = StyleSheet.create({
     color: colors.snow,
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  right: {
+    alignItems: 'flex-end',
   },
   title: {
     color: colors.licorice,
@@ -62,6 +70,8 @@ PacketItem.propTypes = {
     title: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
+    mode: PropTypes.string.isRequired,
+    statuses: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   onClick: PropTypes.func,
 }

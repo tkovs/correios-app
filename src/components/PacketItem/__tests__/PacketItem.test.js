@@ -12,9 +12,17 @@ describe('PacketItem', () => {
         status: 'delivered',
         code: 'PW086958115BR',
         mode: 'SEDEX',
-        createdAt: '07/02/2020',
-        updatedAt: '10/02/2020',
-        deliveredAt: '10/02/2020',
+        statuses: [
+          {
+            status: 'Objeto entregue ao destinatário',
+            datetime: new Date('2020-01-01T00:01:01'),
+            locale: {
+              place: 'CEE CENTRO',
+              city: 'Rio De Janeiro',
+              state: 'RJ',
+            },
+          },
+        ],
       }
       const { baseElement } = render(<PacketItem packet={mockPacket} />)
       expect(baseElement).toMatchSnapshot()

@@ -1,4 +1,4 @@
-const statuses = [
+export const statuses = [
   {
     status: 'Objeto entregue ao destinatário',
     datetime: {

@@ -17,6 +17,7 @@ function PacketItemContainer(props) {
 PacketItemContainer.propTypes = {
   packet: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
     statuses: PropTypes.arrayOf(PropTypes.object).isRequired,

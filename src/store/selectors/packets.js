@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
 
-import { hydrateWithStatus } from '../../utils/correios'
+import { hydratePacket } from '../../utils/packet'
 
 export const packetsSelector = state => state.packets
 
@@ -16,5 +16,5 @@ export const pendingSelector = createSelector(
 
 export const packetsListSelector = createSelector(
   packetsSelector,
-  packets => packets.list.map(packet => hydrateWithStatus(packet))
+  packets => packets.list.map(packet => hydratePacket(packet))
 )
