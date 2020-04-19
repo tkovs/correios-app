@@ -139,7 +139,22 @@ exports[`renders correctly with packets 1`] = `
                   ]
                 }
               >
-                Invalid date
+                4 Feb
+              </Text>
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#000000",
+                      "fontFamily": "System",
+                      "fontWeight": "400",
+                      "textAlign": "left",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                5 days
               </Text>
             </View>
           </View>

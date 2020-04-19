@@ -3,12 +3,19 @@ import { View, StyleSheet, TouchableHighlight } from 'react-native'
 import { Badge, Text } from 'react-native-paper'
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import first from 'lodash/first'
+import last from 'lodash/last'
 
 import { colors } from '../../styles/theme'
 
 const PacketItem = ({ onClick, packet }) => {
-  const lastUpdate = packet.statuses[0].datetime
-  const FormattedLastUpdate = moment(lastUpdate).format('D MMM')
+  const firstUpdate = moment(last(packet.statuses).datetime)
+  const lastUpdate = moment(first(packet.statuses).datetime)
+  const formattedLastUpdate = moment(lastUpdate).format('D MMM')
+  const passedDays =
+    packet.status === 'delivered'
+      ? lastUpdate.diff(firstUpdate, 'days')
+      : moment().diff(firstUpdate, 'days')
 
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
@@ -28,7 +35,8 @@ const PacketItem = ({ onClick, packet }) => {
         </View>
         <View style={styles.right}>
           <Badge>{packet.mode}</Badge>
-          <Text>{FormattedLastUpdate}</Text>
+          <Text>{formattedLastUpdate}</Text>
+          <Text>{`${passedDays} days`}</Text>
         </View>
       </View>
     </TouchableHighlight>

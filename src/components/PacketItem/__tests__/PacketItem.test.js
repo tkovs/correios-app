@@ -15,6 +15,15 @@ describe('PacketItem', () => {
         statuses: [
           {
             status: 'Objeto entregue ao destinatário',
+            datetime: new Date('2020-01-05T00:01:01'),
+            locale: {
+              place: 'CEE CENTRO',
+              city: 'Rio De Janeiro',
+              state: 'RJ',
+            },
+          },
+          {
+            status: 'Objeto postado',
             datetime: new Date('2020-01-01T00:01:01'),
             locale: {
               place: 'CEE CENTRO',

@@ -132,7 +132,22 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               ]
             }
           >
-            1 Jan
+            5 Jan
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            4 days
           </Text>
         </View>
       </View>
