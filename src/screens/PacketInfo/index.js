@@ -1,27 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import PacketInfo from './PacketInfo'
+import { packetsListSelector } from '../../store/selectors/packets'
 
 function PacketInfoContainer(props) {
-  const { route } = props
-  const { packet } = route.params
+  const { route, packets, ...rest } = props
+  const { code } = route.params
 
-  return <PacketInfo {...props} packet={packet} />
+  const packet = packets.find(_packet => _packet.code === code)
+
+  return <PacketInfo {...rest} packet={packet} />
 }
 
 PacketInfoContainer.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({
-      packet: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        status: PropTypes.string.isRequired,
-        code: PropTypes.string.isRequired,
-        mode: PropTypes.string.isRequired,
-        statuses: PropTypes.array.isRequired,
-      }),
+      code: PropTypes.string.isRequired,
     }),
   }).isRequired,
+  packets: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default PacketInfoContainer
+const mapStateToProps = state => ({
+  packets: packetsListSelector(state),
+})
+
+export default connect(mapStateToProps)(PacketInfoContainer)

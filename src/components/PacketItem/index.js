@@ -9,7 +9,7 @@ function PacketItemContainer(props) {
   const navigation = useNavigation()
 
   const navigateToPacketItemInfo = () =>
-    navigation.navigate('PacketInfo', { packet })
+    navigation.navigate('PacketInfo', { code: packet.code })
 
   return <PacketItem onClick={navigateToPacketItemInfo} {...props} />
 }

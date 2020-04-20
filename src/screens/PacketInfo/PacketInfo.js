@@ -8,19 +8,17 @@ import PacketTrackingInfo from '../../components/PacketTrackingItem'
 
 const dateToKey = datetime => moment(datetime).format('YYYY/MM/DD H:m')
 
-function PacketInfo({ packet }) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Header code={packet.code} title={packet.title} />
+const PacketInfo = ({ packet }) => (
+  <SafeAreaView style={styles.container}>
+    <Header code={packet.code} title={packet.title} />
 
-      <ScrollView>
-        {packet.statuses.map(status => (
-          <PacketTrackingInfo key={dateToKey(status.datetime)} {...status} />
-        ))}
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
+    <ScrollView>
+      {packet.statuses.map(status => (
+        <PacketTrackingInfo key={dateToKey(status.datetime)} {...status} />
+      ))}
+    </ScrollView>
+  </SafeAreaView>
+)
 
 const styles = StyleSheet.create({
   container: {
