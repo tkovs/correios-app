@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import { addPacket, clearError } from '../../store/actions/packets'
-import { errorSelector, pendingSelector } from '../../store/selectors/packets'
+import { statusListSelector } from '../../store/selectors/packets'
 import AddPacketModal from './AddPacketModal'
 
 const mapDispatchToProps = dispatch => ({
@@ -10,8 +10,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  pending: pendingSelector(state),
-  error: errorSelector(state),
+  statusList: statusListSelector(state),
 })
 
 export default connect(

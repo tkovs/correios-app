@@ -17,7 +17,7 @@ const addPacketLogic = createLogic({
 
     if (similarPacket) {
       const errorMessage = 'Código de rastreio duplicado'
-      reject(addPacketFailure(errorMessage))
+      reject(addPacketFailure(errorMessage, code))
     } else {
       allow(action)
     }
@@ -41,7 +41,7 @@ const addPacketLogic = createLogic({
 
       dispatch(addPacketSuccess(packet))
     } catch (error) {
-      dispatch(addPacketFailure(error.message))
+      dispatch(addPacketFailure(error.message, code))
     }
     done()
   },

@@ -5,14 +5,9 @@ import { hydratePacket } from '../../utils/packet'
 
 export const packetsSelector = state => state.packets
 
-export const errorSelector = createSelector(
+export const statusListSelector = createSelector(
   packetsSelector,
-  packets => packets.error
-)
-
-export const pendingSelector = createSelector(
-  packetsSelector,
-  packets => packets.pending
+  packets => packets.statusList
 )
 
 export const packetsListSelector = createSelector(

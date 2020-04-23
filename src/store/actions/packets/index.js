@@ -15,10 +15,11 @@ export const addPacketSuccess = packet => ({
   },
 })
 
-export const addPacketFailure = error => ({
+export const addPacketFailure = (error, code) => ({
   type: types.ADD_PACKET_FAILURE,
   payload: {
     error,
+    code,
   },
 })
 

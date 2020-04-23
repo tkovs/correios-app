@@ -2,32 +2,43 @@ import * as types from '../actions/packets/types'
 import mockPackets from '../../__mocks__/packets'
 
 const initialState = {
-  pending: false,
   list: mockPackets,
+  statusList: [],
   deleted: null,
-  error: null,
 }
 
 const packets = (state = initialState, action) => {
   switch (action.type) {
-    case types.ADD_PACKET_PENDING:
+    case types.ADD_PACKET_PENDING: {
+      const packetStatus = {
+        code: action.payload.code,
+        pending: true,
+        error: null,
+      }
+
       return {
         ...state,
-        pending: true,
+        statusList: [...state.statusList, packetStatus],
         deleted: null,
       }
+    }
     case types.ADD_PACKET_SUCCESS:
       return {
         ...state,
         list: [...state.list, action.payload.packet],
-        pending: false,
-        error: null,
+        statusList: state.statusList.filter(
+          status => status.code !== action.payload.packet.code
+        ),
       }
     case types.ADD_PACKET_FAILURE:
       return {
         ...state,
-        pending: false,
-        error: action.payload.error,
+        statusList: [
+          ...state.statusList.filter(
+            status => status.code !== action.payload.code
+          ),
+          { code: action.payload.code, error: action.payload.error },
+        ],
       }
     case types.REMOVE_PACKET:
       return {

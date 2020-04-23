@@ -10,20 +10,20 @@ import { colors } from '../../styles/theme'
 
 function AddPacketModal({
   clearError,
-  error,
-  pending,
-  visible,
   onDismiss,
   onSubmit,
+  statusList,
+  visible,
 }) {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
+  const status = statusList.find(_status => _status.code === code) || {}
 
   useEffect(() => {
-    if (!pending && !error) {
+    if (!status.pending && !status.error) {
       onDismiss()
     }
-  }, [pending])
+  }, [status.pending])
 
   return (
     <Modal
@@ -39,8 +39,8 @@ function AddPacketModal({
         setCode('')
         onDismiss()
       }}
-      loading={pending}
-      disabled={title === '' || code === '' || pending}
+      loading={status.pending}
+      disabled={title === '' || code === '' || status.pending}
     >
       <View style={styles.textInputContainer}>
         <TextInput
@@ -53,7 +53,7 @@ function AddPacketModal({
           mode="outlined"
           value={title}
           onChangeText={value => {
-            if (!isNil(error)) {
+            if (!isNil(status.error)) {
               clearError()
             }
             setTitle(value)
@@ -72,14 +72,14 @@ function AddPacketModal({
           mode="outlined"
           value={code}
           onChangeText={value => {
-            if (!isNil(error)) {
+            if (!isNil(status.error)) {
               clearError()
             }
             setCode(value)
           }}
         />
-        <HelperText type="error" visible={!!error}>
-          {error}
+        <HelperText type="error" visible={!!status.error}>
+          {status.error}
         </HelperText>
       </View>
     </Modal>
@@ -88,16 +88,15 @@ function AddPacketModal({
 
 AddPacketModal.defaultProps = {
   visible: false,
-  error: null,
+  statusList: [],
 }
 
 AddPacketModal.propTypes = {
   clearError: PropTypes.func.isRequired,
-  error: PropTypes.string,
   onDismiss: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  pending: PropTypes.bool.isRequired,
   visible: PropTypes.bool,
+  statusList: PropTypes.arrayOf(PropTypes.object),
 }
 
 const styles = StyleSheet.create({})
