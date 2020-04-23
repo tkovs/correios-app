@@ -4,6 +4,7 @@ import mockPackets from '../../__mocks__/packets'
 const initialState = {
   pending: false,
   list: mockPackets,
+  deleted: null,
   error: null,
 }
 
@@ -13,6 +14,7 @@ const packets = (state = initialState, action) => {
       return {
         ...state,
         pending: true,
+        deleted: null,
       }
     case types.ADD_PACKET_SUCCESS:
       return {
@@ -31,6 +33,7 @@ const packets = (state = initialState, action) => {
       return {
         ...state,
         list: state.list.filter(packet => packet.code !== action.payload.code),
+        deleted: state.list.find(packet => packet.code === action.payload.code),
       }
     case types.CLEAR_ERROR:
       return {
