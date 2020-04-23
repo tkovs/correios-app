@@ -21,6 +21,8 @@ function AddPacketModal({
 
   useEffect(() => {
     if (!status.pending && !status.error) {
+      setTitle('')
+      setCode('')
       onDismiss()
     }
   }, [status.pending])
