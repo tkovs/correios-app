@@ -1,3 +1,6 @@
+import reject from 'lodash/reject'
+import find from 'lodash/find'
+
 import * as types from '../actions/packets/types'
 import mockPackets from '../../__mocks__/packets'
 
@@ -22,30 +25,32 @@ const packets = (state = initialState, action) => {
         deleted: null,
       }
     }
-    case types.ADD_PACKET_SUCCESS:
+    case types.ADD_PACKET_SUCCESS: {
+      const { code } = action.payload.packet
+
       return {
         ...state,
         list: [...state.list, action.payload.packet],
-        statusList: state.statusList.filter(
-          status => status.code !== action.payload.packet.code
-        ),
+        statusList: reject(state.statusList, { code }),
       }
-    case types.ADD_PACKET_FAILURE:
+    }
+    case types.ADD_PACKET_FAILURE: {
+      const { code, error } = action.payload
+
       return {
         ...state,
-        statusList: [
-          ...state.statusList.filter(
-            status => status.code !== action.payload.code
-          ),
-          { code: action.payload.code, error: action.payload.error },
-        ],
+        statusList: [...reject(state.statusList, { code }), { code, error }],
       }
-    case types.REMOVE_PACKET:
+    }
+    case types.REMOVE_PACKET: {
+      const { code } = action.payload
+
       return {
         ...state,
-        list: state.list.filter(packet => packet.code !== action.payload.code),
-        deleted: state.list.find(packet => packet.code === action.payload.code),
+        list: reject(state.list, { code }),
+        deleted: find(state.list, { code }),
       }
+    }
     case types.CLEAR_ERROR:
       return {
         ...state,
