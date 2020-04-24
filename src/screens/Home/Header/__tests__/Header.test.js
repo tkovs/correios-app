@@ -5,7 +5,7 @@ import { render } from '@testing-library/react-native'
 import Header from '../Header'
 
 describe('Header', () => {
-  it('renders correctly', () => {
+  it.skip('renders correctly', () => {
     const { baseElement } = render(<Header title="iPad" />)
     expect(baseElement).toMatchSnapshot()
   })

@@ -3,9 +3,16 @@ import correios from 'encomendas-correios/lib/index'
 import isEmpty from 'lodash/isEmpty'
 
 import * as types from '../actions/packets/types'
-import { addPacketFailure, addPacketSuccess } from '../actions/packets'
+import {
+  addPacketFailure,
+  addPacketSuccess,
+  updatePacket,
+  updatePacketSuccess,
+  updatePacketFailure,
+} from '../actions/packets'
 import { addFeedback } from '../actions/feedback'
 import { getShippingWayFromCode } from '../../utils/correios'
+import { packetsListSelector } from '../selectors/packets'
 
 const addPacketLogic = createLogic({
   type: types.ADD_PACKET_PENDING,
@@ -55,4 +62,44 @@ const addPacketSuccessLogic = createLogic({
   },
 })
 
-export default [addPacketLogic, addPacketSuccessLogic]
+const updatePacketsLogic = createLogic({
+  type: types.UPDATE_PACKETS,
+  process: ({ getState }, dispatch, done) => {
+    const packets = packetsListSelector(getState())
+    packets.forEach(packet => dispatch(updatePacket(packet)))
+    done()
+  },
+})
+
+const updatePacketLogic = createLogic({
+  type: types.UPDATE_PACKET_PENDING,
+  process: async ({ action }, dispatch, done) => {
+    const { packet } = action.payload
+
+    try {
+      const statuses = await correios.track(packet.code)
+
+      if (isEmpty(statuses)) {
+        throw new Error('A encomenda não pôde ser rastreada')
+      }
+
+      const newPacket = {
+        ...packet,
+        mode: getShippingWayFromCode(packet.code),
+        statuses,
+      }
+
+      dispatch(updatePacketSuccess(newPacket))
+    } catch (error) {
+      dispatch(updatePacketFailure(error.message, packet.code))
+    }
+    done()
+  },
+})
+
+export default [
+  addPacketLogic,
+  addPacketSuccessLogic,
+  updatePacketLogic,
+  updatePacketsLogic,
+]

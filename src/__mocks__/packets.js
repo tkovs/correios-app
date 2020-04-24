@@ -154,11 +154,39 @@ export const statuses = [
   },
 ]
 
+export const postedStatuses = [
+  {
+    status: 'Objeto postado após o horário limite da unidade',
+    datetime: {
+      date: {
+        day: 29,
+        month: 1,
+        year: 2020,
+      },
+      time: {
+        hour: 16,
+        minute: 46,
+      },
+    },
+    locale: {
+      place: 'AC ASSIS CHATEAUBRIAND',
+      city: 'Assis Chateaubriand',
+      state: 'PR',
+    },
+  },
+]
+
 export default [
   {
     title: 'iPhone 7',
     code: 'PW086958109BR',
     mode: 'SEDEX',
     statuses,
+  },
+  {
+    title: 'iPad',
+    code: 'PW086958114BR',
+    mode: 'SEDEX',
+    statuses: postedStatuses,
   },
 ]

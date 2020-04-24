@@ -1,14 +1,19 @@
 import React from 'react'
 import { View, StyleSheet, TouchableHighlight } from 'react-native'
-import { Badge, Text } from 'react-native-paper'
+import { ActivityIndicator, Badge, Text } from 'react-native-paper'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import first from 'lodash/first'
 import last from 'lodash/last'
+import find from 'lodash/find'
+import isNil from 'lodash/isNil'
 
 import { colors } from '../../styles/theme'
 
-const PacketItem = ({ onClick, packet }) => {
+const PacketItem = ({ onClick, packet, statusList }) => {
+  const { code } = packet
+  const activityIndicatorSize = 12
+  const status = find(statusList, { code }) || {}
   const firstUpdate = moment(last(packet.statuses).datetime)
   const lastUpdate = moment(first(packet.statuses).datetime)
   const formattedLastUpdate = moment(lastUpdate).format('D MMM')
@@ -21,7 +26,14 @@ const PacketItem = ({ onClick, packet }) => {
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
       <View style={styles.container}>
         <View style={styles.left}>
-          <Text style={styles.title}>{packet.title}</Text>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{packet.title}</Text>
+            <ActivityIndicator
+              animating={!isNil(status.pending)}
+              size={activityIndicatorSize}
+              color={colors.blue}
+            />
+          </View>
           <Text
             style={
               packet.status === 'delivered'
@@ -31,7 +43,7 @@ const PacketItem = ({ onClick, packet }) => {
           >
             {packet.status}
           </Text>
-          <Text style={styles.code}>{packet.code}</Text>
+          <Text style={styles.code}>{code}</Text>
         </View>
         <View style={styles.right}>
           <Badge>{packet.mode}</Badge>
@@ -55,6 +67,10 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.licorice,
+    marginRight: 8,
+  },
+  titleContainer: {
+    flexDirection: 'row',
   },
   statusDelivered: {
     color: colors.green,
@@ -71,6 +87,7 @@ const styles = StyleSheet.create({
 
 PacketItem.defaultProps = {
   onClick: null,
+  statusList: [],
 }
 
 PacketItem.propTypes = {
@@ -82,6 +99,7 @@ PacketItem.propTypes = {
     statuses: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   onClick: PropTypes.func,
+  statusList: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default PacketItem
