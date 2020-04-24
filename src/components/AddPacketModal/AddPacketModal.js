@@ -1,9 +1,9 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import isNil from 'lodash/isNil'
 import { TextInput, HelperText } from 'react-native-paper'
 import { View, StyleSheet, Keyboard } from 'react-native'
+import find from 'lodash/find'
 
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
@@ -17,7 +17,7 @@ function AddPacketModal({
 }) {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
-  const status = statusList.find(_status => _status.code === code) || {}
+  const status = find(statusList, { code }) || {}
 
   useEffect(() => {
     if (!status.pending && !status.error) {
