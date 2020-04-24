@@ -23,6 +23,32 @@ export const addPacketFailure = (error, code) => ({
   },
 })
 
+export const updatePackets = () => ({
+  type: types.UPDATE_PACKETS,
+})
+
+export const updatePacket = packet => ({
+  type: types.UPDATE_PACKET_PENDING,
+  payload: {
+    packet,
+  },
+})
+
+export const updatePacketSuccess = packet => ({
+  type: types.UPDATE_PACKET_SUCCESS,
+  payload: {
+    packet,
+  },
+})
+
+export const updatePacketFailure = (error, code) => ({
+  type: types.UPDATE_PACKET_FAILURE,
+  payload: {
+    error,
+    code,
+  },
+})
+
 export const removePacket = code => ({
   type: types.REMOVE_PACKET,
   payload: {
