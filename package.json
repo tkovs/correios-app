@@ -50,7 +50,8 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "redux-logic-test": "^2.0.0"
   },
   "jest": {
     "preset": "@testing-library/react-native",

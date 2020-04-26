@@ -1,51 +1,41 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { render, act } from '@testing-library/react-native'
+import { createMockStore } from 'redux-logic-test'
+import rootReducer from '../../../store/reducers'
 
-import Toast from '../Toast'
-
-const mockDuration = 2000
-const mockMessage = 'message'
+import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
+import Toast from '..'
+import { getComponentWithRedux } from '../../../utils/jest'
 
 jest.useFakeTimers()
 
 describe('Toast component', () => {
-  it('should not be visible and should not call onDismiss', () => {
-    const mockVisible = false
-    const mockOnDismiss = jest.fn()
+  const mockMessage = 'mockMessage'
+  const toastDuration = 3000
 
-    const { baseElement } = render(
-      <Toast
-        duration={mockDuration}
-        message={mockMessage}
-        onDismiss={mockOnDismiss}
-        visible={mockVisible}
-      />
-    )
+  it('should react correctly to feedback changes', () => {
+    const store = createMockStore({ reducer: rootReducer })
+    const { baseElement } = render(getComponentWithRedux(store, <Toast />))
 
+    // Should not be visible initially
     expect(baseElement).toMatchSnapshot()
 
-    expect(mockOnDismiss).not.toHaveBeenCalled()
-    jest.advanceTimersByTime(2000)
-    expect(mockOnDismiss).not.toHaveBeenCalled()
-  })
-
-  it('should be visible and acll onDismiss after duration', () => {
-    const mockVisible = true
-    const mockOnDismiss = jest.fn()
-
-    const { baseElement } = render(
-      <Toast
-        duration={mockDuration}
-        message={mockMessage}
-        onDismiss={mockOnDismiss}
-        visible={mockVisible}
-      />
-    )
-
+    // Should be visible with a feedback added
+    act(() => {
+      store.dispatch(addFeedback(mockMessage))
+    })
+    expect(store.actions.length).toEqual(1)
     expect(baseElement).toMatchSnapshot()
 
-    expect(mockOnDismiss).not.toHaveBeenCalled()
-    jest.advanceTimersByTime(2000)
-    expect(mockOnDismiss).toHaveBeenCalledTimes(1)
+    // Should not be visible after the feedback was cleaned
+    act(() => {
+      jest.advanceTimersByTime(toastDuration)
+    })
+    expect(store.actions.length).toEqual(2)
+    expect(baseElement).toMatchSnapshot()
+
+    // Check the store actions
+    expect(store.actions[0]).toEqual(addFeedback(mockMessage))
+    expect(store.actions[1]).toEqual(clearFeedback())
   })
 })

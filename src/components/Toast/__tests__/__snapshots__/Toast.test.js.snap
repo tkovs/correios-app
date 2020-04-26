@@ -1,6 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toast component should be visible and acll onDismiss after duration 1`] = `
+exports[`Toast component should react correctly to feedback changes 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Toast component should react correctly to feedback changes 2`] = `
 <View
   pointerEvents="box-none"
   style={
@@ -80,7 +101,7 @@ exports[`Toast component should be visible and acll onDismiss after duration 1`]
             ]
           }
         >
-          message
+          mockMessage
         </Text>
         <View
           style={
@@ -178,7 +199,7 @@ exports[`Toast component should be visible and acll onDismiss after duration 1`]
 </View>
 `;
 
-exports[`Toast component should not be visible and should not call onDismiss 1`] = `
+exports[`Toast component should react correctly to feedback changes 3`] = `
 <View
   pointerEvents="box-none"
   style={
