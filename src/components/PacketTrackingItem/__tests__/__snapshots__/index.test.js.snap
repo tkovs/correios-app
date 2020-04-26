@@ -1,0 +1,410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "padding": 16,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginRight": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          12:01
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          5 Jan
+        </Text>
+      </View>
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                  "textAlign": "left",
+                  "writingDirection": "ltr",
+                },
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          Objeto entregue ao destinatário
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          De: 
+          CTCE CURITIBA - Curitiba / PR
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PacketTrackingItem should render correctly a posted status 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "padding": 16,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginRight": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          12:01
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          5 Jan
+        </Text>
+      </View>
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                  "textAlign": "left",
+                  "writingDirection": "ltr",
+                },
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          Objeto postado após o horário limite da unidade
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          De: 
+          CTCE CURITIBA - Curitiba / PR
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`PacketTrackingItem should render correctly an on course object 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "padding": 16,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginRight": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          12:01
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          5 Jan
+        </Text>
+      </View>
+      <View>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              Array [
+                Object {
+                  "color": "rgba(0, 0, 0, 0.87)",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                  "textAlign": "left",
+                  "writingDirection": "ltr",
+                },
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+                Array [
+                  Object {
+                    "fontSize": 20,
+                    "letterSpacing": 0.15,
+                    "lineHeight": 30,
+                    "marginVertical": 2,
+                  },
+                  undefined,
+                ],
+              ],
+            ]
+          }
+        >
+          Objeto encaminhado
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          De: 
+          AC ASSIS CHATEAUBRIAND - Assis Chateaubriand / PR
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
+                "textAlign": "left",
+              },
+              undefined,
+            ]
+          }
+        >
+          Para: 
+          CTCE CURITIBA - Curitiba / PR
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
