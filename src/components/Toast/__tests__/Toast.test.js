@@ -1,41 +1,56 @@
 import React from 'react'
-import { render, act } from '@testing-library/react-native'
+import { act, render } from '@testing-library/react-native'
 import { createMockStore } from 'redux-logic-test'
-import rootReducer from '../../../store/reducers'
 
 import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
+import rootReducer from '../../../store/reducers'
+import rootLogic from '../../../store/logic'
 import Toast from '..'
 import { getComponentWithRedux } from '../../../utils/jest'
 
-jest.useFakeTimers()
+let store = null
 
 describe('Toast component', () => {
   const mockMessage = 'mockMessage'
   const toastDuration = 3000
 
-  it('should react correctly to feedback changes', () => {
-    const store = createMockStore({ reducer: rootReducer })
+  jest.useFakeTimers()
+
+  beforeEach(() => {
+    store = createMockStore({ logic: rootLogic, reducer: rootReducer })
+    store.resetActions()
+  })
+
+  it('should react correctly to feedback changes', async () => {
     const { baseElement } = render(getComponentWithRedux(store, <Toast />))
 
-    // Should not be visible initially
+    // Toast should not be visible initially
     expect(baseElement).toMatchSnapshot()
+    expect(store.actions.length).toEqual(0)
 
-    // Should be visible with a feedback added
+    // Toast should be visible with a feedback added
     act(() => {
       store.dispatch(addFeedback(mockMessage))
     })
-    expect(store.actions.length).toEqual(1)
-    expect(baseElement).toMatchSnapshot()
+    await store.whenComplete(() => {
+      expect(store.actions.length).toEqual(1)
+      expect(store.actions[0]).toEqual(addFeedback(mockMessage))
+      expect(store.getState().feedback.message).toEqual(mockMessage)
+      expect(store.getState().feedback.visible).toEqual(true)
+      expect(baseElement).toMatchSnapshot()
 
-    // Should not be visible after the feedback was cleaned
-    act(() => {
-      jest.advanceTimersByTime(toastDuration)
+      // Toast should not be visible after the feedback was cleaned
+      // clearFeedback should be dispatched after the Toast visible duration
+      act(() => {
+        jest.advanceTimersByTime(toastDuration)
+      })
+      store.whenComplete(() => {
+        expect(store.actions.length).toEqual(2)
+        expect(store.actions[1]).toEqual(clearFeedback())
+        expect(store.getState().feedback.message).toEqual('')
+        expect(store.getState().feedback.visible).toEqual(false)
+        expect(baseElement).toMatchSnapshot()
+      })
     })
-    expect(store.actions.length).toEqual(2)
-    expect(baseElement).toMatchSnapshot()
-
-    // Check the store actions
-    expect(store.actions[0]).toEqual(addFeedback(mockMessage))
-    expect(store.actions[1]).toEqual(clearFeedback())
   })
 })
