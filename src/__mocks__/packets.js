@@ -110,7 +110,7 @@ export const statuses = [
     },
   },
   {
-    status: 'Objeto encaminhado ',
+    status: 'Objeto encaminhado',
     datetime: {
       date: {
         day: 30,
