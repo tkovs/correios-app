@@ -75,8 +75,8 @@ describe('Toast component', () => {
       expect(store.getState().feedback.visible).toEqual(true)
       expect(baseElement).toMatchSnapshot()
 
-      // Toast should not be visible after the feedback was cleaned
-      // clearFeedback should be dispatched after the Toast visible duration
+      // Toast should not be visible after the Ok! button was clicked
+      // clearFeedback should be dispatched after the Ok! button was clicked
       act(() => {
         const button = getByText('Ok!')
         fireEvent.press(button)
