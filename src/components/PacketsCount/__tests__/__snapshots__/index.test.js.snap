@@ -176,24 +176,3 @@ exports[`PacketsCount with quantity 1 renders correctly 1`] = `
   </View>
 </View>
 `;
-
-exports[`PacketsCount without quantity renders correctly 1`] = `
-<View
-  pointerEvents="box-none"
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
-  <View
-    collapsable={true}
-    pointerEvents="box-none"
-    style={
-      Object {
-        "flex": 1,
-      }
-    }
-  />
-</View>
-`;

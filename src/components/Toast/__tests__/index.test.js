@@ -2,11 +2,11 @@ import React from 'react'
 import { act, render, fireEvent } from '@testing-library/react-native'
 import { createMockStore } from 'redux-logic-test'
 
-import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
+import Toast from '..'
 import rootReducer from '../../../store/reducers'
 import rootLogic from '../../../store/logic'
-import Toast from '..'
 import { getComponentWithRedux } from '../../../utils/jest'
+import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
 
 let store = null
 
