@@ -10,6 +10,11 @@ import isNil from 'lodash/isNil'
 
 import { colors } from '../../styles/theme'
 
+const getPassedDays = (packetStatus, firstUpdate, lastUpdate) =>
+  packetStatus === 'delivered'
+    ? lastUpdate.diff(firstUpdate, 'days')
+    : moment().diff(firstUpdate, 'days')
+
 const PacketItem = ({ onClick, packet, statusList }) => {
   const { code } = packet
   const activityIndicatorSize = 12
@@ -17,10 +22,7 @@ const PacketItem = ({ onClick, packet, statusList }) => {
   const firstUpdate = moment(last(packet.statuses).datetime)
   const lastUpdate = moment(first(packet.statuses).datetime)
   const formattedLastUpdate = moment(lastUpdate).format('D MMM')
-  const passedDays =
-    packet.status === 'delivered'
-      ? lastUpdate.diff(firstUpdate, 'days')
-      : moment().diff(firstUpdate, 'days')
+  const passedDays = getPassedDays(packet.status, firstUpdate, lastUpdate)
 
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>

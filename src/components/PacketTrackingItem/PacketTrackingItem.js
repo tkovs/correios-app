@@ -4,6 +4,7 @@ import moment from 'moment'
 import { View, StyleSheet } from 'react-native'
 import { Caption, Text, Title } from 'react-native-paper'
 import isEmpty from 'lodash/isEmpty'
+
 import { formatLocation } from '../../utils/location'
 
 function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
