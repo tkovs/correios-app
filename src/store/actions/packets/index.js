@@ -59,3 +59,11 @@ export const removePacket = code => ({
 export const clearError = () => ({
   type: types.CLEAR_ERROR,
 })
+
+export const updateLastView = (date, code) => ({
+  type: types.UPDATE_LAST_VIEW,
+  payload: {
+    date,
+    code,
+  },
+})

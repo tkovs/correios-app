@@ -66,6 +66,16 @@ const packets = (state = initialState, action) => {
         ...state,
         error: null,
       }
+    case types.UPDATE_LAST_VIEW: {
+      const { code, date } = action.payload
+      return {
+        ...state,
+        list: [
+          ...reject(state.list, { code }),
+          { ...find(state.list, { code }), lastView: date },
+        ],
+      }
+    }
     default:
       return state
   }

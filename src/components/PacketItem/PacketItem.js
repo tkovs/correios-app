@@ -10,26 +10,36 @@ import isNil from 'lodash/isNil'
 
 import { colors } from '../../styles/theme'
 
-const getPassedDays = (packetStatus, firstUpdate, lastUpdate) =>
+const getPassedDays = (packetStatus, firstShippingUpdate, lastShippingUpdate) =>
   packetStatus === 'delivered'
-    ? lastUpdate.diff(firstUpdate, 'days')
-    : moment().diff(firstUpdate, 'days')
+    ? lastShippingUpdate.diff(firstShippingUpdate, 'days')
+    : moment().diff(firstShippingUpdate, 'days')
 
 const PacketItem = ({ onClick, packet, statusList }) => {
   const { code } = packet
   const activityIndicatorSize = 12
   const status = find(statusList, { code }) || {}
-  const firstUpdate = moment(last(packet.statuses).datetime)
-  const lastUpdate = moment(first(packet.statuses).datetime)
-  const formattedLastUpdate = moment(lastUpdate).format('D MMM')
-  const passedDays = getPassedDays(packet.status, firstUpdate, lastUpdate)
+  const firstShippingUpdate = moment(last(packet.statuses).datetime)
+  const lastShippingUpdate = moment(first(packet.statuses).datetime)
+  const formattedLastUpdate = moment(lastShippingUpdate).format('D MMM')
+  const passedDays = getPassedDays(
+    packet.status,
+    firstShippingUpdate,
+    lastShippingUpdate
+  )
+  const lastView = moment(packet.lastView)
+  const lastUpdate = moment(packet.lastUpdate)
+
+  const isViewed = lastView.isAfter(lastUpdate)
 
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
       <View style={styles.container}>
         <View style={styles.left}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>{packet.title}</Text>
+            <Text style={styles.title}>
+              {packet.title} {!isViewed && '(não visualizado)'}
+            </Text>
             <ActivityIndicator
               animating={!isNil(status.pending)}
               size={activityIndicatorSize}
@@ -98,6 +108,8 @@ PacketItem.propTypes = {
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
+    lastUpdate: PropTypes.objectOf(Date).isRequired,
+    lastView: PropTypes.objectOf(Date).isRequired,
     statuses: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   onClick: PropTypes.func,

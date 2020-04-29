@@ -59,6 +59,7 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               }
             >
               Apple Pencil
+               
             </Text>
             <View
               style={
@@ -76,6 +77,697 @@ exports[`PacketItem with full packet renders correctly 1`] = `
                   Object {
                     "height": 12,
                     "opacity": 0,
+                    "width": 12,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "bottom": 0,
+                      "justifyContent": "center",
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "height": 12,
+                        "transform": Array [
+                          Object {
+                            "rotate": "45deg",
+                          },
+                        ],
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "height": 6,
+                          "overflow": "hidden",
+                          "width": 12,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "height": 12,
+                            "transform": Array [
+                              Object {
+                                "translateY": 0,
+                              },
+                              Object {
+                                "rotate": "-165deg",
+                              },
+                            ],
+                            "width": 12,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            Object {
+                              "height": 6,
+                              "overflow": "hidden",
+                              "width": 12,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "borderColor": "#01417F",
+                                "borderRadius": 6,
+                                "borderWidth": 1.2,
+                                "height": 12,
+                                "width": 12,
+                              }
+                            }
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "bottom": 0,
+                      "justifyContent": "center",
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "height": 12,
+                        "transform": Array [
+                          Object {
+                            "rotate": "45deg",
+                          },
+                        ],
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "height": 6,
+                          "overflow": "hidden",
+                          "top": 6,
+                          "width": 12,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "height": 12,
+                            "transform": Array [
+                              Object {
+                                "translateY": -6,
+                              },
+                              Object {
+                                "rotate": "345deg",
+                              },
+                            ],
+                            "width": 12,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            Object {
+                              "height": 6,
+                              "overflow": "hidden",
+                              "width": 12,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "borderColor": "#01417F",
+                                "borderRadius": 6,
+                                "borderWidth": 1.2,
+                                "height": 12,
+                                "width": 12,
+                              }
+                            }
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#3E8989",
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#939393",
+                },
+              ]
+            }
+          >
+            PW086958115BR
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+            }
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "backgroundColor": "#f50057",
+                "borderRadius": 10,
+                "color": "#ffffff",
+                "fontFamily": "System",
+                "fontSize": 10,
+                "fontWeight": "400",
+                "height": 20,
+                "lineHeight": 20,
+                "minWidth": 20,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingHorizontal": 4,
+                "textAlign": "center",
+                "textAlignVertical": "center",
+              }
+            }
+          >
+            SEDEX
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            5 Jan
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            4 days
+          </Text>
+        </View>
+      </View>
+    </TouchableHighlight>
+  </View>
+</View>
+`;
+
+exports[`PacketItem with not viewed packet renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <TouchableHighlight
+      activeOpacity={0.85}
+      delayPressOut={100}
+      onPress={null}
+      underlayColor="#E5E5E5"
+    >
+      <View
+        style={
+          Object {
+            "color": "#f9f9f9",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginVertical": 8,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "color": "#141414",
+                    "marginRight": 8,
+                  },
+                ]
+              }
+            >
+              Apple Pencil
+               
+              (não visualizado)
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "height": 12,
+                    "opacity": 0,
+                    "width": 12,
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "bottom": 0,
+                      "justifyContent": "center",
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "height": 12,
+                        "transform": Array [
+                          Object {
+                            "rotate": "45deg",
+                          },
+                        ],
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "height": 6,
+                          "overflow": "hidden",
+                          "width": 12,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "height": 12,
+                            "transform": Array [
+                              Object {
+                                "translateY": 0,
+                              },
+                              Object {
+                                "rotate": "-165deg",
+                              },
+                            ],
+                            "width": 12,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            Object {
+                              "height": 6,
+                              "overflow": "hidden",
+                              "width": 12,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "borderColor": "#01417F",
+                                "borderRadius": 6,
+                                "borderWidth": 1.2,
+                                "height": 12,
+                                "width": 12,
+                              }
+                            }
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "bottom": 0,
+                      "justifyContent": "center",
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "height": 12,
+                        "transform": Array [
+                          Object {
+                            "rotate": "45deg",
+                          },
+                        ],
+                        "width": 12,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        Object {
+                          "height": 6,
+                          "overflow": "hidden",
+                          "top": 6,
+                          "width": 12,
+                        }
+                      }
+                    >
+                      <View
+                        style={
+                          Object {
+                            "height": 12,
+                            "transform": Array [
+                              Object {
+                                "translateY": -6,
+                              },
+                              Object {
+                                "rotate": "345deg",
+                              },
+                            ],
+                            "width": 12,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            Object {
+                              "height": 6,
+                              "overflow": "hidden",
+                              "width": 12,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "borderColor": "#01417F",
+                                "borderRadius": 6,
+                                "borderWidth": 1.2,
+                                "height": 12,
+                                "width": 12,
+                              }
+                            }
+                          />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#3E8989",
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+          >
+            delivered
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                Object {
+                  "color": "#939393",
+                },
+              ]
+            }
+          >
+            PW086958115BR
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "flex-end",
+            }
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "backgroundColor": "#f50057",
+                "borderRadius": 10,
+                "color": "#ffffff",
+                "fontFamily": "System",
+                "fontSize": 10,
+                "fontWeight": "400",
+                "height": 20,
+                "lineHeight": 20,
+                "minWidth": 20,
+                "opacity": 1,
+                "overflow": "hidden",
+                "paddingHorizontal": 4,
+                "textAlign": "center",
+                "textAlignVertical": "center",
+              }
+            }
+          >
+            SEDEX
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            5 Jan
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            4 days
+          </Text>
+        </View>
+      </View>
+    </TouchableHighlight>
+  </View>
+</View>
+`;
+
+exports[`PacketItem with updating packet renders correctly 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <TouchableHighlight
+      activeOpacity={0.85}
+      delayPressOut={100}
+      onPress={null}
+      underlayColor="#E5E5E5"
+    >
+      <View
+        style={
+          Object {
+            "color": "#f9f9f9",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginVertical": 8,
+          }
+        }
+      >
+        <View>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "System",
+                    "fontWeight": "400",
+                    "textAlign": "left",
+                  },
+                  Object {
+                    "color": "#141414",
+                    "marginRight": 8,
+                  },
+                ]
+              }
+            >
+              Apple Pencil
+               
+            </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "height": 12,
+                    "opacity": 1,
                     "width": 12,
                   }
                 }

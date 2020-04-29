@@ -30,6 +30,8 @@ PacketItemContainer.propTypes = {
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
+    lastUpdate: PropTypes.objectOf(Date).isRequired,
+    lastView: PropTypes.objectOf(Date).isRequired,
     statuses: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   statusList: PropTypes.arrayOf(PropTypes.object),

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
 import moment from 'moment'
@@ -16,10 +16,14 @@ const getPassedDays = (packetStatus, firstUpdate, lastUpdate) =>
     ? lastUpdate.diff(firstUpdate, 'days')
     : moment().diff(firstUpdate, 'days')
 
-const PacketInfo = ({ packet }) => {
+const PacketInfo = ({ packet, updateLastView }) => {
   const firstUpdate = moment(last(packet.statuses).datetime)
   const lastUpdate = moment(first(packet.statuses).datetime)
   const passedDays = getPassedDays(packet.status, firstUpdate, lastUpdate)
+
+  useEffect(() => {
+    updateLastView(new Date(), packet.code)
+  }, [])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -51,8 +55,11 @@ PacketInfo.propTypes = {
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
+    lastUpdate: PropTypes.objectOf(Date).isRequired,
+    lastView: PropTypes.objectOf(Date).isRequired,
     statuses: PropTypes.array.isRequired,
   }).isRequired,
+  updateLastView: PropTypes.func.isRequired,
 }
 
 export default PacketInfo

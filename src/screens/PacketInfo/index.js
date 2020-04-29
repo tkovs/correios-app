@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import PacketInfo from './PacketInfo'
 import { packetsListWithDeletedSelector } from '../../store/selectors/packets'
+import { updateLastView } from '../../store/actions/packets'
 
 function PacketInfoContainer(props) {
   const { route, packets, ...rest } = props
@@ -21,10 +22,18 @@ PacketInfoContainer.propTypes = {
     }),
   }).isRequired,
   packets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  updateLastView: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   packets: packetsListWithDeletedSelector(state),
 })
 
-export default connect(mapStateToProps)(PacketInfoContainer)
+const mapDispatchToProps = dispatch => ({
+  updateLastView: (date, code) => dispatch(updateLastView(date, code)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PacketInfoContainer)
