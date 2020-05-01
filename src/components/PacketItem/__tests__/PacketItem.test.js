@@ -1,10 +1,20 @@
-import 'react-native'
 import React from 'react'
-import { render } from '@testing-library/react-native'
+import { act, render } from '@testing-library/react-native'
+import { createMockStore } from 'redux-logic-test'
 
-import PacketItem from '../PacketItem'
+import PacketItem from '..'
+import rootReducer from '../../../store/reducers'
+import rootLogic from '../../../store/logic'
+import { getComponentWithRedux } from '../../../utils/jest'
+import { updatePacket } from '../../../store/actions/packets'
 
-// TODO: Migrate test to redux
+const mockNavigate = jest.fn()
+
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: () => ({
+    navigate: mockNavigate,
+  }),
+}))
 
 const mockStatuses = [
   {
@@ -27,7 +37,18 @@ const mockStatuses = [
   },
 ]
 
+let store = null
+
 describe('PacketItem', () => {
+  beforeEach(() => {
+    store = createMockStore({ logic: rootLogic, reducer: rootReducer })
+    store.resetActions()
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
   describe('with full packet', () => {
     it('renders correctly', () => {
       const mockPacket = {
@@ -39,7 +60,9 @@ describe('PacketItem', () => {
         lastView: new Date(2020, 1, 7),
         lastUpdate: new Date(2020, 1, 6),
       }
-      const { baseElement } = render(<PacketItem packet={mockPacket} />)
+      const { baseElement } = render(
+        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+      )
       expect(baseElement).toMatchSnapshot()
     })
   })
@@ -55,13 +78,15 @@ describe('PacketItem', () => {
         lastView: new Date(2020, 1, 5),
         lastUpdate: new Date(2020, 1, 6),
       }
-      const { baseElement } = render(<PacketItem packet={mockPacket} />)
+      const { baseElement } = render(
+        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+      )
       expect(baseElement).toMatchSnapshot()
     })
   })
 
   describe('with updating packet', () => {
-    it('renders correctly', () => {
+    it('renders correctly', async () => {
       const mockPacket = {
         title: 'Apple Pencil',
         status: 'delivered',
@@ -71,15 +96,11 @@ describe('PacketItem', () => {
         lastView: new Date(2020, 1, 7),
         lastUpdate: new Date(2020, 1, 6),
       }
-      const mockStatusList = [
-        {
-          code: 'PW086958115BR',
-          pending: true,
-          error: false,
-        },
-      ]
+      act(() => {
+        store.dispatch(updatePacket(mockPacket))
+      })
       const { baseElement } = render(
-        <PacketItem packet={mockPacket} statusList={mockStatusList} />
+        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
       )
       expect(baseElement).toMatchSnapshot()
     })

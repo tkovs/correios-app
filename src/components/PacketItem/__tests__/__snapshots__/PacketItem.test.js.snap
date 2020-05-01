@@ -21,7 +21,6 @@ exports[`PacketItem with full packet renders correctly 1`] = `
     <TouchableHighlight
       activeOpacity={0.85}
       delayPressOut={100}
-      onPress={null}
       underlayColor="#E5E5E5"
     >
       <View
@@ -366,7 +365,6 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
     <TouchableHighlight
       activeOpacity={0.85}
       delayPressOut={100}
-      onPress={null}
       underlayColor="#E5E5E5"
     >
       <View
@@ -712,7 +710,6 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
     <TouchableHighlight
       activeOpacity={0.85}
       delayPressOut={100}
-      onPress={null}
       underlayColor="#E5E5E5"
     >
       <View
