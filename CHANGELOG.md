@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Icons to InfoBar
+- Icons to `InfoBar`
+- Location Icon to `PacketTrackingItem`
 
 ## [0.6.0] - 2020-04-29
 ### Added
@@ -15,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.5.1] - 2020-04-27
 ### Added
-- InfoBar component at packet info page
+- `InfoBar` component at packet info page
  - Show shipping passed days
  - Show shipping mode
  - Show code
@@ -108,16 +109,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.2.2] - 2020-03-19
 ### Added
-- Styles to Packet Info page
+- Styles to `PacketInfo` page
 - Date formatting
 
 ## [0.2.1] - 2020-03-13
 ### Added
 - PacketInfo screen
-- Menu in Header
+- Menu in `Header`
 - Edit and delete packet option
 ### Fixed
-- Replace margin by padding spacing on left of PacketList
+- Replace margin by padding spacing on left of `PacketList`
 
 ## [0.2.0] - 2020-02-29
 ### Added
