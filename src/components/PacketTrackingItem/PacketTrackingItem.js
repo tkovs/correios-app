@@ -4,8 +4,9 @@ import moment from 'moment'
 import { View, StyleSheet } from 'react-native'
 import { Caption, Text, Title } from 'react-native-paper'
 import isEmpty from 'lodash/isEmpty'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import { formatLocation } from '../../utils/location'
+import { formatLocation, formatInitialLocation } from '../../utils/location'
 
 function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
   const time = moment(datetime).format('h:mm')
@@ -22,6 +23,10 @@ function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
         {!isEmpty(from) ? <Text>De: {formatLocation(from)}</Text> : null}
         {!isEmpty(to) ? <Text>Para: {formatLocation(to)}</Text> : null}
         {!isEmpty(locale) ? <Text>De: {formatLocation(locale)}</Text> : null}
+        <View style={styles.locationInfo}>
+          <Icon name="location-on" size={20} color="#000" />
+          <Text>{formatInitialLocation({ from, to, locale })}</Text>
+        </View>
         {note ? <Caption>Obs.: {note}</Caption> : null}
       </View>
     </View>
@@ -30,14 +35,17 @@ function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    paddingVertical: 16,
+    paddingRight: 16,
     flexDirection: 'row',
   },
   left: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingRight: 8,
-    marginRight: 8,
+    minWidth: 64,
+  },
+  locationInfo: {
+    flexDirection: 'row',
   },
 })
 
