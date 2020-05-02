@@ -22,7 +22,8 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
       style={
         Object {
           "flexDirection": "row",
-          "padding": 16,
+          "paddingRight": 16,
+          "paddingVertical": 16,
         }
       }
     >
@@ -31,8 +32,7 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
           Object {
             "alignItems": "center",
             "justifyContent": "center",
-            "marginRight": 8,
-            "paddingRight": 8,
+            "minWidth": 64,
           }
         }
       >
@@ -125,6 +125,49 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
           De: 
           CTCE CURITIBA - Curitiba / PR
         </Text>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            Curitiba / PR
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -153,7 +196,8 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
       style={
         Object {
           "flexDirection": "row",
-          "padding": 16,
+          "paddingRight": 16,
+          "paddingVertical": 16,
         }
       }
     >
@@ -162,8 +206,7 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
           Object {
             "alignItems": "center",
             "justifyContent": "center",
-            "marginRight": 8,
-            "paddingRight": 8,
+            "minWidth": 64,
           }
         }
       >
@@ -256,6 +299,49 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
           De: 
           CTCE CURITIBA - Curitiba / PR
         </Text>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            Curitiba / PR
+          </Text>
+        </View>
       </View>
     </View>
   </View>
@@ -284,7 +370,8 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
       style={
         Object {
           "flexDirection": "row",
-          "padding": 16,
+          "paddingRight": 16,
+          "paddingVertical": 16,
         }
       }
     >
@@ -293,8 +380,7 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
           Object {
             "alignItems": "center",
             "justifyContent": "center",
-            "marginRight": 8,
-            "paddingRight": 8,
+            "minWidth": 64,
           }
         }
       >
@@ -403,6 +489,49 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
           Para: 
           CTCE CURITIBA - Curitiba / PR
         </Text>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 20,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Material Icons",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                },
+                undefined,
+              ]
+            }
+          >
+            Assis Chateaubriand / PR
+          </Text>
+        </View>
       </View>
     </View>
   </View>
