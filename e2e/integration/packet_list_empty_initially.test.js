@@ -11,16 +11,20 @@ describe('PacketList', () => {
   })
 
   it('should have empty packet list initially', async () => {
+    const allPacketTabViewIndex = 0
+    const pendingPacketTabViewIndex = 0
+    const deliveredPacketTabViewIndex = 0
+
     await expect(element(by.text('Correios'))).toBeVisible()
     await expect(element(by.text('Rastreio de pacotes'))).toBeVisible()
 
     await getAllPacketsTabViewButton().tap()
-    await assertThereIsNoPackets(0)
+    await assertThereIsNoPackets(allPacketTabViewIndex)
 
     await getPendingPacketsTabViewButton().tap()
-    await assertThereIsNoPackets(1)
+    await assertThereIsNoPackets(pendingPacketTabViewIndex)
 
     await getDeliveredPacketsTabViewButton().tap()
-    await assertThereIsNoPackets(2)
+    await assertThereIsNoPackets(deliveredPacketTabViewIndex)
   })
 })
