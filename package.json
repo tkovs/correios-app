@@ -8,6 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ./src",
+    "detox-build-debug": "yarn detox build --configuration android.emu.debug",
+    "detox-test-debug": "yarn detox test -c android.emu.debug",
     "detox-build-release": "yarn detox build --configuration android.emu.release",
     "detox-test-release": "yarn detox test -c android.emu.release"
   },
@@ -75,7 +77,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && yarn test",
-      "pre-push": "yarn lint && yarn test && yarn detox-build-release && yarn detox-test-release"
+      "pre-push": "yarn lint && yarn test && yarn detox-build-debug && yarn detox-test-debug"
     }
   },
   "detox" : {
