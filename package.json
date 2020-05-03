@@ -72,8 +72,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn test",
-      "pre-push": "yarn lint && yarn test"
+      "pre-commit": "yarn lint && yarn test && yarn detox -c android.emu.release",
+      "pre-push": "yarn lint && yarn test && yarn detox -c android.emu.release"
     }
   },
   "detox" : {
