@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "detox-build-release": "yarn detox build --configuration android.emu.release",
+    "detox-test-release": "yarn detox test -c android.emu.release"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
@@ -73,7 +75,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && yarn test",
-      "pre-push": "yarn lint && yarn test && yarn detox test -c android.emu.release"
+      "pre-push": "yarn lint && yarn test && yarn detox-build-release && yarn detox-test-release"
     }
   },
   "detox" : {
