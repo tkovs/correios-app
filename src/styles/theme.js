@@ -16,6 +16,6 @@ export default {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.yellow,
+    primary: colors.sandstorm,
   },
 }
