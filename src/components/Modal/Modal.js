@@ -54,6 +54,7 @@ function Modal({
                 mode="contained"
                 onPress={onSubmit}
                 disabled={disabled}
+                testID="submit-modal-button"
               >
                 Confirmar
               </Button>

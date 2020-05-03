@@ -21,10 +21,14 @@ describe('PacketsCount', () => {
     store.resetActions()
   })
 
+  const mockTestID = 'mockTestID'
+
   describe('with quantity 0', () => {
     it('renders correctly', () => {
       const { baseElement } = render(
-        getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
+        getComponentWithPaper(
+          getComponentWithRedux(store, <PacketsCount tetsID={mockTestID} />)
+        )
       )
       expect(store.getState().packets.list.length).toEqual(0)
       expect(baseElement).toMatchSnapshot()
@@ -37,7 +41,9 @@ describe('PacketsCount', () => {
 
       await store.whenComplete(() => {
         const { baseElement } = render(
-          getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
+          getComponentWithPaper(
+            getComponentWithRedux(store, <PacketsCount tetsID={mockTestID} />)
+          )
         )
         expect(store.getState().packets.list.length).toEqual(1)
         expect(baseElement).toMatchSnapshot()
@@ -52,7 +58,9 @@ describe('PacketsCount', () => {
 
       await store.whenComplete(() => {
         const { baseElement } = render(
-          getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
+          getComponentWithPaper(
+            getComponentWithRedux(store, <PacketsCount tetsID={mockTestID} />)
+          )
         )
         expect(store.getState().packets.list.length).toEqual(2)
         expect(baseElement).toMatchSnapshot()

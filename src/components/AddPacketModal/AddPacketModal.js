@@ -60,6 +60,7 @@ function AddPacketModal({
             }
             setTitle(value)
           }}
+          testID="title-text-input"
         />
       </View>
       <View>
@@ -79,6 +80,7 @@ function AddPacketModal({
             }
             setCode(value)
           }}
+          testID="code-text-input"
         />
         <HelperText type="error" visible={!!status.error}>
           {status.error}

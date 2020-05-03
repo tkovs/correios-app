@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native'
 import { Caption } from 'react-native-paper'
 import { colors } from '../../styles/theme'
 
-function PacketsCount({ quantity }) {
+function PacketsCount({ quantity, testID }) {
   if (quantity === 0) {
     return null
   }
@@ -13,17 +13,21 @@ function PacketsCount({ quantity }) {
 
   return (
     <View style={styles.container}>
-      <Caption style={styles.text}>{phrase}</Caption>
+      <Caption style={styles.text} testID={testID}>
+        {phrase}
+      </Caption>
     </View>
   )
 }
 
 PacketsCount.defaultProps = {
   quantity: 0,
+  testID: null,
 }
 
 PacketsCount.propTypes = {
   quantity: PropTypes.number,
+  testID: PropTypes.string,
 }
 
 const styles = StyleSheet.create({

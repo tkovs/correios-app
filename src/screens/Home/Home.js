@@ -13,21 +13,21 @@ import { colors } from '../../styles/theme'
 
 const AllPacketsRoute = () => (
   <View style={styles.body}>
-    <PacketsCount />
+    <PacketsCount testID="all-packets-count" />
     <PacketList />
   </View>
 )
 
 const PendingPacketsRoute = () => (
   <View style={styles.body}>
-    <PacketsCount filter="pending" />
+    <PacketsCount filter="pending" testID="pending-packets-count" />
     <PacketList filter="pending" />
   </View>
 )
 
 const DeliveredPacketsRoute = () => (
   <View style={styles.body}>
-    <PacketsCount filter="delivered" />
+    <PacketsCount filter="delivered" testID="delivered-packets-count" />
     <PacketList filter="delivered" />
   </View>
 )
@@ -81,6 +81,7 @@ const Home = () => {
         icon="plus"
         onPress={() => setModalVisible(true)}
         style={styles.floatingButton}
+        testID="add-packet-fab"
       />
 
       <Toast />

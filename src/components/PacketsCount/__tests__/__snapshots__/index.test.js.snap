@@ -79,6 +79,7 @@ exports[`PacketsCount with more quantity than 1 renders correctly 1`] = `
               ],
             ]
           }
+          testID={null}
         >
           2 encomendas
         </Text>
@@ -198,6 +199,7 @@ exports[`PacketsCount with quantity 1 renders correctly 1`] = `
               ],
             ]
           }
+          testID={null}
         >
           1 encomenda
         </Text>

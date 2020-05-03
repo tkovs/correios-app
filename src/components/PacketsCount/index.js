@@ -5,21 +5,23 @@ import { connect } from 'react-redux'
 import PacketsCount from './PacketsCount'
 import { packetsListSelector } from '../../store/selectors/packets'
 
-function PacketsCountContainer({ packets, filter }) {
+function PacketsCountContainer({ packets, filter, testID }) {
   const quantity = filter
     ? packets.filter(packet => packet.status === filter).length
     : packets.length
 
-  return <PacketsCount quantity={quantity} />
+  return <PacketsCount quantity={quantity} testID={testID} />
 }
 
 PacketsCountContainer.defaultProps = {
   filter: null,
+  testID: null,
 }
 
 PacketsCountContainer.propTypes = {
   packets: PropTypes.arrayOf(PropTypes.object).isRequired,
   filter: PropTypes.string,
+  testID: PropTypes.string,
 }
 
 const mapStateToProps = state => ({
