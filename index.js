@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import App from './App'
 import { name as appName } from './app.json'
 import configureStore from './src/store'
+import theme from './src/styles/theme'
 
 global.Buffer = global.Buffer || require('buffer').Buffer
 
@@ -17,7 +18,7 @@ const store = configureStore()
 
 const Main = () => (
   <NavigationContainer>
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <Provider store={store}>
         <App />
       </Provider>

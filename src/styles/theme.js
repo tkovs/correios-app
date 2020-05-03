@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { DefaultTheme } from 'react-native-paper'
 
 export const colors = {
   blue: '#01417F',
@@ -12,20 +12,10 @@ export const colors = {
   red: '#C52233',
 }
 
-export default StyleSheet.create({
-  textColorBlue: {
-    color: colors.blue,
+export default {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: colors.yellow,
   },
-  textColorYellow: {
-    color: colors.yellow,
-  },
-  textColorWhite: {
-    color: colors.white,
-  },
-  textColorSandstorm: {
-    color: colors.sandstorm,
-  },
-  textColorLicorice: {
-    color: colors.licorice,
-  },
-})
+}

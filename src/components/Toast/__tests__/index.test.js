@@ -5,7 +5,10 @@ import { createMockStore } from 'redux-logic-test'
 import Toast from '..'
 import rootReducer from '../../../store/reducers'
 import rootLogic from '../../../store/logic'
-import { getComponentWithRedux } from '../../../utils/jest'
+import {
+  getComponentWithPaper,
+  getComponentWithRedux,
+} from '../../../utils/jest'
 import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
 
 let store = null
@@ -22,7 +25,9 @@ describe('Toast component', () => {
   })
 
   it('should react correctly to feedback changes', async () => {
-    const { baseElement } = render(getComponentWithRedux(store, <Toast />))
+    const { baseElement } = render(
+      getComponentWithPaper(getComponentWithRedux(store, <Toast />))
+    )
 
     // Toast should not be visible initially
     expect(baseElement).toMatchSnapshot()
@@ -57,7 +62,7 @@ describe('Toast component', () => {
   it('should be invisible and clear the feedback by clicking the Ok! button', async () => {
     const animationTime = 100
     const { baseElement, getByText } = render(
-      getComponentWithRedux(store, <Toast />)
+      getComponentWithPaper(getComponentWithRedux(store, <Toast />))
     )
 
     // Toast should not be visible initially

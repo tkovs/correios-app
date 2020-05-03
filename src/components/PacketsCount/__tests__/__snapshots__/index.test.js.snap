@@ -19,60 +19,70 @@ exports[`PacketsCount with more quantity than 1 renders correctly 1`] = `
     }
   >
     <View
+      collapsable={false}
+      pointerEvents="box-none"
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#EEC643",
-          "borderBottomColor": "#F9D900",
-          "borderBottomWidth": 1,
+          "flex": 1,
         }
       }
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontWeight": "400",
-              "textAlign": "left",
-            },
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#EEC643",
+            "borderBottomColor": "#F9D900",
+            "borderBottomWidth": 1,
+          }
+        }
+      >
+        <Text
+          style={
             Array [
               Object {
-                "color": "rgba(0, 0, 0, 0.54)",
+                "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
                 "textAlign": "left",
-                "writingDirection": "ltr",
               },
               Array [
                 Object {
-                  "fontSize": 12,
-                  "letterSpacing": 0.4,
-                  "lineHeight": 20,
-                  "marginVertical": 2,
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                  "writingDirection": "ltr",
                 },
-                Object {
-                  "color": "#01417F",
-                },
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "letterSpacing": 0.4,
+                    "lineHeight": 20,
+                    "marginVertical": 2,
+                  },
+                  Object {
+                    "color": "#01417F",
+                  },
+                ],
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "letterSpacing": 0.4,
+                    "lineHeight": 20,
+                    "marginVertical": 2,
+                  },
+                  Object {
+                    "color": "#01417F",
+                  },
+                ],
               ],
-              Array [
-                Object {
-                  "fontSize": 12,
-                  "letterSpacing": 0.4,
-                  "lineHeight": 20,
-                  "marginVertical": 2,
-                },
-                Object {
-                  "color": "#01417F",
-                },
-              ],
-            ],
-          ]
-        }
-      >
-        2 encomendas
-      </Text>
+            ]
+          }
+        >
+          2 encomendas
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -95,7 +105,17 @@ exports[`PacketsCount with quantity 0 renders correctly 1`] = `
         "flex": 1,
       }
     }
-  />
+  >
+    <View
+      collapsable={false}
+      pointerEvents="box-none"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    />
+  </View>
 </View>
 `;
 
@@ -118,60 +138,70 @@ exports[`PacketsCount with quantity 1 renders correctly 1`] = `
     }
   >
     <View
+      collapsable={false}
+      pointerEvents="box-none"
       style={
         Object {
-          "alignItems": "center",
-          "backgroundColor": "#EEC643",
-          "borderBottomColor": "#F9D900",
-          "borderBottomWidth": 1,
+          "flex": 1,
         }
       }
     >
-      <Text
+      <View
         style={
-          Array [
-            Object {
-              "color": "#000000",
-              "fontFamily": "System",
-              "fontWeight": "400",
-              "textAlign": "left",
-            },
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#EEC643",
+            "borderBottomColor": "#F9D900",
+            "borderBottomWidth": 1,
+          }
+        }
+      >
+        <Text
+          style={
             Array [
               Object {
-                "color": "rgba(0, 0, 0, 0.54)",
+                "color": "#000000",
                 "fontFamily": "System",
                 "fontWeight": "400",
                 "textAlign": "left",
-                "writingDirection": "ltr",
               },
               Array [
                 Object {
-                  "fontSize": 12,
-                  "letterSpacing": 0.4,
-                  "lineHeight": 20,
-                  "marginVertical": 2,
+                  "color": "rgba(0, 0, 0, 0.54)",
+                  "fontFamily": "System",
+                  "fontWeight": "400",
+                  "textAlign": "left",
+                  "writingDirection": "ltr",
                 },
-                Object {
-                  "color": "#01417F",
-                },
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "letterSpacing": 0.4,
+                    "lineHeight": 20,
+                    "marginVertical": 2,
+                  },
+                  Object {
+                    "color": "#01417F",
+                  },
+                ],
+                Array [
+                  Object {
+                    "fontSize": 12,
+                    "letterSpacing": 0.4,
+                    "lineHeight": 20,
+                    "marginVertical": 2,
+                  },
+                  Object {
+                    "color": "#01417F",
+                  },
+                ],
               ],
-              Array [
-                Object {
-                  "fontSize": 12,
-                  "letterSpacing": 0.4,
-                  "lineHeight": 20,
-                  "marginVertical": 2,
-                },
-                Object {
-                  "color": "#01417F",
-                },
-              ],
-            ],
-          ]
-        }
-      >
-        1 encomenda
-      </Text>
+            ]
+          }
+        >
+          1 encomenda
+        </Text>
+      </View>
     </View>
   </View>
 </View>

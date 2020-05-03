@@ -5,7 +5,10 @@ import { createMockStore } from 'redux-logic-test'
 import PacketItem from '..'
 import rootReducer from '../../../store/reducers'
 import rootLogic from '../../../store/logic'
-import { getComponentWithRedux } from '../../../utils/jest'
+import {
+  getComponentWithRedux,
+  getComponentWithPaper,
+} from '../../../utils/jest'
 import { updatePacket } from '../../../store/actions/packets'
 
 const mockNavigate = jest.fn()
@@ -61,7 +64,9 @@ describe('PacketItem', () => {
         lastUpdate: new Date(2020, 1, 6),
       }
       const { baseElement } = render(
-        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        getComponentWithPaper(
+          getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        )
       )
       expect(baseElement).toMatchSnapshot()
     })
@@ -79,7 +84,9 @@ describe('PacketItem', () => {
         lastUpdate: new Date(2020, 1, 6),
       }
       const { baseElement } = render(
-        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        getComponentWithPaper(
+          getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        )
       )
       expect(baseElement).toMatchSnapshot()
     })
@@ -100,7 +107,9 @@ describe('PacketItem', () => {
         store.dispatch(updatePacket(mockPacket))
       })
       const { baseElement } = render(
-        getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        getComponentWithPaper(
+          getComponentWithRedux(store, <PacketItem packet={mockPacket} />)
+        )
       )
       expect(baseElement).toMatchSnapshot()
     })

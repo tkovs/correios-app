@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+import { Divider } from 'react-native-paper'
 import moment from 'moment'
 import first from 'lodash/first'
 import last from 'lodash/last'
@@ -36,7 +37,10 @@ const PacketInfo = ({ packet, updateLastView }) => {
 
       <ScrollView>
         {packet.statuses.map(status => (
-          <PacketTrackingInfo key={dateToKey(status.datetime)} {...status} />
+          <Fragment key={dateToKey(status.datetime)}>
+            <PacketTrackingInfo {...status} />
+            <Divider />
+          </Fragment>
         ))}
       </ScrollView>
     </SafeAreaView>

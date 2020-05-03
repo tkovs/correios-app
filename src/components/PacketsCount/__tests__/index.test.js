@@ -6,7 +6,10 @@ import { createMockStore } from 'redux-logic-test'
 import PacketsCount from '..'
 import rootReducer from '../../../store/reducers'
 import rootLogic from '../../../store/logic'
-import { getComponentWithRedux } from '../../../utils/jest'
+import {
+  getComponentWithPaper,
+  getComponentWithRedux,
+} from '../../../utils/jest'
 import { addPacketSuccess } from '../../../store/actions/packets'
 import { statuses } from '../../../__mocks__/packets'
 
@@ -21,7 +24,7 @@ describe('PacketsCount', () => {
   describe('with quantity 0', () => {
     it('renders correctly', () => {
       const { baseElement } = render(
-        getComponentWithRedux(store, <PacketsCount />)
+        getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
       )
       expect(store.getState().packets.list.length).toEqual(0)
       expect(baseElement).toMatchSnapshot()
@@ -34,7 +37,7 @@ describe('PacketsCount', () => {
 
       await store.whenComplete(() => {
         const { baseElement } = render(
-          getComponentWithRedux(store, <PacketsCount />)
+          getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
         )
         expect(store.getState().packets.list.length).toEqual(1)
         expect(baseElement).toMatchSnapshot()
@@ -49,7 +52,7 @@ describe('PacketsCount', () => {
 
       await store.whenComplete(() => {
         const { baseElement } = render(
-          getComponentWithRedux(store, <PacketsCount />)
+          getComponentWithPaper(getComponentWithRedux(store, <PacketsCount />))
         )
         expect(store.getState().packets.list.length).toEqual(2)
         expect(baseElement).toMatchSnapshot()
