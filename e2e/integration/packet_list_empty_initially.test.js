@@ -12,8 +12,8 @@ describe('PacketList', () => {
 
   it('should have empty packet list initially', async () => {
     const allPacketTabViewIndex = 0
-    const pendingPacketTabViewIndex = 0
-    const deliveredPacketTabViewIndex = 0
+    const pendingPacketTabViewIndex = 1
+    const deliveredPacketTabViewIndex = 2
 
     await expect(element(by.text('Correios'))).toBeVisible()
     await expect(element(by.text('Rastreio de pacotes'))).toBeVisible()
