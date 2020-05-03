@@ -61,7 +61,8 @@ describe('PacketItem', () => {
         mode: 'SEDEX',
         statuses: mockStatuses,
         lastView: new Date(2020, 1, 7),
-        lastUpdate: new Date(2020, 1, 6),
+        updatedAt: new Date(2020, 1, 6),
+        createdAt: new Date(2020, 1, 6),
       }
       const { baseElement } = render(
         getComponentWithPaper(
@@ -81,7 +82,8 @@ describe('PacketItem', () => {
         mode: 'SEDEX',
         statuses: mockStatuses,
         lastView: new Date(2020, 1, 5),
-        lastUpdate: new Date(2020, 1, 6),
+        updatedAt: new Date(2020, 1, 6),
+        createdAt: new Date(2020, 1, 6),
       }
       const { baseElement } = render(
         getComponentWithPaper(
@@ -101,7 +103,8 @@ describe('PacketItem', () => {
         mode: 'SEDEX',
         statuses: mockStatuses,
         lastView: new Date(2020, 1, 7),
-        lastUpdate: new Date(2020, 1, 6),
+        updatedAt: new Date(2020, 1, 6),
+        createdAt: new Date(2020, 1, 6),
       }
       act(() => {
         store.dispatch(updatePacket(mockPacket))

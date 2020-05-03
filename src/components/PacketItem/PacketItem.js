@@ -21,16 +21,16 @@ const PacketItem = ({ onClick, packet, statusList }) => {
   const status = find(statusList, { code }) || {}
   const firstShippingUpdate = moment(last(packet.statuses).datetime)
   const lastShippingUpdate = moment(first(packet.statuses).datetime)
-  const formattedLastUpdate = moment(lastShippingUpdate).format('D MMM')
+  const formattedLastShippingUpdate = moment(lastShippingUpdate).format('D MMM')
   const passedDays = getPassedDays(
     packet.status,
     firstShippingUpdate,
     lastShippingUpdate
   )
   const lastView = moment(packet.lastView)
-  const lastUpdate = moment(packet.lastUpdate)
+  const updatedAt = moment(packet.updatedAt)
 
-  const isViewed = lastView.isAfter(lastUpdate)
+  const isViewed = !isNil(packet.lastView) && lastView.isAfter(updatedAt)
 
   return (
     <TouchableHighlight underlayColor="#E5E5E5" onPress={onClick}>
@@ -59,7 +59,7 @@ const PacketItem = ({ onClick, packet, statusList }) => {
         </View>
         <View style={styles.right}>
           <Badge>{packet.mode}</Badge>
-          <Text>{formattedLastUpdate}</Text>
+          <Text>{formattedLastShippingUpdate}</Text>
           <Text>{`${passedDays} days`}</Text>
         </View>
       </View>
@@ -108,8 +108,9 @@ PacketItem.propTypes = {
     status: PropTypes.string.isRequired,
     code: PropTypes.string.isRequired,
     mode: PropTypes.string.isRequired,
-    lastUpdate: PropTypes.objectOf(Date).isRequired,
-    lastView: PropTypes.objectOf(Date).isRequired,
+    updatedAt: PropTypes.objectOf(Date).isRequired,
+    createdAt: PropTypes.objectOf(Date).isRequired,
+    lastView: PropTypes.objectOf(Date),
     statuses: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
   onClick: PropTypes.func,

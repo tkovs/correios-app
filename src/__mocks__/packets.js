@@ -180,17 +180,19 @@ export default [
   {
     title: 'iPhone 7',
     code: 'PW086958109BR',
+    createdAt: new Date(2020, 2, 2, 9, 5),
     mode: 'SEDEX',
     statuses,
     lastView: new Date(2020, 2, 4, 18, 13),
-    lastUpdate: new Date(2020, 2, 3, 18, 13),
+    updatedAt: new Date(2020, 2, 3, 18, 13),
   },
   {
     title: 'iPad',
     code: 'PW086958114BR',
+    createdAt: new Date(2020, 3, 4, 12, 1),
     mode: 'SEDEX',
     statuses: postedStatuses,
     lastView: new Date(2020, 3, 7, 16, 46),
-    lastUpdate: new Date(2020, 3, 6, 16, 46),
+    updatedAt: new Date(2020, 3, 6, 16, 46),
   },
 ]

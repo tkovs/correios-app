@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 import compact from 'lodash/compact'
+import sortBy from 'lodash/sortBy'
 
 import { hydratePacket } from '../../utils/packet'
 
@@ -12,7 +13,11 @@ export const statusListSelector = createSelector(
 
 export const packetsListSelector = createSelector(
   packetsSelector,
-  packets => packets.list.map(packet => hydratePacket(packet))
+  packets =>
+    sortBy(packets.list.map(packet => hydratePacket(packet)), [
+      'updatedAt',
+      'code',
+    ])
 )
 
 export const deletedPacketSelector = createSelector(

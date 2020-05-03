@@ -41,7 +41,8 @@ const addPacketLogic = createLogic({
 
       const packet = {
         code,
-        lastUpdate: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
         mode: getShippingWayFromCode(code),
         statuses,
         title,
@@ -86,7 +87,7 @@ const updatePacketLogic = createLogic({
 
       const newPacket = {
         ...packet,
-        lastUpdate: new Date(),
+        updatedAt: new Date(),
         mode: getShippingWayFromCode(packet.code),
         statuses,
       }
