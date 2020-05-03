@@ -43,6 +43,7 @@
     "@testing-library/jest-native": "^3.1.0",
     "@testing-library/react-native": "^5.0.3",
     "babel-jest": "^25.1.0",
+    "detox": "^16.4.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.20.1",
@@ -74,5 +75,27 @@
       "pre-commit": "yarn lint && yarn test",
       "pre-push": "yarn lint && yarn test"
     }
-  }
+  },
+  "detox" : {
+    "test-runner": "jest",
+    "configurations": {
+        "android.emu.debug": {
+            "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+            "build":
+            "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+            "type": "android.emulator",
+            "device": {
+              "avdName": "Nexus_5X_API_29_x86"
+            }
+        },
+        "android.emu.release": {
+            "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+            "build": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && cd ..",
+            "type": "android.emulator",
+            "device": {
+              "avdName": "Nexus_5X_API_29_x86"
+            }
+        }
+    }
+}
 }

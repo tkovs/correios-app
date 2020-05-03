@@ -16,7 +16,9 @@ const PacketList = ({ packets }) => {
     return (
       <View style={styles.iconScreen}>
         <Icon name="error-outline" size={iconSize} color={iconColor} />
-        <Caption>Nenhuma encomenda nesta lista</Caption>
+        <Caption testId="empty-packet-list">
+          Nenhuma encomenda nesta lista
+        </Caption>
       </View>
     )
   }

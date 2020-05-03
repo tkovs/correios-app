@@ -46,9 +46,13 @@ const Home = () => {
   const [modalVisible, setModalVisible] = useState(false)
   const [index, setIndex] = useState(0)
   const [routes] = useState([
-    { key: 'all', title: 'Todos' },
-    { key: 'pending', title: 'Pendentes' },
-    { key: 'delivered', title: 'Entregues' },
+    { key: 'all', testID: 'allPacketsTabButton', title: 'Todos' },
+    { key: 'pending', testID: 'pendingPacketsTabButton', title: 'Pendentes' },
+    {
+      key: 'delivered',
+      testID: 'deliveredPacketsTabButton',
+      title: 'Entregues',
+    },
   ])
 
   const renderScene = SceneMap({
