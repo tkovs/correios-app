@@ -2,10 +2,9 @@ import reject from 'lodash/reject'
 import find from 'lodash/find'
 
 import * as types from '../actions/packets/types'
-import mockPackets from '../../__mocks__/packets'
 
 const initialState = {
-  list: mockPackets,
+  list: [],
   statusList: [],
   deleted: null,
 }
