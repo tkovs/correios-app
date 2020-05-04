@@ -9,9 +9,9 @@
     "test": "jest",
     "lint": "eslint ./src",
     "detox-build-debug": "yarn detox build --configuration android.emu.debug",
-    "detox-test-debug": "yarn detox test -c android.emu.debug",
+    "detox-test-debug": "yarn detox test -c android.emu.debug --cleanup",
     "detox-build-release": "yarn detox build --configuration android.emu.release",
-    "detox-test-release": "yarn detox test -c android.emu.release"
+    "detox-test-release": "yarn detox test -c android.emu.release --cleanup"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
