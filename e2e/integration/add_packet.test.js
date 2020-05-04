@@ -1,4 +1,5 @@
 import { addPacket } from '../utils/actions'
+import { getAllPacketsCount } from '../utils/queries'
 
 describe('Add packet', () => {
   beforeEach(async () => {
@@ -9,6 +10,9 @@ describe('Add packet', () => {
     const mockTitle = 'iPad'
     const mockCode = 'PW086958114BR'
 
+    await expect(getAllPacketsCount()).toNotExist()
     await addPacket(mockTitle, mockCode)
+    await expect(getAllPacketsCount()).toExist()
+    await expect(getAllPacketsCount()).toHaveText('1 encomenda')
   })
 })
