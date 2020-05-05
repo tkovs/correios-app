@@ -11,7 +11,19 @@ const initialState = {
 
 const packets = (state = initialState, action) => {
   switch (action.type) {
-    case types.ADD_PACKET_PENDING:
+    case types.ADD_PACKET_PENDING: {
+      const packetStatus = {
+        code: action.payload.code,
+        pending: true,
+        error: null,
+      }
+
+      return {
+        ...state,
+        statusList: [...state.statusList, packetStatus],
+        deleted: null,
+      }
+    }
     case types.UPDATE_PACKET_PENDING: {
       const packetStatus = {
         code: action.payload.packet.code,
