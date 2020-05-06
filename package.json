@@ -9,9 +9,9 @@
     "test": "jest",
     "lint": "eslint ./src",
     "detox-build-debug": "yarn detox build --configuration android.emu.debug",
-    "detox-test-debug": "yarn detox test -c android.emu.debug --cleanup",
+    "detox-test-debug": "yarn detox test -c android.emu.debug",
     "detox-build-release": "yarn detox build --configuration android.emu.release",
-    "detox-test-release": "yarn detox test -c android.emu.release --cleanup"
+    "detox-test-release": "yarn detox test -c android.emu.release"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.7",
@@ -47,7 +47,7 @@
     "@testing-library/jest-native": "^3.1.0",
     "@testing-library/react-native": "^5.0.3",
     "babel-jest": "^25.1.0",
-    "detox": "^16.4.0",
+    "detox": "^16..0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.20.1",
