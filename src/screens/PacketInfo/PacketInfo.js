@@ -9,6 +9,7 @@ import last from 'lodash/last'
 import InfoBar from './InfoBar'
 import Header from './Header'
 import PacketTrackingInfo from '../../components/PacketTrackingItem'
+import Toast from '../../components/Toast'
 
 const dateToKey = datetime => moment(datetime).format('YYYY/MM/DD H:m')
 
@@ -43,6 +44,8 @@ const PacketInfo = ({ packet, updateLastView }) => {
           </Fragment>
         ))}
       </ScrollView>
+
+      <Toast />
     </SafeAreaView>
   )
 }

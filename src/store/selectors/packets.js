@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect'
 import compact from 'lodash/compact'
 import sortBy from 'lodash/sortBy'
+import reject from 'lodash/reject'
 
 import { hydratePacket } from '../../utils/packet'
 
@@ -18,6 +19,11 @@ export const packetsListSelector = createSelector(
       'updatedAt',
       'code',
     ])
+)
+
+export const packetsListWithoutArchivedSelector = createSelector(
+  packetsListSelector,
+  list => reject(list, { archived: true })
 )
 
 export const deletedPacketSelector = createSelector(

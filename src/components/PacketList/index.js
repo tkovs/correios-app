@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import PacketList from './PacketList'
-import { packetsListSelector } from '../../store/selectors/packets'
+import { packetsListWithoutArchivedSelector } from '../../store/selectors/packets'
 
 function PacketListContainer(props) {
   const { packets: packetsProp, filter, ...rest } = props
@@ -24,7 +24,7 @@ PacketListContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  packets: packetsListSelector(state),
+  packets: packetsListWithoutArchivedSelector(state),
 })
 
 export default connect(mapStateToProps)(PacketListContainer)

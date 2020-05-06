@@ -1,6 +1,7 @@
 import { createLogic } from 'redux-logic'
 import correios from 'encomendas-correios/lib/index'
 import isEmpty from 'lodash/isEmpty'
+import find from 'lodash/find'
 
 import * as types from '../actions/packets/types'
 import {
@@ -20,7 +21,7 @@ const addPacketLogic = createLogic({
     const { list: packets } = getState().packets
     const { code } = action.payload
 
-    const similarPacket = packets.find(packet => packet.code === code)
+    const similarPacket = find(packets, { code })
 
     if (similarPacket) {
       const errorMessage = 'Código de rastreio duplicado'
@@ -73,6 +74,21 @@ const updatePacketsLogic = createLogic({
   },
 })
 
+const archivePacketLogic = createLogic({
+  type: types.ARCHIVE_PACKET,
+  process: ({ getState, action }, dispatch, done) => {
+    const packets = packetsListSelector(getState())
+    const { code } = action.payload
+    const packet = find(packets, { code })
+    console.log('entrou aqui pelo menos')
+    if (packet.archived) {
+      const message = 'Encomenda arquivada com sucesso'
+      dispatch(addFeedback(message))
+    }
+    done()
+  },
+})
+
 const updatePacketLogic = createLogic({
   type: types.UPDATE_PACKET_PENDING,
   process: async ({ action }, dispatch, done) => {
@@ -103,6 +119,7 @@ const updatePacketLogic = createLogic({
 export default [
   addPacketLogic,
   addPacketSuccessLogic,
+  archivePacketLogic,
   updatePacketLogic,
   updatePacketsLogic,
 ]

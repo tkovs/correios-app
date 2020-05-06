@@ -64,6 +64,16 @@ const packets = (state = initialState, action) => {
         statusList: reject(state.statusList, { code }),
       }
     }
+    case types.ARCHIVE_PACKET: {
+      const { code } = action.payload
+      return {
+        ...state,
+        list: [
+          ...reject(state.list, { code }),
+          { ...find(state.list, { code }), archived: true },
+        ],
+      }
+    }
     case types.REMOVE_PACKET: {
       const { code } = action.payload
 

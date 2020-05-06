@@ -12,7 +12,13 @@ import {
 
 import { colors } from '../../../styles/theme'
 
-const Header = ({ addFeedback, goBack, title, removePacket }) => {
+const Header = ({
+  addFeedback,
+  archivePacket,
+  goBack,
+  title,
+  removePacket,
+}) => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [dialogVisible, setDialogVisible] = useState(false)
 
@@ -32,7 +38,14 @@ const Header = ({ addFeedback, goBack, title, removePacket }) => {
           />
         }
       >
-        <Menu.Item onPress={() => {}} title="Editar" />
+        <Menu.Item
+          onPress={() => {
+            console.log('aqui também')
+            archivePacket()
+            setMenuVisible(false)
+          }}
+          title="Arquivar"
+        />
         <Menu.Item
           onPress={() => {
             setMenuVisible(false)
@@ -84,6 +97,7 @@ Header.defaultProps = {
 
 Header.propTypes = {
   addFeedback: PropTypes.func.isRequired,
+  archivePacket: PropTypes.func.isRequired,
   goBack: PropTypes.func,
   title: PropTypes.string.isRequired,
   removePacket: PropTypes.func.isRequired,
