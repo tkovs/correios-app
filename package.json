@@ -74,12 +74,6 @@
       "^~/(.*)": "<rootDir>/src/$1"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn test",
-      "pre-push": "yarn lint && yarn test && yarn detox-build-debug && yarn detox-test-debug"
-    }
-  },
   "detox" : {
     "test-runner": "jest",
     "configurations": {
