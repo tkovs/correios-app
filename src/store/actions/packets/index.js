@@ -56,6 +56,13 @@ export const removePacket = code => ({
   },
 })
 
+export const archivePacket = code => ({
+  type: types.ARCHIVE_PACKET,
+  payload: {
+    code,
+  },
+})
+
 export const clearError = () => ({
   type: types.CLEAR_ERROR,
 })

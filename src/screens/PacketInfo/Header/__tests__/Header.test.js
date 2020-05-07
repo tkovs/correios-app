@@ -6,6 +6,9 @@ import Header from '../Header'
 
 const mockAddFeedback = jest.fn()
 const mockRemovePacket = jest.fn()
+const mockArchivePacket = jest.fn()
+
+// TODO: Migrate test to redux
 
 describe('Header', () => {
   it('renders correctly', () => {
@@ -13,6 +16,7 @@ describe('Header', () => {
     const { baseElement } = render(
       <Header
         addFeedback={mockAddFeedback}
+        archivePacket={mockArchivePacket}
         title={mockTitle}
         removePacket={mockRemovePacket}
       />

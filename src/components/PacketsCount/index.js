@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import PacketsCount from './PacketsCount'
-import { packetsListSelector } from '../../store/selectors/packets'
+import { packetsListWithoutArchivedSelector } from '../../store/selectors/packets'
 
 function PacketsCountContainer({ packets, filter, testID }) {
   const quantity = filter
@@ -25,7 +25,7 @@ PacketsCountContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  packets: packetsListSelector(state),
+  packets: packetsListWithoutArchivedSelector(state),
 })
 
 export default connect(mapStateToProps)(PacketsCountContainer)
