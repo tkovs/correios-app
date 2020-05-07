@@ -35,7 +35,7 @@
 
 
 <p align="center">
-  <img src="https://i.imgur.com/QGhydfF.png" width="360">
+  <img src="https://github.com/tkovs/correios-app/blob/chest/chest/correios-app-demo-hd-low-rate.gif" width="360">
 </p>
 
 ## :rocket: Technologies
