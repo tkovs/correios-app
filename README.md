@@ -78,7 +78,7 @@ $ yarn detox-build-debug && yarn detox-test-debug
 ```
 
 ## :memo: License
-This project is under the MIT license. See the [LICENSE](https://github.com/lukemorales/rocketshoes-react-native/blob/master/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/tkovs/correios/blob/master/LICENSE) for more information.
 
 ---
 
