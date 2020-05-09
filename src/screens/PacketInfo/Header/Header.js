@@ -40,7 +40,6 @@ const Header = ({
       >
         <Menu.Item
           onPress={() => {
-            console.log('aqui também')
             archivePacket()
             setMenuVisible(false)
           }}
