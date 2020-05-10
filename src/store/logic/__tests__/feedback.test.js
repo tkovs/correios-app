@@ -28,9 +28,18 @@ describe('Feedback Logic', () => {
           expect(store.actions).toHaveLength(2)
           expect(store.actions[0]).toEqual(addFeedback(mockMessage))
           expect(store.actions[1]).toEqual(clearFeedback())
-
           done()
         })
+      })
+    })
+
+    it('should reject clearFeedback if feedback is not visible', done => {
+      expect(store.getState().feedback.visible).toBeFalsy()
+
+      store.dispatch(clearFeedback())
+      store.whenComplete(() => {
+        expect(store.actions).toHaveLength(0)
+        done()
       })
     })
   })
