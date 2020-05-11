@@ -80,7 +80,7 @@ const archivePacketLogic = createLogic({
     const packets = packetsListSelector(getState())
     const { code } = action.payload
     const packet = find(packets, { code })
-    console.log('entrou aqui pelo menos')
+
     if (packet.archived) {
       const message = 'Encomenda arquivada com sucesso'
       dispatch(addFeedback(message))
