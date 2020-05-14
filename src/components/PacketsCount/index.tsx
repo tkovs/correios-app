@@ -10,7 +10,7 @@ interface StateProps {
 }
 
 interface OwnProps {
-  filter: string
+  filter?: string
   testID: string
 }
 
