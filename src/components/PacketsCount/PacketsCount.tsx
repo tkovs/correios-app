@@ -1,10 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Caption } from 'react-native-paper'
 import { colors } from '../../styles/theme'
 
-function PacketsCount({ quantity, testID }) {
+interface PacketsCountProps {
+  quantity: number
+  testID: string
+}
+
+type Props = PacketsCountProps
+
+const PacketsCount: FC<Props> = ({ quantity, testID }: Props) => {
   if (quantity === 0) {
     return null
   }
@@ -22,12 +28,6 @@ function PacketsCount({ quantity, testID }) {
 
 PacketsCount.defaultProps = {
   quantity: 0,
-  testID: null,
-}
-
-PacketsCount.propTypes = {
-  quantity: PropTypes.number,
-  testID: PropTypes.string,
 }
 
 const styles = StyleSheet.create({
