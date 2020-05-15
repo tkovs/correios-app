@@ -12,7 +12,7 @@
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/tkovs/correios-app.svg">
   
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/tkovs/correios">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/tkovs/correios-app">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/tkovs/correios-app.svg">
   <br />
