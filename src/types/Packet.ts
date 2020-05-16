@@ -20,5 +20,5 @@ export type Packet = {
   statuses: Status[]
   status: string
   title: string
-  updateAt: Date
+  updatedAt: Date
 }
