@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ./src --ext .ts,tsx",
+    "ts-check": "tsc --noEmit",
     "detox-build-debug": "yarn detox build --configuration android.emu.debug",
     "detox-test-debug": "yarn detox test -c android.emu.debug",
     "detox-build-release": "yarn detox build --configuration android.emu.release",
@@ -27,7 +28,7 @@
     "react-intl": "^4.1.1",
     "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.6.0",
-    "react-native-paper": "^3.6.0",
+    "react-native-paper": "^3.10.1",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
@@ -94,8 +95,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn test",
-      "pre-push": "yarn lint && yarn test && yarn detox-build-debug && yarn detox-test-debug"
+      "pre-commit": "yarn lint && yarn ts-check && yarn test",
+      "pre-push": "yarn lint && yarn ts-check && yarn test && yarn detox-build-debug && yarn detox-test-debug"
     }
   },
   "detox": {
