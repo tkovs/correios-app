@@ -61,11 +61,14 @@ exports[`Toast component should be invisible and clear the feedback by clicking 
       <SafeAreaView
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "position": "absolute",
-            "width": "100%",
-          }
+          Array [
+            Object {
+              "bottom": 0,
+              "position": "absolute",
+              "width": "100%",
+            },
+            undefined,
+          ]
         }
       >
         <View
@@ -311,11 +314,14 @@ exports[`Toast component should react correctly to feedback changes 2`] = `
       <SafeAreaView
         pointerEvents="box-none"
         style={
-          Object {
-            "bottom": 0,
-            "position": "absolute",
-            "width": "100%",
-          }
+          Array [
+            Object {
+              "bottom": 0,
+              "position": "absolute",
+              "width": "100%",
+            },
+            undefined,
+          ]
         }
       >
         <View

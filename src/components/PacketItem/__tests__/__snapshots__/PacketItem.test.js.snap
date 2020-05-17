@@ -51,6 +51,7 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               }
             >
               <Text
+                accessibilityStates="12"
                 style={
                   Array [
                     Object {
@@ -70,6 +71,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
                  
               </Text>
               <View
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
@@ -250,6 +256,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               </View>
             </View>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -268,6 +279,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               delivered
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -317,6 +333,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               SEDEX
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -332,6 +353,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               5 Jan
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -405,6 +431,7 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               }
             >
               <Text
+                accessibilityStates="12"
                 style={
                   Array [
                     Object {
@@ -425,6 +452,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
                 (não visualizado)
               </Text>
               <View
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
@@ -605,6 +637,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               </View>
             </View>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -623,6 +660,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               delivered
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -672,6 +714,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               SEDEX
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -687,6 +734,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               5 Jan
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -760,6 +812,7 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               }
             >
               <Text
+                accessibilityStates="12"
                 style={
                   Array [
                     Object {
@@ -779,6 +832,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
                  
               </Text>
               <View
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
@@ -959,6 +1017,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               </View>
             </View>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -977,6 +1040,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               delivered
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -1026,6 +1094,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               SEDEX
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {
@@ -1041,6 +1114,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               5 Jan
             </Text>
             <Text
+              accessibilityStates={
+                Array [
+                  "disabled",
+                ]
+              }
               style={
                 Array [
                   Object {

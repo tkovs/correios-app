@@ -169,7 +169,9 @@ exports[`Header renders correctly 1`] = `
             </View>
           </View>
         </TouchableHighlight>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          disabled={true}
+        >
           <View
             style={
               Array [

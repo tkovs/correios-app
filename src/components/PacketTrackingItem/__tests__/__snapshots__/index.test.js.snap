@@ -90,6 +90,7 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
         }
       >
         <View
+          color="#01417F"
           style={
             Array [
               Object {
@@ -340,6 +341,7 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
         }
       >
         <View
+          color="#01417F"
           style={
             Array [
               Object {
@@ -590,6 +592,7 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
         }
       >
         <View
+          color="#01417F"
           style={
             Array [
               Object {
