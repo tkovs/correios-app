@@ -50,7 +50,7 @@ const PacketItem: FC<Props> = ({ onClick, packet, statusList }: Props) => {
       <View style={styles.container}>
         <View>
           <View style={styles.titleContainer}>
-            <Text accessibilityStates="12" style={styles.title}>
+            <Text accessibilityStates={['disabled']} style={styles.title}>
               {packet.title} {!isViewed && '(não visualizado)'}
             </Text>
             <ActivityIndicator

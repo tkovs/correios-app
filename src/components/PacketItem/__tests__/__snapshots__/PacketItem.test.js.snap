@@ -51,7 +51,11 @@ exports[`PacketItem with full packet renders correctly 1`] = `
               }
             >
               <Text
-                accessibilityStates="12"
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
@@ -431,7 +435,11 @@ exports[`PacketItem with not viewed packet renders correctly 1`] = `
               }
             >
               <Text
-                accessibilityStates="12"
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
@@ -812,7 +820,11 @@ exports[`PacketItem with updating packet renders correctly 1`] = `
               }
             >
               <Text
-                accessibilityStates="12"
+                accessibilityStates={
+                  Array [
+                    "disabled",
+                  ]
+                }
                 style={
                   Array [
                     Object {
