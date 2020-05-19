@@ -5,7 +5,7 @@ import { colors } from '../../styles/theme'
 
 interface PacketsCountProps {
   quantity: number
-  testID: string
+  testID?: string
 }
 
 type Props = PacketsCountProps

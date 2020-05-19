@@ -11,7 +11,7 @@ interface StateProps {
 
 interface OwnProps {
   filter?: string
-  testID: string
+  testID?: string
 }
 
 type Props = StateProps & OwnProps
