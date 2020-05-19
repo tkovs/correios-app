@@ -8,8 +8,6 @@ import find from 'lodash/find'
 import isNil from 'lodash/isNil'
 
 import { colors } from '../../styles/theme'
-import { Packet } from '../../types/Packet'
-import { StatusListItem } from '../../types/StatusListItem'
 
 const getPassedDays: (
   packetStatus: string,

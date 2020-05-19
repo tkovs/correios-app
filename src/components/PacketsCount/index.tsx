@@ -3,7 +3,6 @@ import { connect, MapStateToProps } from 'react-redux'
 
 import PacketsCount from './PacketsCount'
 import { packetsListWithoutArchivedSelector } from '../../store/selectors/packets'
-import { Packet } from '../../types/Packet'
 
 interface StateProps {
   packets: Packet[]

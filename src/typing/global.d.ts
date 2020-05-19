@@ -12,7 +12,7 @@ interface Status {
   status: string
 }
 
-export type Packet = {
+type Packet = {
   code: string
   createdAt: Date
   lastView: Date
@@ -21,4 +21,10 @@ export type Packet = {
   status: string
   title: string
   updatedAt: Date
+}
+
+type StatusListItem = {
+  code: string
+  pending: boolean
+  error?: string
 }

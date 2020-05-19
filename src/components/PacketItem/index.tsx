@@ -4,8 +4,6 @@ import { useNavigation } from '@react-navigation/native'
 
 import PacketItem from './PacketItem'
 import { statusListSelector } from '../../store/selectors/packets'
-import { Packet } from '../../types/Packet'
-import { StatusListItem } from '../../types/StatusListItem'
 
 interface StateProps {
   statusList: StatusListItem[]
