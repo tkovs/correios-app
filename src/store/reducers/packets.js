@@ -1,7 +1,7 @@
 import reject from 'lodash/reject'
 import find from 'lodash/find'
 
-import * as types from '../actions/packets/types'
+import types from '../actions/packets/types'
 
 const initialState = {
   list: [],

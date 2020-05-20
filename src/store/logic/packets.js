@@ -3,7 +3,7 @@ import correios from 'encomendas-correios/lib/index'
 import isEmpty from 'lodash/isEmpty'
 import find from 'lodash/find'
 
-import * as types from '../actions/packets/types'
+import types from '../actions/packets/types'
 import {
   addPacketFailure,
   addPacketSuccess,
@@ -69,7 +69,7 @@ const updatePacketsLogic = createLogic({
   type: types.UPDATE_PACKETS,
   process: ({ getState }, dispatch, done) => {
     const packets = packetsListSelector(getState())
-    packets.forEach(packet => dispatch(updatePacket(packet)))
+    packets.forEach((packet) => dispatch(updatePacket(packet)))
     done()
   },
 })
