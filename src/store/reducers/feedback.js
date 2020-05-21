@@ -1,4 +1,4 @@
-import * as types from '../actions/feedback/types'
+import types from '../actions/feedback/types'
 
 const initialState = {
   message: '',

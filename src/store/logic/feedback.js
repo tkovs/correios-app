@@ -1,6 +1,6 @@
 import { createLogic } from 'redux-logic'
 
-import * as types from '../actions/feedback/types'
+import types from '../actions/feedback/types'
 
 const clearFeedbackLogic = createLogic({
   type: types.CLEAR_FEEDBACK,

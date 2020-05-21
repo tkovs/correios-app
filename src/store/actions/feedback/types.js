@@ -1,2 +1,0 @@
-export const ADD_FEEDBACK = 'ADD_FEEDBACK'
-export const CLEAR_FEEDBACK = 'CLEAR_FEEDBACK'
