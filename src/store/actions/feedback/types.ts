@@ -1,18 +1,19 @@
-const types = {
-  ADD_FEEDBACK: 'ADD_FEEDBACK',
-  CLEAR_FEEDBACK: 'CLEAR_FEEDBACK',
-}
-export default types
+import { Action } from 'redux'
 
-interface AddFeedback {
-  type: typeof types.ADD_FEEDBACK
+export const ADD_FEEDBACK = 'ADD_FEEDBACK'
+export const CLEAR_FEEDBACK = 'CLEAR_FEEDBACK'
+
+export interface AddFeedback extends Action<typeof ADD_FEEDBACK> {
   payload: {
     message: string
   }
 }
 
-interface ClearFeedback {
-  type: typeof types.CLEAR_FEEDBACK
-}
+export type ClearFeedback = Action<typeof CLEAR_FEEDBACK>
 
 export type FeedbackActionTypes = AddFeedback | ClearFeedback
+
+export interface FeedbackState {
+  message: string
+  visible: boolean
+}

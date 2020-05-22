@@ -1,9 +1,9 @@
 import { createLogic } from 'redux-logic'
 
-import types from '../actions/feedback/types'
+import { CLEAR_FEEDBACK } from '../actions/feedback/types'
 
 const clearFeedbackLogic = createLogic({
-  type: types.CLEAR_FEEDBACK,
+  type: CLEAR_FEEDBACK,
   validate: ({ getState, action }, allow, reject) => {
     const { message, visible } = getState().feedback
 
