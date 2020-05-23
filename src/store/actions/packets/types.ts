@@ -1,94 +1,86 @@
-const types = {
-  ADD_PACKET_PENDING: 'ADD_PACKET_PENDING',
-  ADD_PACKET_SUCCESS: 'ADD_PACKET_SUCCESS',
-  ADD_PACKET_FAILURE: 'ADD_PACKET_FAILURE',
-  UPDATE_PACKETS: 'UPDATE_PACKETS',
-  UPDATE_PACKET_PENDING: 'UPDATE_PACKET_PENDING',
-  UPDATE_PACKET_SUCCESS: 'UPDATE_PACKET_SUCCESS',
-  UPDATE_PACKET_FAILURE: 'UPDATE_PACKET_FAILURE',
-  ARCHIVE_PACKET: 'ARCHIVE_PACKET',
-  REMOVE_PACKET: 'REMOVE_PACKET',
-  CLEAR_ERROR: 'CLEAR_ERROR',
-  UPDATE_LAST_VIEW: 'UPDATE_LAST_VIEW',
-}
-export default types
+export const ADD_PACKET_PENDING = 'ADD_PACKET_PENDING'
+export const ADD_PACKET_SUCCESS = 'ADD_PACKET_SUCCESS'
+export const ADD_PACKET_FAILURE = 'ADD_PACKET_FAILURE'
+export const UPDATE_PACKETS = 'UPDATE_PACKETS'
+export const UPDATE_PACKET_PENDING = 'UPDATE_PACKET_PENDING'
+export const UPDATE_PACKET_SUCCESS = 'UPDATE_PACKET_SUCCESS'
+export const UPDATE_PACKET_FAILURE = 'UPDATE_PACKET_FAILURE'
+export const ARCHIVE_PACKET = 'ARCHIVE_PACKET'
+export const REMOVE_PACKET = 'REMOVE_PACKET'
+export const UPDATE_LAST_VIEW = 'UPDATE_LAST_VIEW'
 
-interface AddPacketPending {
-  type: typeof types.ADD_PACKET_PENDING
+export interface AddPacketPending {
+  type: typeof ADD_PACKET_PENDING
   payload: {
     title: string
     code: string
   }
 }
 
-interface AddPacketSuccess {
-  type: typeof types.ADD_PACKET_SUCCESS
+export interface AddPacketSuccess {
+  type: typeof ADD_PACKET_SUCCESS
   payload: {
     packet: Packet
   }
 }
 
-interface AddPacketFailure {
-  type: typeof types.ADD_PACKET_FAILURE
+export interface AddPacketFailure {
+  type: typeof ADD_PACKET_FAILURE
   payload: {
     error: string
     code: string
   }
 }
 
-interface UpdatePackets {
-  type: typeof types.UPDATE_PACKETS
+export interface UpdatePackets {
+  type: typeof UPDATE_PACKETS
 }
 
-interface UpdatePacketPending {
-  type: typeof types.UPDATE_PACKET_PENDING
+export interface UpdatePacketPending {
+  type: typeof UPDATE_PACKET_PENDING
   payload: {
     packet: Packet
   }
 }
 
-interface UpdatePacketSuccess {
-  type: typeof types.UPDATE_PACKET_SUCCESS
+export interface UpdatePacketSuccess {
+  type: typeof UPDATE_PACKET_SUCCESS
   payload: {
     packet: Packet
   }
 }
 
-interface UpdatePacketFailure {
-  type: typeof types.UPDATE_PACKET_FAILURE
+export interface UpdatePacketFailure {
+  type: typeof UPDATE_PACKET_FAILURE
   payload: {
     error: string
     code: string
   }
 }
 
-interface RemovePacket {
-  type: typeof types.REMOVE_PACKET
+export interface RemovePacket {
+  type: typeof REMOVE_PACKET
   payload: {
     code: string
   }
 }
 
-interface ArchivePacket {
-  type: typeof types.ARCHIVE_PACKET
+export interface ArchivePacket {
+  type: typeof ARCHIVE_PACKET
   payload: {
     code: string
   }
 }
 
-interface ClearError {
-  type: typeof types.CLEAR_ERROR
-}
-
-interface UpdateLastView {
-  type: typeof types.UPDATE_LAST_VIEW
+export interface UpdateLastView {
+  type: typeof UPDATE_LAST_VIEW
   payload: {
     code: string
     date: Date
   }
 }
 
-export type PacketActionTypes =
+export type PacketsActionTypes =
   | AddPacketPending
   | AddPacketSuccess
   | AddPacketFailure
@@ -98,5 +90,10 @@ export type PacketActionTypes =
   | UpdatePacketFailure
   | RemovePacket
   | ArchivePacket
-  | ClearError
   | UpdateLastView
+
+export interface PacketsState {
+  list: Packet[]
+  statusList: StatusListItem[]
+  deleted?: Packet
+}

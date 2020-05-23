@@ -1,43 +1,57 @@
 import reject from 'lodash/reject'
 import find from 'lodash/find'
-
-import types from '../actions/packets/types'
+import {
+  ADD_PACKET_PENDING,
+  ADD_PACKET_SUCCESS,
+  ADD_PACKET_FAILURE,
+  UPDATE_PACKET_PENDING,
+  UPDATE_PACKET_SUCCESS,
+  UPDATE_PACKET_FAILURE,
+  REMOVE_PACKET,
+  ARCHIVE_PACKET,
+  UPDATE_LAST_VIEW,
+  PacketsActionTypes,
+  PacketsState,
+} from '../actions/packets/types'
 
 const initialState = {
   list: [],
   statusList: [],
-  deleted: null,
+  deleted: undefined,
 }
 
-const packets = (state = initialState, action) => {
+const packets = (
+  state: PacketsState = initialState,
+  action: PacketsActionTypes
+): PacketsState => {
   switch (action.type) {
-    case types.ADD_PACKET_PENDING: {
-      const packetStatus = {
+    case ADD_PACKET_PENDING: {
+      const packetStatus: StatusListItem = {
         code: action.payload.code,
         pending: true,
-        error: null,
+        error: undefined,
       }
 
       return {
         ...state,
         statusList: [...state.statusList, packetStatus],
-        deleted: null,
+        deleted: undefined,
       }
     }
-    case types.UPDATE_PACKET_PENDING: {
-      const packetStatus = {
+    case UPDATE_PACKET_PENDING: {
+      const packetStatus: StatusListItem = {
         code: action.payload.packet.code,
         pending: true,
-        error: null,
+        error: undefined,
       }
 
       return {
         ...state,
         statusList: [...state.statusList, packetStatus],
-        deleted: null,
+        deleted: undefined,
       }
     }
-    case types.ADD_PACKET_SUCCESS: {
+    case ADD_PACKET_SUCCESS: {
       const { code } = action.payload.packet
 
       return {
@@ -46,8 +60,8 @@ const packets = (state = initialState, action) => {
         statusList: reject(state.statusList, { code }),
       }
     }
-    case types.ADD_PACKET_FAILURE:
-    case types.UPDATE_PACKET_FAILURE: {
+    case ADD_PACKET_FAILURE:
+    case UPDATE_PACKET_FAILURE: {
       const { code, error } = action.payload
 
       return {
@@ -55,7 +69,7 @@ const packets = (state = initialState, action) => {
         statusList: [...reject(state.statusList, { code }), { code, error }],
       }
     }
-    case types.UPDATE_PACKET_SUCCESS: {
+    case UPDATE_PACKET_SUCCESS: {
       const { code } = action.payload.packet
 
       return {
@@ -64,7 +78,7 @@ const packets = (state = initialState, action) => {
         statusList: reject(state.statusList, { code }),
       }
     }
-    case types.ARCHIVE_PACKET: {
+    case ARCHIVE_PACKET: {
       const { code } = action.payload
       return {
         ...state,
@@ -74,7 +88,7 @@ const packets = (state = initialState, action) => {
         ],
       }
     }
-    case types.REMOVE_PACKET: {
+    case REMOVE_PACKET: {
       const { code } = action.payload
 
       return {
@@ -83,12 +97,7 @@ const packets = (state = initialState, action) => {
         deleted: find(state.list, { code }),
       }
     }
-    case types.CLEAR_ERROR:
-      return {
-        ...state,
-        error: null,
-      }
-    case types.UPDATE_LAST_VIEW: {
+    case UPDATE_LAST_VIEW: {
       const { code, date } = action.payload
       return {
         ...state,

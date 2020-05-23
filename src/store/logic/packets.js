@@ -3,7 +3,13 @@ import correios from 'encomendas-correios/lib/index'
 import isEmpty from 'lodash/isEmpty'
 import find from 'lodash/find'
 
-import types from '../actions/packets/types'
+import {
+  ADD_PACKET_PENDING,
+  ADD_PACKET_SUCCESS,
+  UPDATE_PACKETS,
+  UPDATE_PACKET_PENDING,
+  ARCHIVE_PACKET,
+} from '../actions/packets/types'
 import {
   addPacketFailure,
   addPacketSuccess,
@@ -16,7 +22,7 @@ import { getShippingWayFromCode } from '../../utils/correios'
 import { packetsListSelector } from '../selectors/packets'
 
 const addPacketLogic = createLogic({
-  type: types.ADD_PACKET_PENDING,
+  type: ADD_PACKET_PENDING,
   validate: ({ getState, action }, allow, reject) => {
     const { list: packets } = getState().packets
     const { code } = action.payload
@@ -58,7 +64,7 @@ const addPacketLogic = createLogic({
 })
 
 const addPacketSuccessLogic = createLogic({
-  type: types.ADD_PACKET_SUCCESS,
+  type: ADD_PACKET_SUCCESS,
   process: () => {
     const message = 'Encomenda rastreada com sucesso'
     return addFeedback(message)
@@ -66,7 +72,7 @@ const addPacketSuccessLogic = createLogic({
 })
 
 const updatePacketsLogic = createLogic({
-  type: types.UPDATE_PACKETS,
+  type: UPDATE_PACKETS,
   process: ({ getState }, dispatch, done) => {
     const packets = packetsListSelector(getState())
     packets.forEach((packet) => dispatch(updatePacket(packet)))
@@ -75,7 +81,7 @@ const updatePacketsLogic = createLogic({
 })
 
 const archivePacketLogic = createLogic({
-  type: types.ARCHIVE_PACKET,
+  type: ARCHIVE_PACKET,
   process: ({ getState, action }, dispatch, done) => {
     const packets = packetsListSelector(getState())
     const { code } = action.payload
@@ -90,7 +96,7 @@ const archivePacketLogic = createLogic({
 })
 
 const updatePacketLogic = createLogic({
-  type: types.UPDATE_PACKET_PENDING,
+  type: UPDATE_PACKET_PENDING,
   process: async ({ action }, dispatch, done) => {
     const { packet } = action.payload
 

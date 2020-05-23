@@ -4,7 +4,6 @@ import { render } from '@testing-library/react-native'
 
 import AddPacketModal from '../AddPacketModal'
 
-const mockClearError = jest.fn()
 const mockOnDismiss = jest.fn()
 const mockOnSubmit = jest.fn()
 
@@ -16,7 +15,6 @@ describe('AddPacketModal', () => {
 
     const { baseElement } = render(
       <AddPacketModal
-        clearError={mockClearError}
         error={mockError}
         onDismiss={mockOnDismiss}
         onSubmit={mockOnSubmit}

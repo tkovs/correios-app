@@ -8,13 +8,7 @@ import find from 'lodash/find'
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
 
-function AddPacketModal({
-  clearError,
-  onDismiss,
-  onSubmit,
-  statusList,
-  visible,
-}) {
+function AddPacketModal({ onDismiss, onSubmit, statusList, visible }) {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
   const status = find(statusList, { code }) || {}
@@ -25,7 +19,7 @@ function AddPacketModal({
       setCode('')
       onDismiss()
     }
-  }, [status.pending])
+  }, [onDismiss, status.error, status.pending])
 
   return (
     <Modal
@@ -36,7 +30,6 @@ function AddPacketModal({
         onSubmit(title, code)
       }}
       onDismiss={() => {
-        clearError()
         setTitle('')
         setCode('')
         onDismiss()
@@ -54,10 +47,7 @@ function AddPacketModal({
           label="Nome do pacote"
           mode="outlined"
           value={title}
-          onChangeText={value => {
-            if (!isNil(status.error)) {
-              clearError()
-            }
+          onChangeText={(value) => {
             setTitle(value)
           }}
           testID="title-text-input"
@@ -74,10 +64,7 @@ function AddPacketModal({
           label="Código de rastreio"
           mode="outlined"
           value={code}
-          onChangeText={value => {
-            if (!isNil(status.error)) {
-              clearError()
-            }
+          onChangeText={(value) => {
             setCode(value)
           }}
           testID="code-text-input"
@@ -96,7 +83,6 @@ AddPacketModal.defaultProps = {
 }
 
 AddPacketModal.propTypes = {
-  clearError: PropTypes.func.isRequired,
   onDismiss: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   visible: PropTypes.bool,
