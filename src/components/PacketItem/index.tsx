@@ -31,7 +31,9 @@ const PacketItemContainer: FC<Props> = (props: Props) => {
   )
 }
 
-const mapStateToProps: MapStateToProps<StateProps, OwnProps> = (state) => ({
+const mapStateToProps: MapStateToProps<StateProps, OwnProps, State> = (
+  state: State
+) => ({
   statusList: statusListSelector(state),
 })
 

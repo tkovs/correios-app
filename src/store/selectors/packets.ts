@@ -3,36 +3,38 @@ import compact from 'lodash/compact'
 import sortBy from 'lodash/sortBy'
 import reject from 'lodash/reject'
 
+import { PacketsState } from '../actions/packets/types'
 import { hydratePacket } from '../../utils/packet'
 
-export const packetsSelector = state => state.packets
+export const packetsSelector = (state: State): PacketsState => state.packets
 
 export const statusListSelector = createSelector(
   packetsSelector,
-  packets => packets.statusList
+  (packets: PacketsState) => packets.statusList
 )
 
 export const packetsListSelector = createSelector(
   packetsSelector,
-  packets =>
-    sortBy(packets.list.map(packet => hydratePacket(packet)), [
-      'updatedAt',
-      'code',
-    ])
+  (packets: PacketsState) =>
+    sortBy(
+      packets.list.map((packet: Packet) => hydratePacket(packet)),
+      ['updatedAt', 'code']
+    )
 )
 
 export const packetsListWithoutArchivedSelector = createSelector(
   packetsListSelector,
-  list => reject(list, { archived: true })
+  (list: Packet[]) => reject(list, { archived: true })
 )
 
 export const deletedPacketSelector = createSelector(
   packetsSelector,
-  packets => packets.deleted
+  (packets: PacketsState) => packets.deleted
 )
 
 export const packetsListWithDeletedSelector = createSelector(
   packetsListSelector,
   deletedPacketSelector,
-  (packets, deleted) => compact([...packets, hydratePacket(deleted)])
+  (packets: Packet[], deleted: Packet | undefined) =>
+    compact([...packets, hydratePacket(deleted)])
 )

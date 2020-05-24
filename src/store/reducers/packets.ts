@@ -1,5 +1,8 @@
 import reject from 'lodash/reject'
 import find from 'lodash/find'
+import concat from 'lodash/concat'
+import merge from 'lodash/merge'
+
 import {
   ADD_PACKET_PENDING,
   ADD_PACKET_SUCCESS,
@@ -66,7 +69,11 @@ const packets = (
 
       return {
         ...state,
-        statusList: [...reject(state.statusList, { code }), { code, error }],
+        statusList: concat(reject(state.statusList, { code }), {
+          code,
+          error,
+          pending: false,
+        }),
       }
     }
     case UPDATE_PACKET_SUCCESS: {
@@ -80,12 +87,13 @@ const packets = (
     }
     case ARCHIVE_PACKET: {
       const { code } = action.payload
+
       return {
         ...state,
-        list: [
-          ...reject(state.list, { code }),
-          { ...find(state.list, { code }), archived: true },
-        ],
+        list: concat(
+          reject(state.list, { code }),
+          merge(find(state.list, { code }), { archived: true })
+        ),
       }
     }
     case REMOVE_PACKET: {
@@ -99,12 +107,13 @@ const packets = (
     }
     case UPDATE_LAST_VIEW: {
       const { code, date } = action.payload
+
       return {
         ...state,
-        list: [
-          ...reject(state.list, { code }),
-          { ...find(state.list, { code }), lastView: date },
-        ],
+        list: concat(
+          reject(state.list, { code }),
+          merge(find(state.list, { code }), { lastView: date })
+        ),
       }
     }
     default:

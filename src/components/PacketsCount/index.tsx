@@ -27,7 +27,9 @@ const PacketsCountContainer: FC<Props> = ({
   return <PacketsCount quantity={quantity} testID={testID} />
 }
 
-const mapStateToProps: MapStateToProps<StateProps, OwnProps> = (state) => ({
+const mapStateToProps: MapStateToProps<StateProps, OwnProps, State> = (
+  state: State
+) => ({
   packets: packetsListWithoutArchivedSelector(state),
 })
 

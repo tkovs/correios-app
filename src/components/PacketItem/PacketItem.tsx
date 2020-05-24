@@ -29,9 +29,9 @@ type Props = PacketItemProps
 const PacketItem: FC<Props> = ({ onClick, packet, statusList }: Props) => {
   const { code } = packet
   const activityIndicatorSize = 12
-  const status = find(statusList, { code }) || {}
-  const firstShippingUpdate = moment(last(packet.statuses).datetime)
-  const lastShippingUpdate = moment(first(packet.statuses).datetime)
+  const status = find(statusList, { code })
+  const firstShippingUpdate = moment(last(packet.statuses)?.datetime)
+  const lastShippingUpdate = moment(first(packet.statuses)?.datetime)
   const formattedLastShippingUpdate = moment(lastShippingUpdate).format('D MMM')
   const passedDays = getPassedDays(
     packet.status,
@@ -53,7 +53,7 @@ const PacketItem: FC<Props> = ({ onClick, packet, statusList }: Props) => {
             </Text>
             <ActivityIndicator
               accessibilityStates={['disabled']}
-              animating={!isNil(status.pending)}
+              animating={!isNil(status?.pending)}
               size={activityIndicatorSize}
               color={colors.blue}
             />
