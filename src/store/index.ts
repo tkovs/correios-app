@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, Store } from 'redux'
 import { createLogicMiddleware } from 'redux-logic'
 
 import rootReducer from './reducers'
 import rootLogic from './logic'
 
-export default function configureStore(preloadedState) {
+export default function configureStore(preloadedState: State): Store<State> {
   const logicMiddleware = createLogicMiddleware(rootLogic)
   const middlewares = applyMiddleware(logicMiddleware)
   const store = createStore(rootReducer, preloadedState, middlewares)
