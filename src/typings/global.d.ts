@@ -31,6 +31,6 @@ type StatusListItem = {
 }
 
 type State = {
-  feedback: import('./../store/actions/feedback/types').FeedbackState
-  packets: import('./../store/actions/packets/types').PacketsState
+  feedback: import('../store/actions/feedback/types').FeedbackState
+  packets: import('../store/actions/packets/types').PacketsState
 }

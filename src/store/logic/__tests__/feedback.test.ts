@@ -1,10 +1,11 @@
-import { createMockStore } from 'redux-logic-test'
+import { createMockStore, MockStore } from 'redux-logic-test'
+import { Action } from 'redux-logic'
 
 import rootReducer from '../../reducers'
 import feedback from '../feedback'
 import { addFeedback, clearFeedback } from '../../actions/feedback'
 
-let store = null
+let store: MockStore<State, Action>
 
 describe('Feedback Logic', () => {
   beforeEach(() => {
@@ -13,7 +14,7 @@ describe('Feedback Logic', () => {
   })
 
   describe('clearFeedbackLogic', () => {
-    it('should allow clearFeedback if feedback is visible', done => {
+    it('should allow clearFeedback if feedback is visible', (done) => {
       const mockMessage = 'mockMessage'
 
       store.dispatch(addFeedback(mockMessage))
@@ -33,7 +34,7 @@ describe('Feedback Logic', () => {
       })
     })
 
-    it('should reject clearFeedback if feedback is not visible', done => {
+    it('should reject clearFeedback if feedback is not visible', (done) => {
       expect(store.getState().feedback.visible).toBeFalsy()
 
       store.dispatch(clearFeedback())
