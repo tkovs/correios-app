@@ -26,16 +26,13 @@ ToastContainer.propTypes = {
   visible: PropTypes.bool.isRequired,
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   message: messageSelector(state),
   visible: visibleSelector(state),
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   hideToast: () => dispatch(clearFeedback()),
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ToastContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ToastContainer)

@@ -9,7 +9,11 @@ import {
   getComponentWithPaper,
   getComponentWithRedux,
 } from '../../../utils/jest'
-import { addFeedback, clearFeedback } from '../../../store/actions/feedback'
+import {
+  addFeedback,
+  clearFeedback,
+  rejectClearFeedback,
+} from '../../../store/actions/feedback'
 
 let store = null
 
@@ -73,11 +77,11 @@ describe('Toast component', () => {
     act(() => {
       store.dispatch(addFeedback(mockMessage))
     })
-    await store.whenComplete(() => {
+    await store.whenComplete(async () => {
       expect(store.actions.length).toEqual(1)
       expect(store.actions[0]).toEqual(addFeedback(mockMessage))
       expect(store.getState().feedback.message).toEqual(mockMessage)
-      expect(store.getState().feedback.visible).toEqual(true)
+      expect(store.getState().feedback.visible).toBeTruthy()
       expect(baseElement).toMatchSnapshot()
 
       // Toast should not be visible after the Ok! button was clicked
@@ -87,9 +91,10 @@ describe('Toast component', () => {
         fireEvent.press(button)
         jest.advanceTimersByTime(animationTime)
       })
-      store.whenComplete(() => {
-        expect(store.actions.length).toEqual(2)
+      await store.whenComplete(() => {
+        expect(store.actions.length).toEqual(3)
         expect(store.actions[1]).toEqual(clearFeedback())
+        expect(store.actions[2]).toEqual(rejectClearFeedback()) // prevent duplicated call
         expect(store.getState().feedback.message).toEqual('')
         expect(store.getState().feedback.visible).toEqual(false)
         expect(baseElement).toMatchSnapshot()

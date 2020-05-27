@@ -3,7 +3,11 @@ import { Action } from 'redux-logic'
 
 import rootReducer from '../../reducers'
 import feedback from '../feedback'
-import { addFeedback, clearFeedback } from '../../actions/feedback'
+import {
+  addFeedback,
+  clearFeedback,
+  rejectClearFeedback,
+} from '../../actions/feedback'
 
 let store: MockStore<State, Action>
 
@@ -39,7 +43,8 @@ describe('Feedback Logic', () => {
 
       store.dispatch(clearFeedback())
       store.whenComplete(() => {
-        expect(store.actions).toHaveLength(0)
+        expect(store.actions).toHaveLength(1)
+        expect(store.actions[0]).toEqual(rejectClearFeedback())
         done()
       })
     })
