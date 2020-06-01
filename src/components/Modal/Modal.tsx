@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { View, StyleSheet } from 'react-native'
 import {
   Button,
@@ -7,11 +7,23 @@ import {
   Modal as ModalPaper,
   Divider,
 } from 'react-native-paper'
-import PropTypes from 'prop-types'
 
 import { colors } from '../../styles/theme'
 
-function Modal({
+interface ModalProps {
+  disabled: boolean
+  visible: boolean
+  loading: boolean
+  fullscreen?: boolean
+  title?: string
+  onDismiss: () => void
+  onSubmit: () => void
+  children: React.ReactNode
+}
+
+type Props = ModalProps
+
+const Modal: FC<Props> = ({
   children,
   disabled,
   fullscreen,
@@ -20,7 +32,7 @@ function Modal({
   onSubmit,
   title,
   visible,
-}) {
+}: Props) => {
   return (
     <Portal>
       <ModalPaper visible={visible} onDismiss={onDismiss}>
@@ -29,19 +41,20 @@ function Modal({
         >
           {title && (
             <View style={styles.header}>
-              <Title style={styles.headerText}>{title}</Title>
+              <Title>{title}</Title>
             </View>
           )}
           <View style={fullscreen ? styles.contentFullscreen : styles.content}>
             {children}
           </View>
-          <Divider />
+          <Divider accessibilityStates={['disabled']} />
           <View style={styles.bottomBar}>
             <View style={styles.cancelButtonView}>
               <Button
                 labelStyle={{ color: colors.blue }}
                 compact
                 onPress={onDismiss}
+                accessibilityStates={['disabled']}
               >
                 Cancelar
               </Button>
@@ -55,6 +68,7 @@ function Modal({
                 onPress={onSubmit}
                 disabled={disabled}
                 testID="submit-modal-button"
+                accessibilityStates={['disabled']}
               >
                 Confirmar
               </Button>
@@ -69,21 +83,7 @@ function Modal({
 Modal.defaultProps = {
   disabled: false,
   visible: false,
-  title: null,
-  onSubmit: null,
-  fullscreen: false,
   loading: false,
-}
-
-Modal.propTypes = {
-  disabled: PropTypes.bool,
-  visible: PropTypes.bool,
-  loading: PropTypes.bool,
-  fullscreen: PropTypes.bool,
-  title: PropTypes.string,
-  onDismiss: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 }
 
 const styles = StyleSheet.create({

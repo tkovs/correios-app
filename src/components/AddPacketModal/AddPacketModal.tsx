@@ -47,8 +47,8 @@ const AddPacketModal: FC<Props> = ({
         setCode('')
         onDismiss()
       }}
-      loading={status?.pending}
-      disabled={title === '' || code === '' || status?.pending}
+      loading={status?.pending || false}
+      disabled={status?.pending || title === '' || code === ''}
     >
       <View>
         <TextInput
