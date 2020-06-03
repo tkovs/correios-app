@@ -9,10 +9,19 @@ import {
   REMOVE_PACKET,
   ARCHIVE_PACKET,
   UPDATE_LAST_VIEW,
-  PacketsActionTypes,
+  AddPacketPending,
+  AddPacketSuccess,
+  AddPacketFailure,
+  UpdatePackets,
+  UpdatePacketPending,
+  UpdatePacketSuccess,
+  RemovePacket,
+  ArchivePacket,
+  UpdateLastView,
+  UpdatePacketFailure,
 } from './types'
 
-export const addPacket = (title: string, code: string): PacketsActionTypes => ({
+export const addPacket = (title: string, code: string): AddPacketPending => ({
   type: ADD_PACKET_PENDING,
   payload: {
     title,
@@ -20,7 +29,7 @@ export const addPacket = (title: string, code: string): PacketsActionTypes => ({
   },
 })
 
-export const addPacketSuccess = (packet: Packet): PacketsActionTypes => ({
+export const addPacketSuccess = (packet: Packet): AddPacketSuccess => ({
   type: ADD_PACKET_SUCCESS,
   payload: {
     packet,
@@ -30,7 +39,7 @@ export const addPacketSuccess = (packet: Packet): PacketsActionTypes => ({
 export const addPacketFailure = (
   error: string,
   code: string
-): PacketsActionTypes => ({
+): AddPacketFailure => ({
   type: ADD_PACKET_FAILURE,
   payload: {
     error,
@@ -38,18 +47,18 @@ export const addPacketFailure = (
   },
 })
 
-export const updatePackets = (): PacketsActionTypes => ({
+export const updatePackets = (): UpdatePackets => ({
   type: UPDATE_PACKETS,
 })
 
-export const updatePacket = (packet: Packet): PacketsActionTypes => ({
+export const updatePacket = (packet: Packet): UpdatePacketPending => ({
   type: UPDATE_PACKET_PENDING,
   payload: {
     packet,
   },
 })
 
-export const updatePacketSuccess = (packet: Packet): PacketsActionTypes => ({
+export const updatePacketSuccess = (packet: Packet): UpdatePacketSuccess => ({
   type: UPDATE_PACKET_SUCCESS,
   payload: {
     packet,
@@ -59,7 +68,7 @@ export const updatePacketSuccess = (packet: Packet): PacketsActionTypes => ({
 export const updatePacketFailure = (
   error: string,
   code: string
-): PacketsActionTypes => ({
+): UpdatePacketFailure => ({
   type: UPDATE_PACKET_FAILURE,
   payload: {
     error,
@@ -67,24 +76,21 @@ export const updatePacketFailure = (
   },
 })
 
-export const removePacket = (code: string): PacketsActionTypes => ({
+export const removePacket = (code: string): RemovePacket => ({
   type: REMOVE_PACKET,
   payload: {
     code,
   },
 })
 
-export const archivePacket = (code: string): PacketsActionTypes => ({
+export const archivePacket = (code: string): ArchivePacket => ({
   type: ARCHIVE_PACKET,
   payload: {
     code,
   },
 })
 
-export const updateLastView = (
-  date: Date,
-  code: string
-): PacketsActionTypes => ({
+export const updateLastView = (date: Date, code: string): UpdateLastView => ({
   type: UPDATE_LAST_VIEW,
   payload: {
     date,
