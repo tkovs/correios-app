@@ -1,5 +1,5 @@
 import { createMockStore, MockStore } from 'redux-logic-test'
-import { Action } from 'redux-logic'
+import { StandardAction } from 'redux-logic'
 import { FeedbackActionTypes } from '../../actions/feedback/types'
 
 import rootReducer from '../../reducers'
@@ -11,7 +11,7 @@ import {
 } from '../../actions/feedback'
 
 describe('Feedback Logic', () => {
-  let store: MockStore<State, Action>
+  let store: MockStore<State, StandardAction>
 
   beforeEach(() => {
     store = createMockStore<State, FeedbackActionTypes, FeedbackActionTypes>({

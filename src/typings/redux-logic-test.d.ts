@@ -1,11 +1,13 @@
 declare module 'redux-logic-test' {
   import { Middleware, Reducer, Store } from 'redux'
-  import { Action, Logic, LogicMiddleware } from 'redux-logic'
+  import { StandardAction, Logic, LogicMiddleware } from 'redux-logic'
 
   type Callback = () => void
 
-  export interface MockStore<State extends object, Actions extends Action>
-    extends Store<State, Actions> {
+  export interface MockStore<
+    State extends object,
+    Actions extends StandardAction
+  > extends Store<State, Actions> {
     dispatch: Dispatch<State>
     getState(): State
     resetActions(): void
@@ -29,11 +31,15 @@ declare module 'redux-logic-test' {
   }
 
   export interface CreateMockStore {
-    <State extends object, Dependency extends object, Actions extends Action>(
+    <
+      State extends object,
+      Dependency extends object,
+      Actions extends StandardAction
+    >(
       options?: CreateMockStoreOptions<State, Dependency>
     ): MockStore<State, Actions>
 
-    <State extends object, Actions extends Action>(
+    <State extends object, Actions extends StandardAction>(
       options?: CreateMockStoreOptions<State, {}>
     ): MockStore<State, Actions>
   }

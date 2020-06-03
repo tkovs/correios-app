@@ -1,4 +1,4 @@
-import { Action } from 'redux'
+import { StandardAction } from 'redux-logic'
 
 export const ADD_PACKET_PENDING = 'ADD_PACKET_PENDING'
 export const ADD_PACKET_SUCCESS = 'ADD_PACKET_SUCCESS'
@@ -11,63 +11,67 @@ export const ARCHIVE_PACKET = 'ARCHIVE_PACKET'
 export const REMOVE_PACKET = 'REMOVE_PACKET'
 export const UPDATE_LAST_VIEW = 'UPDATE_LAST_VIEW'
 
-export interface AddPacketPending extends Action<typeof ADD_PACKET_PENDING> {
+export interface AddPacketPending
+  extends StandardAction<typeof ADD_PACKET_PENDING> {
   payload: {
     title: string
     code: string
   }
 }
 
-export interface AddPacketSuccess extends Action<typeof ADD_PACKET_SUCCESS> {
+export interface AddPacketSuccess
+  extends StandardAction<typeof ADD_PACKET_SUCCESS> {
   payload: {
     packet: Packet
   }
 }
 
-export interface AddPacketFailure extends Action<typeof ADD_PACKET_FAILURE> {
+export interface AddPacketFailure
+  extends StandardAction<typeof ADD_PACKET_FAILURE> {
   payload: {
     error: string
     code: string
   }
 }
 
-export type UpdatePackets = Action<typeof UPDATE_PACKETS>
+export type UpdatePackets = StandardAction<typeof UPDATE_PACKETS>
 
 export interface UpdatePacketPending
-  extends Action<typeof UPDATE_PACKET_PENDING> {
+  extends StandardAction<typeof UPDATE_PACKET_PENDING> {
   payload: {
     packet: Packet
   }
 }
 
 export interface UpdatePacketSuccess
-  extends Action<typeof UPDATE_PACKET_SUCCESS> {
+  extends StandardAction<typeof UPDATE_PACKET_SUCCESS> {
   payload: {
     packet: Packet
   }
 }
 
 export interface UpdatePacketFailure
-  extends Action<typeof UPDATE_PACKET_FAILURE> {
+  extends StandardAction<typeof UPDATE_PACKET_FAILURE> {
   payload: {
     error: string
     code: string
   }
 }
 
-export interface RemovePacket extends Action<typeof REMOVE_PACKET> {
+export interface RemovePacket extends StandardAction<typeof REMOVE_PACKET> {
   payload: {
     code: string
   }
 }
 
-export interface ArchivePacket extends Action<typeof ARCHIVE_PACKET> {
+export interface ArchivePacket extends StandardAction<typeof ARCHIVE_PACKET> {
   payload: {
     code: string
   }
 }
 
-export interface UpdateLastView extends Action<typeof UPDATE_LAST_VIEW> {
+export interface UpdateLastView
+  extends StandardAction<typeof UPDATE_LAST_VIEW> {
   payload: {
     code: string
     date: Date
