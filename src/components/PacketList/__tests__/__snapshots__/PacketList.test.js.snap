@@ -86,7 +86,6 @@ exports[`renders correctly without packets 1`] = `
             ],
           ]
         }
-        testId="empty-packet-list"
       >
         Nenhuma encomenda nesta lista
       </Text>
