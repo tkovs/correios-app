@@ -73,6 +73,11 @@ exports[`Toast component should be invisible and clear the feedback by clicking 
       >
         <View
           accessibilityLiveRegion="polite"
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           pointerEvents="box-none"
           style={
             Object {
@@ -326,6 +331,11 @@ exports[`Toast component should react correctly to feedback changes 2`] = `
       >
         <View
           accessibilityLiveRegion="polite"
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           pointerEvents="box-none"
           style={
             Object {
