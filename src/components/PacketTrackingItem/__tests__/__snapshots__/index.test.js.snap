@@ -37,6 +37,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
         }
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -59,6 +64,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
           12:01
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -90,6 +100,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
         }
       >
         <View
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           color="#01417F"
           style={
             Array [
@@ -147,6 +162,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
         style={Object {}}
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           numberOfLines={1}
           style={
             Array [
@@ -173,6 +193,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
           Objeto entregue ao destinatário
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -223,6 +248,11 @@ exports[`PacketTrackingItem should render correctly a delivered object 1`] = `
             
           </Text>
           <Text
+            accessibilityStates={
+              Array [
+                "disabled",
+              ]
+            }
             style={
               Array [
                 Object {
@@ -288,6 +318,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
         }
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -310,6 +345,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
           12:01
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -341,6 +381,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
         }
       >
         <View
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           color="#01417F"
           style={
             Array [
@@ -398,6 +443,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
         style={Object {}}
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           numberOfLines={1}
           style={
             Array [
@@ -424,6 +474,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
           Objeto postado após o horário limite da unidade
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -474,6 +529,11 @@ exports[`PacketTrackingItem should render correctly a posted status 1`] = `
             
           </Text>
           <Text
+            accessibilityStates={
+              Array [
+                "disabled",
+              ]
+            }
             style={
               Array [
                 Object {
@@ -539,6 +599,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
         }
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -561,6 +626,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
           12:01
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -592,6 +662,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
         }
       >
         <View
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           color="#01417F"
           style={
             Array [
@@ -649,6 +724,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
         style={Object {}}
       >
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           numberOfLines={1}
           style={
             Array [
@@ -675,6 +755,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
           Objeto encaminhado
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -698,6 +783,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
           AC ASSIS CHATEAUBRIAND - Assis Chateaubriand / PR
         </Text>
         <Text
+          accessibilityStates={
+            Array [
+              "disabled",
+            ]
+          }
           style={
             Array [
               Object {
@@ -748,6 +838,11 @@ exports[`PacketTrackingItem should render correctly an on course object 1`] = `
             
           </Text>
           <Text
+            accessibilityStates={
+              Array [
+                "disabled",
+              ]
+            }
             style={
               Array [
                 Object {

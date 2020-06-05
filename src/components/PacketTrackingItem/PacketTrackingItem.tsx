@@ -1,5 +1,4 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { FC } from 'react'
 import moment from 'moment'
 import { View, StyleSheet } from 'react-native'
 import { Avatar, Caption, Text } from 'react-native-paper'
@@ -9,25 +8,55 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { formatLocation, formatInitialLocation } from '../../utils/location'
 import { colors } from '../../styles/theme'
 
-function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
+interface PacketTrackingItemProps {
+  datetime: Date
+  status: string
+  note?: string
+  from?: Locale
+  to?: Locale
+  locale?: Locale
+}
+
+type Props = PacketTrackingItemProps
+
+const PacketTrackingItem: FC<Props> = ({
+  datetime,
+  status,
+  from,
+  to,
+  locale,
+  note,
+}: Props) => {
   const time = moment(datetime).format('h:mm')
   const day = moment(datetime).format('D MMM')
 
   return (
     <View style={styles.container}>
       <View style={styles.left}>
-        <Text style={[styles.textColor, styles.alignTextToLocation]}>
+        <Text
+          accessibilityStates={['disabled']}
+          style={[styles.textColor, styles.alignTextToLocation]}
+        >
           {time}
         </Text>
-        <Text style={[styles.textColor, styles.alignTextToLocation]}>
+        <Text
+          accessibilityStates={['disabled']}
+          style={[styles.textColor, styles.alignTextToLocation]}
+        >
           {day}
         </Text>
       </View>
       <View style={styles.icon}>
-        <Avatar.Icon size={48} icon="truck" color={colors.blue} />
+        <Avatar.Icon
+          accessibilityStates={['disabled']}
+          size={48}
+          icon="truck"
+          color={colors.blue}
+        />
       </View>
       <View style={styles.right}>
         <Text
+          accessibilityStates={['disabled']}
           style={[
             styles.textColor,
             styles.alignTextToLocation,
@@ -38,23 +67,35 @@ function PacketTrackingItem({ datetime, status, from, to, locale, note }) {
           {status}
         </Text>
         {!isEmpty(from) ? (
-          <Text style={[styles.textColor, styles.alignTextToLocation]}>
+          <Text
+            accessibilityStates={['disabled']}
+            style={[styles.textColor, styles.alignTextToLocation]}
+          >
             De: {formatLocation(from)}
           </Text>
         ) : null}
         {!isEmpty(to) ? (
-          <Text style={[styles.textColor, styles.alignTextToLocation]}>
+          <Text
+            accessibilityStates={['disabled']}
+            style={[styles.textColor, styles.alignTextToLocation]}
+          >
             Para: {formatLocation(to)}
           </Text>
         ) : null}
         {!isEmpty(locale) ? (
-          <Text style={[styles.textColor, styles.alignTextToLocation]}>
+          <Text
+            accessibilityStates={['disabled']}
+            style={[styles.textColor, styles.alignTextToLocation]}
+          >
             De: {formatLocation(locale)}
           </Text>
         ) : null}
         <View style={styles.locationInfo}>
           <Icon name="location-on" size={20} color={colors.licorice} />
-          <Text style={[styles.textColor, styles.alignTextToLocation]}>
+          <Text
+            accessibilityStates={['disabled']}
+            style={[styles.textColor, styles.alignTextToLocation]}
+          >
             {formatInitialLocation({ from, to, locale })}
           </Text>
         </View>
@@ -93,27 +134,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
-
-PacketTrackingItem.propTypes = {
-  datetime: PropTypes.instanceOf(Date).isRequired,
-  status: PropTypes.string.isRequired,
-  note: PropTypes.string,
-  from: PropTypes.shape({
-    city: PropTypes.string,
-    state: PropTypes.string,
-    place: PropTypes.string,
-  }),
-  to: PropTypes.shape({
-    city: PropTypes.string,
-    state: PropTypes.string,
-    place: PropTypes.string,
-  }),
-  locale: PropTypes.shape({
-    city: PropTypes.string,
-    state: PropTypes.string,
-    place: PropTypes.string,
-  }),
-}
 
 PacketTrackingItem.defaultProps = {
   note: '',
