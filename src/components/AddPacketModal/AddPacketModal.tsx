@@ -64,7 +64,7 @@ const AddPacketModal: FC<Props> = ({
             setTitle(value)
           }}
           testID="title-text-input"
-          accessibilityStates={['disabled']}
+          accessibilityStates={['selected']}
         />
       </View>
       <View>
@@ -82,7 +82,7 @@ const AddPacketModal: FC<Props> = ({
             setCode(value)
           }}
           testID="code-text-input"
-          accessibilityStates={['disabled']}
+          accessibilityStates={['selected']}
         />
         <HelperText type="error" visible={!!status?.error}>
           {status?.error}

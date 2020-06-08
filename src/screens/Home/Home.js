@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { SafeAreaView, View, StyleSheet, Dimensions } from 'react-native'
 import { FAB } from 'react-native-paper'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
@@ -34,7 +34,7 @@ const DeliveredPacketsRoute = () => (
 
 const initialLayout = { width: Dimensions.get('window').width }
 
-const renderTabBar = props => (
+const renderTabBar = (props) => (
   <TabBar
     {...props}
     indicatorStyle={{ backgroundColor: colors.sandstorm }}
@@ -61,13 +61,12 @@ const Home = () => {
     delivered: DeliveredPacketsRoute,
   })
 
+  const onDismiss = useCallback(() => setModalVisible(false), [])
+
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <AddPacketModal
-        onDismiss={() => setModalVisible(false)}
-        visible={modalVisible}
-      />
+      <AddPacketModal onDismiss={onDismiss} visible={modalVisible} />
 
       <TabView
         renderTabBar={renderTabBar}
