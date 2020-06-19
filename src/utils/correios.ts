@@ -1,21 +1,23 @@
 import first from 'lodash/first'
 
-export const getShippingWayFromCode = code => {
-  const initials = /\w\w/.exec(code)[0]
+export const getShippingWayFromCode = (code: string): string => {
+  const regex = /\w\w/.exec(code)
+  const initials = regex && regex[0]
 
-  return shippingWayInitials[initials]
+  return initials ? shippingWayInitials[initials] : ''
 }
 
-export const hydrateWithStatus = packet => {
+export const hydrateWithStatus = (packet: Partial<Packet>): Partial<Packet> => {
   const status =
-    first(packet.statuses).status === 'Objeto entregue ao destinatário'
+    first(packet?.statuses)?.status === 'Objeto entregue ao destinatário'
       ? 'delivered'
       : 'pending'
 
   return { ...packet, status }
 }
 
-const shippingWayInitials = {
+// Updated at 06/19/2020
+const shippingWayInitials: Record<string, string> = {
   AA: 'ETIQUETA LÓGICA SEDEX',
   AB: 'ETIQUETA LÓGICA SEDEX',
   AL: 'AGENTES DE LEITURA',
