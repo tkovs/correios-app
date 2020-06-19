@@ -71,7 +71,7 @@ const PacketTrackingItem: FC<Props> = ({
             accessibilityStates={['disabled']}
             style={[styles.textColor, styles.alignTextToLocation]}
           >
-            De: {formatLocation(from)}
+            De: {from && formatLocation(from)}
           </Text>
         ) : null}
         {!isEmpty(to) ? (
@@ -79,7 +79,7 @@ const PacketTrackingItem: FC<Props> = ({
             accessibilityStates={['disabled']}
             style={[styles.textColor, styles.alignTextToLocation]}
           >
-            Para: {formatLocation(to)}
+            Para: {to && formatLocation(to)}
           </Text>
         ) : null}
         {!isEmpty(locale) ? (
@@ -87,7 +87,7 @@ const PacketTrackingItem: FC<Props> = ({
             accessibilityStates={['disabled']}
             style={[styles.textColor, styles.alignTextToLocation]}
           >
-            De: {formatLocation(locale)}
+            De: {locale && formatLocation(locale)}
           </Text>
         ) : null}
         <View style={styles.locationInfo}>
@@ -96,7 +96,7 @@ const PacketTrackingItem: FC<Props> = ({
             accessibilityStates={['disabled']}
             style={[styles.textColor, styles.alignTextToLocation]}
           >
-            {formatInitialLocation({ from, to, locale })}
+            {formatInitialLocation({ from, locale })}
           </Text>
         </View>
         {note ? <Caption>Obs.: {note}</Caption> : null}
