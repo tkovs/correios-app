@@ -9,6 +9,9 @@ import {
   UPDATE_PACKETS,
   UPDATE_PACKET_PENDING,
   ARCHIVE_PACKET,
+  AddPacketPending,
+  ArchivePacket,
+  UpdatePacketPending,
 } from '../actions/packets/types'
 import {
   addPacketFailure,
@@ -21,7 +24,7 @@ import { addFeedback } from '../actions/feedback'
 import { getShippingWayFromCode } from '../../utils/correios'
 import { packetsListSelector } from '../selectors/packets'
 
-const addPacketLogic = createLogic({
+const addPacketLogic = createLogic<State, AddPacketPending['payload']>({
   type: ADD_PACKET_PENDING,
   validate: ({ getState, action }, allow, reject) => {
     const { list: packets } = getState().packets
@@ -46,13 +49,15 @@ const addPacketLogic = createLogic({
         throw new Error('A encomenda não pôde ser rastreada')
       }
 
-      const packet = {
+      const packet: Packet = {
         code,
         createdAt: new Date(),
         updatedAt: new Date(),
         mode: getShippingWayFromCode(code),
         statuses,
         title,
+        archived: false,
+        status: 'recentlyAdded',
       }
 
       dispatch(addPacketSuccess(packet))
@@ -63,7 +68,7 @@ const addPacketLogic = createLogic({
   },
 })
 
-const addPacketSuccessLogic = createLogic({
+const addPacketSuccessLogic = createLogic<State, {}>({
   type: ADD_PACKET_SUCCESS,
   process: () => {
     const message = 'Encomenda rastreada com sucesso'
@@ -71,7 +76,7 @@ const addPacketSuccessLogic = createLogic({
   },
 })
 
-const updatePacketsLogic = createLogic({
+const updatePacketsLogic = createLogic<State, {}>({
   type: UPDATE_PACKETS,
   process: ({ getState }, dispatch, done) => {
     const packets = packetsListSelector(getState())
@@ -80,7 +85,7 @@ const updatePacketsLogic = createLogic({
   },
 })
 
-const archivePacketLogic = createLogic({
+const archivePacketLogic = createLogic<State, ArchivePacket['payload']>({
   type: ARCHIVE_PACKET,
   process: ({ getState, action }, dispatch, done) => {
     const packets = packetsListSelector(getState())
@@ -95,7 +100,7 @@ const archivePacketLogic = createLogic({
   },
 })
 
-const updatePacketLogic = createLogic({
+const updatePacketLogic = createLogic<State, UpdatePacketPending['payload']>({
   type: UPDATE_PACKET_PENDING,
   process: async ({ action }, dispatch, done) => {
     const { packet } = action.payload

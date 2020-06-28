@@ -1,8 +1,9 @@
 import { createMockStore, MockStore } from 'redux-logic-test'
 import { Action } from 'redux-logic'
+import { PacketsActionTypes } from '../../actions/packets/types'
 
 import rootReducer from '../../reducers'
-import packetsLogic from '../packets'
+import logic from '../packets'
 import { addPacketSuccess, archivePacket } from '../../actions/packets'
 import { addFeedback } from '../../actions/feedback'
 import mockPackets from '../../../__mocks__/packets'
@@ -13,7 +14,10 @@ describe('Packets Logic', () => {
   let store: MockStore<State, Action>
 
   beforeEach(() => {
-    store = createMockStore({ logic: [...packetsLogic], reducer: rootReducer })
+    store = createMockStore<State, PacketsActionTypes, PacketsActionTypes>({
+      logic: logic as any, // TODO: fix this any use
+      reducer: rootReducer,
+    })
     store.resetActions()
   })
 

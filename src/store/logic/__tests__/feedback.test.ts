@@ -1,19 +1,23 @@
 import { createMockStore, MockStore } from 'redux-logic-test'
 import { Action } from 'redux-logic'
+import { FeedbackActionTypes } from '../../actions/feedback/types'
 
 import rootReducer from '../../reducers'
-import feedback from '../feedback'
+import logic from '../feedback'
 import {
   addFeedback,
   clearFeedback,
   rejectClearFeedback,
 } from '../../actions/feedback'
 
-let store: MockStore<State, Action>
-
 describe('Feedback Logic', () => {
+  let store: MockStore<State, Action>
+
   beforeEach(() => {
-    store = createMockStore({ logic: [...feedback], reducer: rootReducer })
+    store = createMockStore<State, FeedbackActionTypes, FeedbackActionTypes>({
+      logic,
+      reducer: rootReducer,
+    })
     store.resetActions()
   })
 

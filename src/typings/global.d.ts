@@ -16,7 +16,7 @@ type Packet = {
   archived: boolean
   code: string
   createdAt: Date
-  lastView: Date
+  lastView?: Date
   mode: string
   statuses: Status[]
   status: string
