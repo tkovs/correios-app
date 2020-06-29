@@ -68,7 +68,7 @@ const addPacketLogic = createLogic<State, AddPacketPending['payload']>({
   },
 })
 
-const addPacketSuccessLogic = createLogic<State, {}>({
+const addPacketSuccessLogic = createLogic<State>({
   type: ADD_PACKET_SUCCESS,
   process: () => {
     const message = 'Encomenda rastreada com sucesso'
@@ -76,7 +76,7 @@ const addPacketSuccessLogic = createLogic<State, {}>({
   },
 })
 
-const updatePacketsLogic = createLogic<State, {}>({
+const updatePacketsLogic = createLogic<State>({
   type: UPDATE_PACKETS,
   process: ({ getState }, dispatch, done) => {
     const packets = packetsListSelector(getState())
