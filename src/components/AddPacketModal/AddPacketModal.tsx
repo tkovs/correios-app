@@ -1,62 +1,76 @@
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import isNil from 'lodash/isNil'
+import React, { FC, useState, useEffect } from 'react'
 import { TextInput, HelperText } from 'react-native-paper'
-import { View, StyleSheet, Keyboard } from 'react-native'
+import { View, Keyboard } from 'react-native'
 import find from 'lodash/find'
 
 import Modal from '../Modal'
 import { colors } from '../../styles/theme'
+import { PacketsActionTypes } from '../../store/actions/packets/types'
 
-function AddPacketModal({ onDismiss, onSubmit, statusList, visible }) {
+interface AddPacketModalProps {
+  onDismiss: Function
+  onSubmit: (title: string, code: string) => PacketsActionTypes
+  visible: boolean
+  statusList: StatusListItem[]
+}
+
+type Props = AddPacketModalProps
+
+const AddPacketModal: FC<Props> = ({
+  onDismiss,
+  onSubmit,
+  statusList,
+  visible,
+}: Props) => {
   const [title, setTitle] = useState('')
   const [code, setCode] = useState('')
-  const status = find(statusList, { code }) || {}
+  const status = find(statusList, { code })
 
   useEffect(() => {
-    if (!status.pending && !status.error) {
+    if (!status?.pending && !status?.error) {
       setTitle('')
       setCode('')
       onDismiss()
     }
-  }, [onDismiss, status.error, status.pending])
+  }, [onDismiss, status])
 
   return (
     <Modal
       title="Adicionar novo rastreio"
       visible={visible}
-      onSubmit={() => {
+      onSubmit={(): void => {
         Keyboard.dismiss()
         onSubmit(title, code)
       }}
-      onDismiss={() => {
+      onDismiss={(): void => {
         setTitle('')
         setCode('')
         onDismiss()
       }}
-      loading={status.pending}
-      disabled={title === '' || code === '' || status.pending}
+      loading={status?.pending}
+      disabled={title === '' || code === '' || status?.pending}
     >
-      <View style={styles.textInputContainer}>
+      <View>
         <TextInput
           theme={{
-            colors: { primary: colors.blue, underlineColor: 'transparent' },
+            colors: { primary: colors.blue },
           }}
           dense
           placeholder="iPad"
           label="Nome do pacote"
           mode="outlined"
           value={title}
-          onChangeText={(value) => {
+          onChangeText={(value: string): void => {
             setTitle(value)
           }}
           testID="title-text-input"
+          accessibilityStates={['disabled']}
         />
       </View>
       <View>
         <TextInput
           theme={{
-            colors: { primary: colors.blue, underlineColor: 'transparent' },
+            colors: { primary: colors.blue },
           }}
           autoCapitalize="characters"
           dense
@@ -64,13 +78,14 @@ function AddPacketModal({ onDismiss, onSubmit, statusList, visible }) {
           label="Código de rastreio"
           mode="outlined"
           value={code}
-          onChangeText={(value) => {
+          onChangeText={(value): void => {
             setCode(value)
           }}
           testID="code-text-input"
+          accessibilityStates={['disabled']}
         />
-        <HelperText type="error" visible={!!status.error}>
-          {status.error}
+        <HelperText type="error" visible={!!status?.error}>
+          {status?.error}
         </HelperText>
       </View>
     </Modal>
@@ -81,14 +96,5 @@ AddPacketModal.defaultProps = {
   visible: false,
   statusList: [],
 }
-
-AddPacketModal.propTypes = {
-  onDismiss: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  visible: PropTypes.bool,
-  statusList: PropTypes.arrayOf(PropTypes.object),
-}
-
-const styles = StyleSheet.create({})
 
 export default AddPacketModal
