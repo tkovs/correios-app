@@ -8,7 +8,7 @@ describe('Add packet', () => {
 
   it('should have a new packet on the list', async () => {
     const mockTitle = 'iPad'
-    const mockCode = 'PW086958114BR'
+    const mockCode = 'PZ024483413BR'
 
     await expect(getAllPacketsCount()).toNotExist()
     await addPacket(mockTitle, mockCode)
